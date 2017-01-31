@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFC71BBC1E40153800C4A72A /* GithubJavaPopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */; };
+		AFC71BC71E40153800C4A72A /* GithubJavaPopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BC61E40153800C4A72A /* GithubJavaPopUITests.swift */; };
+		AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BF41E4017CC00C4A72A /* AppDelegate.swift */; };
+		AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC71BF91E4017CC00C4A72A /* Assets.xcassets */; };
+		AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */; };
+		AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C041E4017CC00C4A72A /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFC71BB81E40153800C4A72A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFC71B9B1E40153700C4A72A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFC71BA21E40153700C4A72A;
+			remoteInfo = GithubJavaPop;
+		};
+		AFC71BC31E40153800C4A72A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFC71B9B1E40153700C4A72A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFC71BA21E40153700C4A72A;
+			remoteInfo = GithubJavaPop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AFC71BA31E40153700C4A72A /* GithubJavaPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubJavaPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC71BB71E40153800C4A72A /* GithubJavaPopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubJavaPopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubJavaPopTests.swift; sourceTree = "<group>"; };
+		AFC71BBD1E40153800C4A72A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC71BC21E40153800C4A72A /* GithubJavaPopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubJavaPopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC71BC61E40153800C4A72A /* GithubJavaPopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubJavaPopUITests.swift; sourceTree = "<group>"; };
+		AFC71BC81E40153800C4A72A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC71BF41E4017CC00C4A72A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFC71BF91E4017CC00C4A72A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFC71BFE1E4017CC00C4A72A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC71C031E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFC71C051E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFC71BA01E40153700C4A72A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BB41E40153800C4A72A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BBF1E40153800C4A72A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFC71B9A1E40153700C4A72A = {
+			isa = PBXGroup;
+			children = (
+				AFC71BA51E40153700C4A72A /* GithubJavaPop */,
+				AFC71BBA1E40153800C4A72A /* GithubJavaPopTests */,
+				AFC71BC51E40153800C4A72A /* GithubJavaPopUITests */,
+				AFC71BA41E40153700C4A72A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFC71BA41E40153700C4A72A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BA31E40153700C4A72A /* GithubJavaPop.app */,
+				AFC71BB71E40153800C4A72A /* GithubJavaPopTests.xctest */,
+				AFC71BC21E40153800C4A72A /* GithubJavaPopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFC71BA51E40153700C4A72A /* GithubJavaPop */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BF71E4017CC00C4A72A /* Network */,
+				AFC71BF61E4017CC00C4A72A /* Models */,
+				AFC71C001E4017CC00C4A72A /* Views */,
+				AFC71BFF1E4017CC00C4A72A /* ViewModels */,
+				AFC71BF21E4017CC00C4A72A /* Controllers */,
+				AFC71BF11E4017CC00C4A72A /* Classes */,
+				AFC71BF51E4017CC00C4A72A /* Extensions */,
+				AFC71BF81E4017CC00C4A72A /* SupportingFiles */,
+			);
+			path = GithubJavaPop;
+			sourceTree = "<group>";
+		};
+		AFC71BBA1E40153800C4A72A /* GithubJavaPopTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */,
+				AFC71BBD1E40153800C4A72A /* Info.plist */,
+			);
+			path = GithubJavaPopTests;
+			sourceTree = "<group>";
+		};
+		AFC71BC51E40153800C4A72A /* GithubJavaPopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BC61E40153800C4A72A /* GithubJavaPopUITests.swift */,
+				AFC71BC81E40153800C4A72A /* Info.plist */,
+			);
+			path = GithubJavaPopUITests;
+			sourceTree = "<group>";
+		};
+		AFC71BF11E4017CC00C4A72A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AFC71BF21E4017CC00C4A72A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BF31E4017CC00C4A72A /* AppDelegate */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFC71BF31E4017CC00C4A72A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BF41E4017CC00C4A72A /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AFC71BF51E4017CC00C4A72A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AFC71BF61E4017CC00C4A72A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFC71BF71E4017CC00C4A72A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AFC71BF81E4017CC00C4A72A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71BF91E4017CC00C4A72A /* Assets.xcassets */,
+				AFC71BFE1E4017CC00C4A72A /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AFC71BFF1E4017CC00C4A72A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AFC71C001E4017CC00C4A72A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71C011E4017CC00C4A72A /* Storyboards */,
+				AFC71C061E4017CC00C4A72A /* Xibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFC71C011E4017CC00C4A72A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */,
+				AFC71C041E4017CC00C4A72A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AFC71C061E4017CC00C4A72A /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFC71BA21E40153700C4A72A /* GithubJavaPop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC71BCB1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPop" */;
+			buildPhases = (
+				AFC71B9F1E40153700C4A72A /* Sources */,
+				AFC71BA01E40153700C4A72A /* Frameworks */,
+				AFC71BA11E40153700C4A72A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GithubJavaPop;
+			productName = GithubJavaPop;
+			productReference = AFC71BA31E40153700C4A72A /* GithubJavaPop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFC71BB61E40153800C4A72A /* GithubJavaPopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC71BCE1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopTests" */;
+			buildPhases = (
+				AFC71BB31E40153800C4A72A /* Sources */,
+				AFC71BB41E40153800C4A72A /* Frameworks */,
+				AFC71BB51E40153800C4A72A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFC71BB91E40153800C4A72A /* PBXTargetDependency */,
+			);
+			name = GithubJavaPopTests;
+			productName = GithubJavaPopTests;
+			productReference = AFC71BB71E40153800C4A72A /* GithubJavaPopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AFC71BC11E40153800C4A72A /* GithubJavaPopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC71BD11E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopUITests" */;
+			buildPhases = (
+				AFC71BBE1E40153800C4A72A /* Sources */,
+				AFC71BBF1E40153800C4A72A /* Frameworks */,
+				AFC71BC01E40153800C4A72A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFC71BC41E40153800C4A72A /* PBXTargetDependency */,
+			);
+			name = GithubJavaPopUITests;
+			productName = GithubJavaPopUITests;
+			productReference = AFC71BC21E40153800C4A72A /* GithubJavaPopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFC71B9B1E40153700C4A72A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Thiago Delmotte";
+				TargetAttributes = {
+					AFC71BA21E40153700C4A72A = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6D6VCA69GN;
+						ProvisioningStyle = Automatic;
+					};
+					AFC71BB61E40153800C4A72A = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6D6VCA69GN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AFC71BA21E40153700C4A72A;
+					};
+					AFC71BC11E40153800C4A72A = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6D6VCA69GN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AFC71BA21E40153700C4A72A;
+					};
+				};
+			};
+			buildConfigurationList = AFC71B9E1E40153700C4A72A /* Build configuration list for PBXProject "GithubJavaPop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFC71B9A1E40153700C4A72A;
+			productRefGroup = AFC71BA41E40153700C4A72A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFC71BA21E40153700C4A72A /* GithubJavaPop */,
+				AFC71BB61E40153800C4A72A /* GithubJavaPopTests */,
+				AFC71BC11E40153800C4A72A /* GithubJavaPopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFC71BA11E40153700C4A72A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */,
+				AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */,
+				AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BB51E40153800C4A72A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BC01E40153800C4A72A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFC71B9F1E40153700C4A72A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BB31E40153800C4A72A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFC71BBC1E40153800C4A72A /* GithubJavaPopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC71BBE1E40153800C4A72A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFC71BC71E40153800C4A72A /* GithubJavaPopUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFC71BB91E40153800C4A72A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFC71BA21E40153700C4A72A /* GithubJavaPop */;
+			targetProxy = AFC71BB81E40153800C4A72A /* PBXContainerItemProxy */;
+		};
+		AFC71BC41E40153800C4A72A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFC71BA21E40153700C4A72A /* GithubJavaPop */;
+			targetProxy = AFC71BC31E40153800C4A72A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFC71C031E4017CC00C4A72A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AFC71C041E4017CC00C4A72A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFC71C051E4017CC00C4A72A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AFC71BC91E40153800C4A72A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFC71BCA1E40153800C4A72A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFC71BCC1E40153800C4A72A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPop/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AFC71BCD1E40153800C4A72A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPop/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AFC71BCF1E40153800C4A72A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubJavaPop.app/GithubJavaPop";
+			};
+			name = Debug;
+		};
+		AFC71BD01E40153800C4A72A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubJavaPop.app/GithubJavaPop";
+			};
+			name = Release;
+		};
+		AFC71BD21E40153800C4A72A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GithubJavaPop;
+			};
+			name = Debug;
+		};
+		AFC71BD31E40153800C4A72A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 6D6VCA69GN;
+				INFOPLIST_FILE = GithubJavaPopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.delmotte.GithubJavaPopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GithubJavaPop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFC71B9E1E40153700C4A72A /* Build configuration list for PBXProject "GithubJavaPop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC71BC91E40153800C4A72A /* Debug */,
+				AFC71BCA1E40153800C4A72A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC71BCB1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC71BCC1E40153800C4A72A /* Debug */,
+				AFC71BCD1E40153800C4A72A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC71BCE1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC71BCF1E40153800C4A72A /* Debug */,
+				AFC71BD01E40153800C4A72A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC71BD11E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC71BD21E40153800C4A72A /* Debug */,
+				AFC71BD31E40153800C4A72A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFC71B9B1E40153700C4A72A /* Project object */;
+}
