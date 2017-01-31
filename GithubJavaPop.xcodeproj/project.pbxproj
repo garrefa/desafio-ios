@@ -32,6 +32,7 @@
 		AFC71C391E4021C400C4A72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C381E4021C400C4A72A /* Localizable.strings */; };
 		AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3B1E402E8F00C4A72A /* Alert.swift */; };
 		AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3D1E4030F200C4A72A /* Reachability.swift */; };
+		AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */; };
 		B6CB05BDEF95944207B83929 /* Pods_GithubJavaPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */; };
 		E9239246BE81373232D379D9 /* Pods_GithubJavaPopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		AFC71C381E4021C400C4A72A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		AFC71C3B1E402E8F00C4A72A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AFC71C3D1E4030F200C4A72A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +225,7 @@
 				AFC71C1C1E401DB900C4A72A /* UIColor.swift */,
 				AFC71C1D1E401DB900C4A72A /* UIFont.swift */,
 				AFC71C1E1E401DB900C4A72A /* UIImageView.swift */,
+				AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */,
 				AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */,
 				AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */,
+				AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */,
 				AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */,
 				AFC71C111E401D9700C4A72A /* Api.swift in Sources */,
 			);

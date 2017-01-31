@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "iconFork@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iconFork.png",
+      "filename" : "iconFork@3x.png",
       "scale" : "3x"
     }
   ],
