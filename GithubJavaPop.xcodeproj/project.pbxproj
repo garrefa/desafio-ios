@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6685C6092EC305399EEA0BA /* Pods_GithubJavaPopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806B333B34326E16C42CDA71 /* Pods_GithubJavaPopUITests.framework */; };
 		AFC71BBC1E40153800C4A72A /* GithubJavaPopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */; };
 		AFC71BC71E40153800C4A72A /* GithubJavaPopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BC61E40153800C4A72A /* GithubJavaPopUITests.swift */; };
 		AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BF41E4017CC00C4A72A /* AppDelegate.swift */; };
 		AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC71BF91E4017CC00C4A72A /* Assets.xcassets */; };
 		AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */; };
 		AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C041E4017CC00C4A72A /* Main.storyboard */; };
+		B6CB05BDEF95944207B83929 /* Pods_GithubJavaPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */; };
+		E9239246BE81373232D379D9 /* Pods_GithubJavaPopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		133EBAD11E4E9CE4E382806D /* Pods-GithubJavaPop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPop/Pods-GithubJavaPop.debug.xcconfig"; sourceTree = "<group>"; };
+		1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubJavaPop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubJavaPopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF61F7E6EB8BD9889349315 /* Pods-GithubJavaPopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests.release.xcconfig"; sourceTree = "<group>"; };
+		7141B5B4B87E3A1CE2904A24 /* Pods-GithubJavaPopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopUITests/Pods-GithubJavaPopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		806B333B34326E16C42CDA71 /* Pods_GithubJavaPopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubJavaPopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94442F2C6F0585DF7E0C7FFB /* Pods-GithubJavaPopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopUITests/Pods-GithubJavaPopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB596FF2B13033DA48D0B876 /* Pods-GithubJavaPop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPop.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPop/Pods-GithubJavaPop.release.xcconfig"; sourceTree = "<group>"; };
 		AFC71BA31E40153700C4A72A /* GithubJavaPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubJavaPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC71BB71E40153800C4A72A /* GithubJavaPopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubJavaPopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubJavaPopTests.swift; sourceTree = "<group>"; };
@@ -45,6 +56,7 @@
 		AFC71BFE1E4017CC00C4A72A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC71C031E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC71C051E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CB05BDEF95944207B83929 /* Pods_GithubJavaPop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9239246BE81373232D379D9 /* Pods_GithubJavaPopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +80,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6685C6092EC305399EEA0BA /* Pods_GithubJavaPopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A6FA2EB784013B7B72B555A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				133EBAD11E4E9CE4E382806D /* Pods-GithubJavaPop.debug.xcconfig */,
+				AB596FF2B13033DA48D0B876 /* Pods-GithubJavaPop.release.xcconfig */,
+				D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */,
+				5CF61F7E6EB8BD9889349315 /* Pods-GithubJavaPopTests.release.xcconfig */,
+				94442F2C6F0585DF7E0C7FFB /* Pods-GithubJavaPopUITests.debug.xcconfig */,
+				7141B5B4B87E3A1CE2904A24 /* Pods-GithubJavaPopUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AFC71B9A1E40153700C4A72A = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +107,8 @@
 				AFC71BBA1E40153800C4A72A /* GithubJavaPopTests */,
 				AFC71BC51E40153800C4A72A /* GithubJavaPopUITests */,
 				AFC71BA41E40153700C4A72A /* Products */,
+				4A6FA2EB784013B7B72B555A /* Pods */,
+				DE9F52B7AF8521443376AC14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +240,16 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		DE9F52B7AF8521443376AC14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */,
+				1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */,
+				806B333B34326E16C42CDA71 /* Pods_GithubJavaPopUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFC71BCB1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPop" */;
 			buildPhases = (
+				9F8BE6D37BE1769C21E96FB6 /* [CP] Check Pods Manifest.lock */,
 				AFC71B9F1E40153700C4A72A /* Sources */,
 				AFC71BA01E40153700C4A72A /* Frameworks */,
 				AFC71BA11E40153700C4A72A /* Resources */,
+				E379A3BD0D9935B86FBBB4D6 /* [CP] Embed Pods Frameworks */,
+				6BE4923BD753DF4791DA788A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFC71BCE1E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopTests" */;
 			buildPhases = (
+				AF806B8AF1EDFEF212C76ABE /* [CP] Check Pods Manifest.lock */,
 				AFC71BB31E40153800C4A72A /* Sources */,
 				AFC71BB41E40153800C4A72A /* Frameworks */,
 				AFC71BB51E40153800C4A72A /* Resources */,
+				692B28711C99C154031A351E /* [CP] Embed Pods Frameworks */,
+				9DCC3779EC21B754EC93ECEF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,9 +298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFC71BD11E40153800C4A72A /* Build configuration list for PBXNativeTarget "GithubJavaPopUITests" */;
 			buildPhases = (
+				1102E7FA3306468B2FC1CB28 /* [CP] Check Pods Manifest.lock */,
 				AFC71BBE1E40153800C4A72A /* Sources */,
 				AFC71BBF1E40153800C4A72A /* Frameworks */,
 				AFC71BC01E40153800C4A72A /* Resources */,
+				F7405DEE93627D16F3D3E7E2 /* [CP] Embed Pods Frameworks */,
+				C298E858F2565A490D3C8511 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +390,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1102E7FA3306468B2FC1CB28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		692B28711C99C154031A351E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BE4923BD753DF4791DA788A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPop/Pods-GithubJavaPop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DCC3779EC21B754EC93ECEF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F8BE6D37BE1769C21E96FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF806B8AF1EDFEF212C76ABE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C298E858F2565A490D3C8511 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPopUITests/Pods-GithubJavaPopUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E379A3BD0D9935B86FBBB4D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPop/Pods-GithubJavaPop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7405DEE93627D16F3D3E7E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GithubJavaPopUITests/Pods-GithubJavaPopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFC71B9F1E40153700C4A72A /* Sources */ = {
@@ -495,6 +682,7 @@
 		};
 		AFC71BCC1E40153800C4A72A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133EBAD11E4E9CE4E382806D /* Pods-GithubJavaPop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
@@ -509,6 +697,7 @@
 		};
 		AFC71BCD1E40153800C4A72A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB596FF2B13033DA48D0B876 /* Pods-GithubJavaPop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
@@ -523,8 +712,8 @@
 		};
 		AFC71BCF1E40153800C4A72A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPopTests/Info.plist;
@@ -538,8 +727,8 @@
 		};
 		AFC71BD01E40153800C4A72A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CF61F7E6EB8BD9889349315 /* Pods-GithubJavaPopTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPopTests/Info.plist;
@@ -553,8 +742,8 @@
 		};
 		AFC71BD21E40153800C4A72A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94442F2C6F0585DF7E0C7FFB /* Pods-GithubJavaPopUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -567,8 +756,8 @@
 		};
 		AFC71BD31E40153800C4A72A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7141B5B4B87E3A1CE2904A24 /* Pods-GithubJavaPopUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
