@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.2.0)
+  - Kingfisher (3.2.4)
+  - MBProgressHUD (1.0.0)
+  - ObjectMapper (2.2.2)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - SwiftyUtils (0.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher (~> 3.0)
+  - MBProgressHUD (~> 1.0.0)
+  - ObjectMapper (~> 2.2)
+  - R.swift
+  - SwiftyUtils
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  SwiftyUtils: dbfeedd5e01bbf13f23e64ea9fd4c77ffd494688
+
+PODFILE CHECKSUM: 536e2a489b337dbd81bdb3540770b875784a456e
+
+COCOAPODS: 1.1.1
