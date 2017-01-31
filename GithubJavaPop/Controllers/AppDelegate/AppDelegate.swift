@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  GithubJavaPop
-//
-//  Created by Thiago Delmotte on 30/01/17.
-//  Copyright © 2017 Thiago Delmotte. All rights reserved.
-//
 
 import UIKit
 

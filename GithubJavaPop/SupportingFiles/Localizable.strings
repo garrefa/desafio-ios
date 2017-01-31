@@ -1,0 +1,7 @@
+
+// General
+"generalPullToRefreshLoadingLbl" = "Carregando...";
+"generalNormalTitleDefault" = "Aviso";
+"generalErrorTitleDefault" = "Ops";
+"generalErrorMessageDefault" = "Desculpe, parece que não conseguimos estabelecer conexão";
+"generalBackButton" = "Voltar";

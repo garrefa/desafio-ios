@@ -14,6 +14,24 @@
 		AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC71BF91E4017CC00C4A72A /* Assets.xcassets */; };
 		AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */; };
 		AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C041E4017CC00C4A72A /* Main.storyboard */; };
+		AFC71C111E401D9700C4A72A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C0E1E401D9700C4A72A /* Api.swift */; };
+		AFC71C131E401D9700C4A72A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C101E401D9700C4A72A /* JSONSerializer.swift */; };
+		AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C151E401DA500C4A72A /* StyleGuide.swift */; };
+		AFC71C201E401DB900C4A72A /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C171E401DB900C4A72A /* NSBundle.swift */; };
+		AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */; };
+		AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1C1E401DB900C4A72A /* UIColor.swift */; };
+		AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1D1E401DB900C4A72A /* UIFont.swift */; };
+		AFC71C271E401DB900C4A72A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1E1E401DB900C4A72A /* UIImageView.swift */; };
+		AFC71C311E401DC200C4A72A /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2A1E401DC200C4A72A /* Lato-Black.ttf */; };
+		AFC71C321E401DC200C4A72A /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2B1E401DC200C4A72A /* Lato-BlackItalic.ttf */; };
+		AFC71C331E401DC200C4A72A /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2C1E401DC200C4A72A /* Lato-Bold.ttf */; };
+		AFC71C341E401DC200C4A72A /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2D1E401DC200C4A72A /* Lato-BoldItalic.ttf */; };
+		AFC71C351E401DC200C4A72A /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2E1E401DC200C4A72A /* Lato-Italic.ttf */; };
+		AFC71C361E401DC200C4A72A /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C2F1E401DC200C4A72A /* Lato-Light.ttf */; };
+		AFC71C371E401DC200C4A72A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C301E401DC200C4A72A /* Lato-Regular.ttf */; };
+		AFC71C391E4021C400C4A72A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C381E4021C400C4A72A /* Localizable.strings */; };
+		AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3B1E402E8F00C4A72A /* Alert.swift */; };
+		AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3D1E4030F200C4A72A /* Reachability.swift */; };
 		B6CB05BDEF95944207B83929 /* Pods_GithubJavaPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */; };
 		E9239246BE81373232D379D9 /* Pods_GithubJavaPopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +74,24 @@
 		AFC71BFE1E4017CC00C4A72A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC71C031E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC71C051E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFC71C0E1E401D9700C4A72A /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AFC71C101E401D9700C4A72A /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		AFC71C151E401DA500C4A72A /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		AFC71C171E401DB900C4A72A /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
+		AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		AFC71C1C1E401DB900C4A72A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AFC71C1D1E401DB900C4A72A /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		AFC71C1E1E401DB900C4A72A /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		AFC71C2A1E401DC200C4A72A /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		AFC71C2B1E401DC200C4A72A /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AFC71C2C1E401DC200C4A72A /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AFC71C2D1E401DC200C4A72A /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AFC71C2E1E401DC200C4A72A /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		AFC71C2F1E401DC200C4A72A /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AFC71C301E401DC200C4A72A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		AFC71C381E4021C400C4A72A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		AFC71C3B1E402E8F00C4A72A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AFC71C3D1E4030F200C4A72A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +194,7 @@
 		AFC71BF11E4017CC00C4A72A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AFC71C141E401DA500C4A72A /* Utils */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,6 +218,11 @@
 		AFC71BF51E4017CC00C4A72A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AFC71C171E401DB900C4A72A /* NSBundle.swift */,
+				AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */,
+				AFC71C1C1E401DB900C4A72A /* UIColor.swift */,
+				AFC71C1D1E401DB900C4A72A /* UIFont.swift */,
+				AFC71C1E1E401DB900C4A72A /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +237,8 @@
 		AFC71BF71E4017CC00C4A72A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AFC71C0E1E401D9700C4A72A /* Api.swift */,
+				AFC71C101E401D9700C4A72A /* JSONSerializer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -202,6 +246,8 @@
 		AFC71BF81E4017CC00C4A72A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AFC71C381E4021C400C4A72A /* Localizable.strings */,
+				AFC71C291E401DC200C4A72A /* Fonts */,
 				AFC71BF91E4017CC00C4A72A /* Assets.xcassets */,
 				AFC71BFE1E4017CC00C4A72A /* Info.plist */,
 			);
@@ -238,6 +284,30 @@
 			children = (
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		AFC71C141E401DA500C4A72A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71C3D1E4030F200C4A72A /* Reachability.swift */,
+				AFC71C151E401DA500C4A72A /* StyleGuide.swift */,
+				AFC71C3B1E402E8F00C4A72A /* Alert.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AFC71C291E401DC200C4A72A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AFC71C2A1E401DC200C4A72A /* Lato-Black.ttf */,
+				AFC71C2B1E401DC200C4A72A /* Lato-BlackItalic.ttf */,
+				AFC71C2C1E401DC200C4A72A /* Lato-Bold.ttf */,
+				AFC71C2D1E401DC200C4A72A /* Lato-BoldItalic.ttf */,
+				AFC71C2E1E401DC200C4A72A /* Lato-Italic.ttf */,
+				AFC71C2F1E401DC200C4A72A /* Lato-Light.ttf */,
+				AFC71C301E401DC200C4A72A /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DE9F52B7AF8521443376AC14 /* Frameworks */ = {
@@ -369,8 +439,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC71C311E401DC200C4A72A /* Lato-Black.ttf in Resources */,
+				AFC71C331E401DC200C4A72A /* Lato-Bold.ttf in Resources */,
+				AFC71C391E4021C400C4A72A /* Localizable.strings in Resources */,
 				AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */,
+				AFC71C361E401DC200C4A72A /* Lato-Light.ttf in Resources */,
+				AFC71C321E401DC200C4A72A /* Lato-BlackItalic.ttf in Resources */,
 				AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */,
+				AFC71C341E401DC200C4A72A /* Lato-BoldItalic.ttf in Resources */,
+				AFC71C371E401DC200C4A72A /* Lato-Regular.ttf in Resources */,
+				AFC71C351E401DC200C4A72A /* Lato-Italic.ttf in Resources */,
 				AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +612,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC71C201E401DB900C4A72A /* NSBundle.swift in Sources */,
+				AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */,
 				AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */,
+				AFC71C271E401DB900C4A72A /* UIImageView.swift in Sources */,
+				AFC71C131E401D9700C4A72A /* JSONSerializer.swift in Sources */,
+				AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */,
+				AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */,
+				AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */,
+				AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */,
+				AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */,
+				AFC71C111E401D9700C4A72A /* Api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
