@@ -15,9 +15,8 @@
 		AFC71C0C1E4017CC00C4A72A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C021E4017CC00C4A72A /* LaunchScreen.storyboard */; };
 		AFC71C0D1E4017CC00C4A72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC71C041E4017CC00C4A72A /* Main.storyboard */; };
 		AFC71C111E401D9700C4A72A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C0E1E401D9700C4A72A /* Api.swift */; };
-		AFC71C131E401D9700C4A72A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C101E401D9700C4A72A /* JSONSerializer.swift */; };
 		AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C151E401DA500C4A72A /* StyleGuide.swift */; };
-		AFC71C201E401DB900C4A72A /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C171E401DB900C4A72A /* NSBundle.swift */; };
+		AFC71C201E401DB900C4A72A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C171E401DB900C4A72A /* Bundle.swift */; };
 		AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */; };
 		AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1C1E401DB900C4A72A /* UIColor.swift */; };
 		AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C1D1E401DB900C4A72A /* UIFont.swift */; };
@@ -33,6 +32,12 @@
 		AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3B1E402E8F00C4A72A /* Alert.swift */; };
 		AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3D1E4030F200C4A72A /* Reachability.swift */; };
 		AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */; };
+		AFDA982B1E41692700807052 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982A1E41692700807052 /* RepositoryListViewController.swift */; };
+		AFDA982D1E4169C800807052 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982C1E4169C800807052 /* Repository.swift */; };
+		AFDA982F1E416E9000807052 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */; };
+		AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA98311E41843D00807052 /* JSONSerializer.swift */; };
+		AFDA98341E41847F00807052 /* RepositoryDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA98331E41847F00807052 /* RepositoryDecode.swift */; };
+		AFDA98361E41867500807052 /* RepositoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA98351E41867500807052 /* RepositoryApi.swift */; };
 		B6CB05BDEF95944207B83929 /* Pods_GithubJavaPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1523F03FCAEF84413E78821F /* Pods_GithubJavaPop.framework */; };
 		E9239246BE81373232D379D9 /* Pods_GithubJavaPopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA8F4F0D5D45A45537AA99A /* Pods_GithubJavaPopTests.framework */; };
 /* End PBXBuildFile section */
@@ -76,9 +81,8 @@
 		AFC71C031E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC71C051E4017CC00C4A72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFC71C0E1E401D9700C4A72A /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		AFC71C101E401D9700C4A72A /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		AFC71C151E401DA500C4A72A /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
-		AFC71C171E401DB900C4A72A /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
+		AFC71C171E401DB900C4A72A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		AFC71C1C1E401DB900C4A72A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AFC71C1D1E401DB900C4A72A /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -94,6 +98,12 @@
 		AFC71C3B1E402E8F00C4A72A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AFC71C3D1E4030F200C4A72A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		AFDA982A1E41692700807052 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
+		AFDA982C1E4169C800807052 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		AFDA98311E41843D00807052 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = Serializations/JSONSerializer.swift; sourceTree = "<group>"; };
+		AFDA98331E41847F00807052 /* RepositoryDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryDecode.swift; path = Serializations/RepositoryDecode.swift; sourceTree = "<group>"; };
+		AFDA98351E41867500807052 /* RepositoryApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryApi.swift; sourceTree = "<group>"; };
 		D0B5ED3BA660D42B824C40DB /* Pods-GithubJavaPopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopTests/Pods-GithubJavaPopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,10 +174,11 @@
 			isa = PBXGroup;
 			children = (
 				AFC71BF71E4017CC00C4A72A /* Network */,
+				AFDA98301E4183C500807052 /* Serializations */,
 				AFC71BF61E4017CC00C4A72A /* Models */,
-				AFC71C001E4017CC00C4A72A /* Views */,
 				AFC71BFF1E4017CC00C4A72A /* ViewModels */,
 				AFC71BF21E4017CC00C4A72A /* Controllers */,
+				AFC71C001E4017CC00C4A72A /* Views */,
 				AFC71BF11E4017CC00C4A72A /* Classes */,
 				AFC71BF51E4017CC00C4A72A /* Extensions */,
 				AFC71BF81E4017CC00C4A72A /* SupportingFiles */,
@@ -205,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC71BF31E4017CC00C4A72A /* AppDelegate */,
+				AFDA982A1E41692700807052 /* RepositoryListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -220,7 +232,7 @@
 		AFC71BF51E4017CC00C4A72A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AFC71C171E401DB900C4A72A /* NSBundle.swift */,
+				AFC71C171E401DB900C4A72A /* Bundle.swift */,
 				AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */,
 				AFC71C1C1E401DB900C4A72A /* UIColor.swift */,
 				AFC71C1D1E401DB900C4A72A /* UIFont.swift */,
@@ -233,6 +245,7 @@
 		AFC71BF61E4017CC00C4A72A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFDA982C1E4169C800807052 /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC71C0E1E401D9700C4A72A /* Api.swift */,
-				AFC71C101E401D9700C4A72A /* JSONSerializer.swift */,
+				AFDA98351E41867500807052 /* RepositoryApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -260,6 +273,7 @@
 		AFC71BFF1E4017CC00C4A72A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -311,6 +325,15 @@
 				AFC71C301E401DC200C4A72A /* Lato-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AFDA98301E4183C500807052 /* Serializations */ = {
+			isa = PBXGroup;
+			children = (
+				AFDA98311E41843D00807052 /* JSONSerializer.swift */,
+				AFDA98331E41847F00807052 /* RepositoryDecode.swift */,
+			);
+			name = Serializations;
 			sourceTree = "<group>";
 		};
 		DE9F52B7AF8521443376AC14 /* Frameworks */ = {
@@ -615,17 +638,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFC71C201E401DB900C4A72A /* NSBundle.swift in Sources */,
+				AFC71C201E401DB900C4A72A /* Bundle.swift in Sources */,
 				AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */,
 				AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */,
 				AFC71C271E401DB900C4A72A /* UIImageView.swift in Sources */,
-				AFC71C131E401D9700C4A72A /* JSONSerializer.swift in Sources */,
 				AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */,
+				AFDA98341E41847F00807052 /* RepositoryDecode.swift in Sources */,
 				AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */,
+				AFDA982D1E4169C800807052 /* Repository.swift in Sources */,
+				AFDA98361E41867500807052 /* RepositoryApi.swift in Sources */,
+				AFDA982B1E41692700807052 /* RepositoryListViewController.swift in Sources */,
 				AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */,
 				AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */,
+				AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */,
 				AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */,
 				AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */,
+				AFDA982F1E416E9000807052 /* RepositoryViewModel.swift in Sources */,
 				AFC71C111E401D9700C4A72A /* Api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
