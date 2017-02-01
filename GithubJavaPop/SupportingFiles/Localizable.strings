@@ -3,5 +3,5 @@
 "generalPullToRefreshLoadingLbl" = "Carregando...";
 "generalNormalTitleDefault" = "Aviso";
 "generalErrorTitleDefault" = "Ops";
-"generalErrorMessageDefault" = "Desculpe, parece que não conseguimos estabelecer conexão";
+"generalErrorMessageDefault" = "Ops! Você parece estar sem internet =(";
 "generalBackButton" = "Voltar";

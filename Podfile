@@ -6,7 +6,7 @@ target 'GithubJavaPop' do
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SwiftyJSON'
-  pod 'Whisper'
+  pod 'SwiftyDrop'
 end
 
 target 'GithubJavaPopTests' do

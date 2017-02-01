@@ -1,13 +1,12 @@
 
 import Foundation
 import UIKit
-import Whisper
+import SwiftyDrop
 
 class Alert {
   
   class func connectionError() {
-    let murmur = Murmur(title: NSLocalizedString("generalErrorMessageDefault", comment: ""))
-    show(whistle: murmur, action: .show(0.5))
+    Drop.down(NSLocalizedString("generalErrorMessageDefault", comment: ""), state: .error, duration: 3.0, action: nil)
   }
   
 }

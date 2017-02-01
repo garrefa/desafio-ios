@@ -13,12 +13,15 @@ class RepositoryListViewController: UIViewController {
   }
   
   private func loadRepositories() {
-    RepositoryApi.getRepositories(success: { (repositoryViewModel) in
-      self.repositoryViewModel = repositoryViewModel
+    
+    RepositoryApi.getRepositories(success: { (repositoriesViewModel) in
+      self.repositoryViewModel = repositoriesViewModel.first
       print(self.repositoryViewModel.name)
+      print(repositoriesViewModel.count)
     }) { (statusCode, response, error) in
       print(statusCode)
     }
+    
   }
   
 }

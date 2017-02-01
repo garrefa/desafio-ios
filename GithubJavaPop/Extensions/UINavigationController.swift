@@ -5,6 +5,10 @@ import UIKit
 extension UINavigationController {
   
   open override func awakeFromNib() {
+    self.customizeDefault()
+  }
+  
+  private func customizeDefault() {
     self.navigationBar.barTintColor = StyleGuide.Color.Black.value
     self.navigationBar.tintColor = StyleGuide.Color.White.value
     let font = StyleGuide.Font.Title.value
