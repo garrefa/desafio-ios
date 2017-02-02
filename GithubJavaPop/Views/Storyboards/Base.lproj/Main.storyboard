@@ -47,12 +47,50 @@
             </objects>
             <point key="canvasLocation" x="378" y="170"/>
         </scene>
+        <!--Pull Request List View Controller-->
+        <scene sceneID="vKj-TP-2Tb">
+            <objects>
+                <viewController storyboardIdentifier="pullRequestVC" id="2Ne-NO-6LZ" customClass="PullRequestListViewController" customModule="GithubJavaPop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yUz-C2-dYa"/>
+                        <viewControllerLayoutGuide type="bottom" id="P8n-C8-iUp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IRS-7h-52v">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBe-cJ-Wda">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Ne-NO-6LZ" id="Hd0-u4-wTk"/>
+                                    <outlet property="delegate" destination="2Ne-NO-6LZ" id="U9y-Fr-cVP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SBe-cJ-Wda" firstAttribute="leading" secondItem="IRS-7h-52v" secondAttribute="leading" id="3lS-Uj-y9F"/>
+                            <constraint firstItem="P8n-C8-iUp" firstAttribute="top" secondItem="SBe-cJ-Wda" secondAttribute="bottom" id="6x3-VP-eY0"/>
+                            <constraint firstAttribute="trailing" secondItem="SBe-cJ-Wda" secondAttribute="trailing" id="Wun-tR-MDg"/>
+                            <constraint firstItem="SBe-cJ-Wda" firstAttribute="top" secondItem="yUz-C2-dYa" secondAttribute="bottom" id="uMN-x3-oG3"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="SBe-cJ-Wda" id="il9-e3-E36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnR-9O-Zhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="170"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZaV-b4-vE6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5C6-2C-8Zg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Sl-g6-xZX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5Sl-g6-xZX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -19,6 +19,7 @@ class RepositoryListViewController: UIViewController, UITableViewDelegate, UITab
   
   fileprivate func customizeInterface() {
     self.navigationItem.title = NSLocalizedString("repositoryNavTitle", comment: "")
+    self.navigationItem.backBarButtonItem = UIBarButtonItem().clear()
     self.automaticallyAdjustsScrollViewInsets = false
   }
   
@@ -92,9 +93,22 @@ class RepositoryListViewController: UIViewController, UITableViewDelegate, UITab
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     
-    if indexPath.row >= (self.repositoriesViewModel.count - 10) && !isLoading {
+    if indexPath.row >= (self.repositoriesViewModel.count - 10) && !self.isLoading {
       self.loadRepositories()
     }
+    
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let pullViewController = mainStoryboard.instantiateViewController(withIdentifier: "pullRequestVC") as! PullRequestListViewController
+    let repositorySelected = self.repositoriesViewModel[indexPath.row]
+    pullViewController.repositoryName = repositorySelected.name
+    pullViewController.repositoryOwner = repositorySelected.ownerNick
+    self.navigationController?.pushViewController(pullViewController, animated: true)
+    
+    tableView.deselectRow(at: indexPath, animated: true)
     
   }
   

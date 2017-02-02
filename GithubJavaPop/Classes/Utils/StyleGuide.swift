@@ -47,6 +47,7 @@ class StyleGuide {
     case Description
     case Number
     case Name
+    case Date
     
     var value: UIFont {
       switch self {
@@ -58,6 +59,8 @@ class StyleGuide {
           return UIFont(Lato: .Bold, fontSize: 17)
         case .Name:
           return UIFont(Lato: .Regular, fontSize: 15)
+        case .Date:
+          return UIFont(Lato: .Light, fontSize: 12)
       }
     }
     

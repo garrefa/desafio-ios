@@ -4,12 +4,12 @@ import UIKit
 
 extension UIBarButtonItem {
   
-  func back(action: Selector?, target: UIViewController?) -> UIBarButtonItem {
+  func clear() -> UIBarButtonItem {
     
-    self.title = NSLocalizedString("generalBackButton", comment: "")
+    self.title = ""
     self.style = .plain
-    self.target = target ?? nil
-    self.action = action ?? nil
+    self.target = nil
+    self.action = nil
     
     return self
     
