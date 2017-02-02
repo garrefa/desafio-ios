@@ -13,20 +13,20 @@ class RepositoryViewModel {
     return self.repository.description
   }
   
-  var forks: Int {
-    return self.repository.forks
+  var forks: String {
+    return String(self.repository.forks)
   }
   
-  var favorites: Int {
-    return self.repository.favorites
+  var favorites: String {
+    return String(self.repository.favorites)
   }
   
   var ownerNick: String {
     return self.repository.ownerNick
   }
   
-  var ownerAvatarUrl: String {
-    return self.repository.ownerAvatarUrl
+  var ownerAvatarUrl: URL {
+    return URL(string: self.repository.ownerAvatarUrl)!
   }
   
   init(repository: Repository) {

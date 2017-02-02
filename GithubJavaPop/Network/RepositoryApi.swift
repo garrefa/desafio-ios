@@ -6,13 +6,13 @@ typealias completionRepositoryFailure = (_ statusCode: Int, _ response: Any?, _ 
 
 class RepositoryApi: Api {
   
-  class func getRepositories(success: @escaping completionRepositorySuccess, failure: @escaping completionRepositoryFailure) {
+  class func getRepositories(page: Int, success: @escaping completionRepositorySuccess, failure: @escaping completionRepositoryFailure) {
     
-    let url = "\(Bundle.main.apiEntrypoint)/search/repositories?q=language:Java&sort=stars&page=1"
+    let url = "\(Bundle.main.apiEntrypoint)/search/repositories?q=language:Java&sort=stars&page=\(page)"
     
     super.request(method: .GET, url: url, success: { (statusCode, response) in
       
-      var repositoriesViewModel: [RepositoryViewModel] = []
+      var repositoriesViewModel = [RepositoryViewModel]()
       let itemsArray = response.object["items"].array
       
       guard itemsArray != nil else {

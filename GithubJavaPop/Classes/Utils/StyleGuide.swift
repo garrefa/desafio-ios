@@ -44,11 +44,20 @@ class StyleGuide {
   enum Font {
     
     case Title
+    case Description
+    case Number
+    case Name
     
     var value: UIFont {
       switch self {
         case .Title:
           return UIFont(Lato: .Regular, fontSize: 20)
+        case .Description:
+          return UIFont(Lato: .Regular, fontSize: 15)
+        case .Number:
+          return UIFont(Lato: .Bold, fontSize: 17)
+        case .Name:
+          return UIFont(Lato: .Regular, fontSize: 15)
       }
     }
     

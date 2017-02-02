@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A6685C6092EC305399EEA0BA /* Pods_GithubJavaPopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806B333B34326E16C42CDA71 /* Pods_GithubJavaPopUITests.framework */; };
+		AF2C7D931E42A26800F00D6D /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2C7D921E42A26800F00D6D /* RepositoryCell.xib */; };
+		AF2C7D961E42A77800F00D6D /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C7D951E42A77800F00D6D /* RepositoryListViewController.swift */; };
+		AF2C7D991E42A7BB00F00D6D /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C7D981E42A7BB00F00D6D /* RepositoryCell.swift */; };
 		AFC71BBC1E40153800C4A72A /* GithubJavaPopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */; };
 		AFC71BC71E40153800C4A72A /* GithubJavaPopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BC61E40153800C4A72A /* GithubJavaPopUITests.swift */; };
 		AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71BF41E4017CC00C4A72A /* AppDelegate.swift */; };
@@ -32,7 +35,6 @@
 		AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3B1E402E8F00C4A72A /* Alert.swift */; };
 		AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3D1E4030F200C4A72A /* Reachability.swift */; };
 		AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */; };
-		AFDA982B1E41692700807052 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982A1E41692700807052 /* RepositoryListViewController.swift */; };
 		AFDA982D1E4169C800807052 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982C1E4169C800807052 /* Repository.swift */; };
 		AFDA982F1E416E9000807052 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */; };
 		AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA98311E41843D00807052 /* JSONSerializer.swift */; };
@@ -68,6 +70,9 @@
 		806B333B34326E16C42CDA71 /* Pods_GithubJavaPopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubJavaPopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94442F2C6F0585DF7E0C7FFB /* Pods-GithubJavaPopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPopUITests/Pods-GithubJavaPopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB596FF2B13033DA48D0B876 /* Pods-GithubJavaPop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubJavaPop.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubJavaPop/Pods-GithubJavaPop.release.xcconfig"; sourceTree = "<group>"; };
+		AF2C7D921E42A26800F00D6D /* RepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		AF2C7D951E42A77800F00D6D /* RepositoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryListViewController.swift; path = Main/RepositoryListViewController.swift; sourceTree = "<group>"; };
+		AF2C7D981E42A7BB00F00D6D /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		AFC71BA31E40153700C4A72A /* GithubJavaPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubJavaPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC71BB71E40153800C4A72A /* GithubJavaPopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubJavaPopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC71BBB1E40153800C4A72A /* GithubJavaPopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubJavaPopTests.swift; sourceTree = "<group>"; };
@@ -98,7 +103,6 @@
 		AFC71C3B1E402E8F00C4A72A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AFC71C3D1E4030F200C4A72A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		AFDA982A1E41692700807052 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		AFDA982C1E4169C800807052 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		AFDA98311E41843D00807052 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = Serializations/JSONSerializer.swift; sourceTree = "<group>"; };
@@ -146,6 +150,22 @@
 				7141B5B4B87E3A1CE2904A24 /* Pods-GithubJavaPopUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF2C7D941E42A73C00F00D6D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C7D951E42A77800F00D6D /* RepositoryListViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		AF2C7D971E42A78400F00D6D /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C7D981E42A7BB00F00D6D /* RepositoryCell.swift */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		AFC71B9A1E40153700C4A72A = {
@@ -216,7 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				AFC71BF31E4017CC00C4A72A /* AppDelegate */,
-				AFDA982A1E41692700807052 /* RepositoryListViewController.swift */,
+				AF2C7D941E42A73C00F00D6D /* Main */,
+				AF2C7D971E42A78400F00D6D /* Xibs */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +320,7 @@
 		AFC71C061E4017CC00C4A72A /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				AF2C7D921E42A26800F00D6D /* RepositoryCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -468,6 +490,7 @@
 				AFC71C311E401DC200C4A72A /* Lato-Black.ttf in Resources */,
 				AFC71C331E401DC200C4A72A /* Lato-Bold.ttf in Resources */,
 				AFC71C391E4021C400C4A72A /* Localizable.strings in Resources */,
+				AF2C7D931E42A26800F00D6D /* RepositoryCell.xib in Resources */,
 				AFC71C081E4017CC00C4A72A /* Assets.xcassets in Resources */,
 				AFC71C361E401DC200C4A72A /* Lato-Light.ttf in Resources */,
 				AFC71C321E401DC200C4A72A /* Lato-BlackItalic.ttf in Resources */,
@@ -639,15 +662,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC71C201E401DB900C4A72A /* Bundle.swift in Sources */,
+				AF2C7D991E42A7BB00F00D6D /* RepositoryCell.swift in Sources */,
 				AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */,
 				AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */,
 				AFC71C271E401DB900C4A72A /* UIImageView.swift in Sources */,
 				AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */,
+				AF2C7D961E42A77800F00D6D /* RepositoryListViewController.swift in Sources */,
 				AFDA98341E41847F00807052 /* RepositoryDecode.swift in Sources */,
 				AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */,
 				AFDA982D1E4169C800807052 /* Repository.swift in Sources */,
 				AFDA98361E41867500807052 /* RepositoryApi.swift in Sources */,
-				AFDA982B1E41692700807052 /* RepositoryListViewController.swift in Sources */,
 				AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */,
 				AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */,
 				AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */,
@@ -804,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 133EBAD11E4E9CE4E382806D /* Pods-GithubJavaPop.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPop/SupportingFiles/Info.plist;
@@ -819,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB596FF2B13033DA48D0B876 /* Pods-GithubJavaPop.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6D6VCA69GN;
 				INFOPLIST_FILE = GithubJavaPop/SupportingFiles/Info.plist;
