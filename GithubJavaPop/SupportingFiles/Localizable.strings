@@ -1,0 +1,10 @@
+
+// General
+"generalPullToRefreshLoadingLbl" = "Carregando...";
+"generalNormalTitleDefault" = "Aviso";
+"generalErrorTitleDefault" = "Ops";
+"generalErrorMessageDefault" = "Ops! Você parece estar sem internet =(";
+"generalBackButton" = "Voltar";
+
+// Repository
+"repositoryNavTitle" = "Github JavaPop";
