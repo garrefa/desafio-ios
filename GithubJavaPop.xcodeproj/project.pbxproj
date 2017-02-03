@@ -42,6 +42,9 @@
 		AFC71C3C1E402E8F00C4A72A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3B1E402E8F00C4A72A /* Alert.swift */; };
 		AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3D1E4030F200C4A72A /* Reachability.swift */; };
 		AFC71C401E4034FF00C4A72A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */; };
+		AFD9D4771E44107C00D0B2BD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9D4761E44107C00D0B2BD /* String.swift */; };
+		AFD9D47B1E441B0200D0B2BD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9D47A1E441B0200D0B2BD /* Date.swift */; };
+		AFD9D47F1E4425CA00D0B2BD /* SafariHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9D47E1E4425CA00D0B2BD /* SafariHelper.swift */; };
 		AFDA982D1E4169C800807052 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982C1E4169C800807052 /* Repository.swift */; };
 		AFDA982F1E416E9000807052 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */; };
 		AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA98311E41843D00807052 /* JSONSerializer.swift */; };
@@ -117,6 +120,9 @@
 		AFC71C3B1E402E8F00C4A72A /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AFC71C3D1E4030F200C4A72A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		AFD9D4761E44107C00D0B2BD /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AFD9D47A1E441B0200D0B2BD /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		AFD9D47E1E4425CA00D0B2BD /* SafariHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariHelper.swift; sourceTree = "<group>"; };
 		AFDA982C1E4169C800807052 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		AFDA982E1E416E9000807052 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		AFDA98311E41843D00807052 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = Serializations/JSONSerializer.swift; sourceTree = "<group>"; };
@@ -269,12 +275,14 @@
 		AFC71BF51E4017CC00C4A72A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AFD9D4761E44107C00D0B2BD /* String.swift */,
 				AFC71C171E401DB900C4A72A /* Bundle.swift */,
 				AFC71C1A1E401DB900C4A72A /* UIBarButtonItem.swift */,
 				AFC71C1C1E401DB900C4A72A /* UIColor.swift */,
 				AFC71C1D1E401DB900C4A72A /* UIFont.swift */,
 				AFC71C1E1E401DB900C4A72A /* UIImageView.swift */,
 				AFC71C3F1E4034FF00C4A72A /* UINavigationController.swift */,
+				AFD9D47A1E441B0200D0B2BD /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,9 +356,10 @@
 		AFC71C141E401DA500C4A72A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AFC71C3D1E4030F200C4A72A /* Reachability.swift */,
 				AFC71C151E401DA500C4A72A /* StyleGuide.swift */,
 				AFC71C3B1E402E8F00C4A72A /* Alert.swift */,
+				AFC71C3D1E4030F200C4A72A /* Reachability.swift */,
+				AFD9D47E1E4425CA00D0B2BD /* SafariHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -688,18 +697,21 @@
 				AF2C7D991E42A7BB00F00D6D /* RepositoryCell.swift in Sources */,
 				AFC71C231E401DB900C4A72A /* UIBarButtonItem.swift in Sources */,
 				AFC71C071E4017CC00C4A72A /* AppDelegate.swift in Sources */,
+				AFD9D47F1E4425CA00D0B2BD /* SafariHelper.swift in Sources */,
 				AFC71C271E401DB900C4A72A /* UIImageView.swift in Sources */,
 				AF2C7DA11E42DA4200F00D6D /* PullRequest.swift in Sources */,
 				AFC71C251E401DB900C4A72A /* UIColor.swift in Sources */,
 				AF2C7D961E42A77800F00D6D /* RepositoryListViewController.swift in Sources */,
 				AFDA98341E41847F00807052 /* RepositoryDecode.swift in Sources */,
 				AF2C7D9B1E42D96F00F00D6D /* PullRequestListViewController.swift in Sources */,
+				AFD9D47B1E441B0200D0B2BD /* Date.swift in Sources */,
 				AFC71C261E401DB900C4A72A /* UIFont.swift in Sources */,
 				AFDA982D1E4169C800807052 /* Repository.swift in Sources */,
 				AF2C7D9D1E42D9E900F00D6D /* PullRequestApi.swift in Sources */,
 				AF2C7DA71E42E20600F00D6D /* PullRequestCell.swift in Sources */,
 				AFDA98361E41867500807052 /* RepositoryApi.swift in Sources */,
 				AFC71C3E1E4030F200C4A72A /* Reachability.swift in Sources */,
+				AFD9D4771E44107C00D0B2BD /* String.swift in Sources */,
 				AF2C7DA31E42DBB500F00D6D /* PullRequestViewModel.swift in Sources */,
 				AFC71C161E401DA500C4A72A /* StyleGuide.swift in Sources */,
 				AFDA98321E41843D00807052 /* JSONSerializer.swift in Sources */,

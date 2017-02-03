@@ -5,6 +5,9 @@ import UIKit
 class PullRequestListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var prStatusLabel: UILabel!
+  @IBOutlet weak var prStatusHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
   var repositoryName: String!
   var repositoryOwner: String!
   fileprivate var pullRequestsViewModel = [PullRequestViewModel]()
@@ -19,6 +22,7 @@ class PullRequestListViewController: UIViewController, UITableViewDelegate, UITa
   fileprivate func customizeInterface() {
     self.navigationItem.title = self.repositoryName
     self.automaticallyAdjustsScrollViewInsets = false
+    self.view.backgroundColor = StyleGuide.Color.Gray.value
   }
   
   fileprivate func configureTableView() {
@@ -35,10 +39,28 @@ class PullRequestListViewController: UIViewController, UITableViewDelegate, UITa
     
     PullRequestApi.getPullRequests(owner: self.repositoryOwner, repository: self.repositoryName, success: { pullRequestsViewModel in
       self.pullRequestsViewModel = pullRequestsViewModel
+      self.setTotalState()
       self.tableView.reloadData()
+      self.spinner.stopAnimating()
     }) { (statusCode, response, error) in
       Alert.connectionError()
       _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+  }
+  
+  fileprivate func setTotalState() {
+    
+    self.prStatusLabel.attributedText = PullRequestViewModel.totalStates(self.pullRequestsViewModel)
+    
+    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+      self.prStatusHeightConstraint.constant = 50
+      self.view.layoutIfNeeded()
+    }) { finished in
+      UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+        self.prStatusHeightConstraint.constant = 45
+        self.view.layoutIfNeeded()
+      }, completion: nil)
     }
     
   }
@@ -71,7 +93,7 @@ class PullRequestListViewController: UIViewController, UITableViewDelegate, UITa
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let pullRequest = self.pullRequestsViewModel[indexPath.row]
-    UIApplication.shared.openURL(pullRequest.url)
+    SafariHelper().openUrl(pullRequest.url, viewController: self)
     tableView.deselectRow(at: indexPath, animated: true)
   }
   

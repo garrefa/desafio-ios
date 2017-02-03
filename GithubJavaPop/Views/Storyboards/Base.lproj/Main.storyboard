@@ -29,17 +29,23 @@
                                     <outlet property="delegate" destination="bi7-ra-ukV" id="8mG-d7-Hkh"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="13a-PG-sNK">
+                                <rect key="frame" x="178" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ylu-zv-F4g" firstAttribute="leading" secondItem="APA-IJ-7dU" secondAttribute="leading" id="1pL-SC-xc2"/>
+                            <constraint firstItem="13a-PG-sNK" firstAttribute="centerY" secondItem="APA-IJ-7dU" secondAttribute="centerY" id="f5H-tc-o8D"/>
                             <constraint firstItem="W01-NB-Yrj" firstAttribute="top" secondItem="Ylu-zv-F4g" secondAttribute="bottom" id="jOI-Dh-bu8"/>
                             <constraint firstItem="Ylu-zv-F4g" firstAttribute="top" secondItem="uLt-dr-Spf" secondAttribute="bottom" id="pl9-S7-5ES"/>
+                            <constraint firstItem="13a-PG-sNK" firstAttribute="centerX" secondItem="APA-IJ-7dU" secondAttribute="centerX" id="q3w-6T-LvP"/>
                             <constraint firstAttribute="trailing" secondItem="Ylu-zv-F4g" secondAttribute="trailing" id="wic-rq-G9h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yHZ-pU-o8H"/>
                     <connections>
+                        <outlet property="spinner" destination="13a-PG-sNK" id="cYn-l9-Vaf"/>
                         <outlet property="tableView" destination="Ylu-zv-F4g" id="FRN-LP-y0O"/>
                     </connections>
                 </viewController>
@@ -59,31 +65,62 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcf-zo-eAC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHn-BR-2Xe">
+                                        <rect key="frame" x="187" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="250" constant="42" id="UNY-tH-Tcs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xHn-BR-2Xe" firstAttribute="centerX" secondItem="wcf-zo-eAC" secondAttribute="centerX" id="Q3S-E4-jyr"/>
+                                    <constraint firstAttribute="height" id="bt4-tF-O5k"/>
+                                    <constraint firstItem="xHn-BR-2Xe" firstAttribute="centerY" secondItem="wcf-zo-eAC" secondAttribute="centerY" id="ycq-xq-F8d"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBe-cJ-Wda">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="3" width="375" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2Ne-NO-6LZ" id="Hd0-u4-wTk"/>
                                     <outlet property="delegate" destination="2Ne-NO-6LZ" id="U9y-Fr-cVP"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7Rt-tt-bOU">
+                                <rect key="frame" x="177" y="291" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SBe-cJ-Wda" firstAttribute="top" secondItem="wcf-zo-eAC" secondAttribute="bottom" constant="3" id="0de-Vx-t1s"/>
+                            <constraint firstItem="wcf-zo-eAC" firstAttribute="top" secondItem="yUz-C2-dYa" secondAttribute="bottom" id="2OO-eQ-Fq0"/>
                             <constraint firstItem="SBe-cJ-Wda" firstAttribute="leading" secondItem="IRS-7h-52v" secondAttribute="leading" id="3lS-Uj-y9F"/>
+                            <constraint firstAttribute="trailing" secondItem="wcf-zo-eAC" secondAttribute="trailing" id="47j-6I-cnY"/>
                             <constraint firstItem="P8n-C8-iUp" firstAttribute="top" secondItem="SBe-cJ-Wda" secondAttribute="bottom" id="6x3-VP-eY0"/>
                             <constraint firstAttribute="trailing" secondItem="SBe-cJ-Wda" secondAttribute="trailing" id="Wun-tR-MDg"/>
-                            <constraint firstItem="SBe-cJ-Wda" firstAttribute="top" secondItem="yUz-C2-dYa" secondAttribute="bottom" id="uMN-x3-oG3"/>
+                            <constraint firstItem="7Rt-tt-bOU" firstAttribute="centerX" secondItem="IRS-7h-52v" secondAttribute="centerX" id="X3T-hC-S2O"/>
+                            <constraint firstItem="7Rt-tt-bOU" firstAttribute="centerY" secondItem="IRS-7h-52v" secondAttribute="centerY" id="lJd-qs-4ki"/>
+                            <constraint firstItem="wcf-zo-eAC" firstAttribute="leading" secondItem="IRS-7h-52v" secondAttribute="leading" id="w6h-gw-Z5d"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="prStatusHeightConstraint" destination="bt4-tF-O5k" id="7Rv-Yu-yNU"/>
+                        <outlet property="prStatusLabel" destination="xHn-BR-2Xe" id="fH6-uf-RO4"/>
+                        <outlet property="spinner" destination="7Rt-tt-bOU" id="fUT-J8-lCC"/>
                         <outlet property="tableView" destination="SBe-cJ-Wda" id="il9-e3-E36"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnR-9O-Zhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="170"/>
+            <point key="canvasLocation" x="1128.8" y="169.56521739130437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZaV-b4-vE6">

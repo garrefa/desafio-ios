@@ -4,7 +4,6 @@ use_frameworks!
 target 'GithubJavaPop' do	
 	pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'AlamofireNetworkActivityIndicator'
   pod 'SwiftyJSON'
   pod 'SwiftyDrop'
 end

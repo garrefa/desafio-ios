@@ -5,6 +5,7 @@ import UIKit
 class RepositoryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
   fileprivate var repositoriesViewModel = [RepositoryViewModel]()
   fileprivate var currentPage = 0
   fileprivate var isLoading = true
@@ -42,6 +43,7 @@ class RepositoryListViewController: UIViewController, UITableViewDelegate, UITab
       guard repositoriesViewModel.count > 0 else {
         self.isLoading = false
         self.isConnectionErrorShowed = false
+        self.spinner.stopAnimating()
         return
       }
       
@@ -50,6 +52,7 @@ class RepositoryListViewController: UIViewController, UITableViewDelegate, UITab
       self.currentPage += 1
       self.isLoading = false
       self.isConnectionErrorShowed = false
+      self.spinner.stopAnimating()
       
     }) { (statusCode, response, error) in
       
@@ -59,6 +62,7 @@ class RepositoryListViewController: UIViewController, UITableViewDelegate, UITab
       }
       
       self.isLoading = false
+      self.spinner.stopAnimating()
       
     }
     
