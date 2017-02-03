@@ -2,14 +2,16 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'GithubJavaPop' do	
-	pod 'Alamofire'
+
+  pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'SwiftyDrop'
-end
-
-target 'GithubJavaPopTests' do
-	inherit! :search_paths
+  
+  target 'GithubJavaPopTests' do
+    inherit! :search_paths
+  end
+  
 end
 
 target 'GithubJavaPopUITests' do
