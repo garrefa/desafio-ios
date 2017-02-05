@@ -10,6 +10,7 @@ import Foundation
 
 protocol PullRequestProtocol: class, ControllersProtocol {
     func reloadTable()
+    func existData(result:Bool)
 }
 
 class PullRequestViewModel {
@@ -27,13 +28,30 @@ class PullRequestViewModel {
         self.controller?.showLoading()
         GitHubAPI.getPullRequests(url: url, handler: { (statusCode, result) in
 
-            if statusCode {
-                self.pulls.append(contentsOf: result)
-                self.controller?.hideLoading()
-                self.controller?.reloadTable()
+            switch statusCode {
                 
-            } else {
-                self.controller?.showAlert(message: "Error! Try again.")
+                case GitHubAPI.statusCodes.resultOk.rawValue:
+                    
+                    self.pulls.append(contentsOf: result)
+                    self.controller?.hideLoading()
+                    self.controller?.reloadTable()
+                    self.controller?.existData(result: true)
+                    break
+                    
+                case GitHubAPI.statusCodes.errorNetwork.rawValue:
+                    
+                    self.controller?.existData(result: false)
+                    self.controller?.hideLoading()
+                    self.controller?.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to the internet.")
+                    break
+                    
+                case GitHubAPI.statusCodes.errorServidor.rawValue:
+                    
+                    self.controller?.existData(result: false)
+                    self.controller?.showAlert(title: "Attention", message: "Communication error with the server. Try again.")
+                    break
+                    
+                default: break
             }
             
         })

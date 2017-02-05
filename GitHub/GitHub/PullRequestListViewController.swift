@@ -16,22 +16,51 @@ class PullRequestListViewController: UIViewController {
     @IBOutlet weak var countPullsOpened: UILabel!
     @IBOutlet weak var countPullsClosed: UILabel!
     
+    @IBOutlet weak var labelMessage: UILabel!
+    @IBOutlet weak var viewInfoPull: UIView!
+    
+    private let refreshControl = UIRefreshControl()
+    
     var repository: RepositoryEntity?
     
     fileprivate var modelPullRequest: PullRequestViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupView()
 
         self.modelPullRequest = PullRequestViewModel()
+        self.modelPullRequest?.assignController(controller: self)
+        self.modelPullRequest?.requestPullRequests(url: (repository?.pullsUrl)!)
     }
+    
+    func setupView() {
+        
+        self.tablePullRequest.isHidden = true
+        self.labelMessage.isHidden = true
+        
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Loading Pull Requests ...", attributes: nil)
+        self.refreshControl.addTarget(self, action: #selector(PullRequestListViewController.refreshData(sender:)), for: .valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            self.tablePullRequest.refreshControl = refreshControl
+        } else {
+            self.tablePullRequest.addSubview(refreshControl)
+        }
+        
+    }
+    
+    func refreshData (sender: UIRefreshControl) {
+        
+        self.modelPullRequest?.requestPullRequests(url: (repository?.pullsUrl)!)
+        self.refreshControl.endRefreshing()
+    }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = repository?.name
-        
-        self.modelPullRequest?.assignController(controller: self)
-        self.modelPullRequest?.requestPullRequests(url: (repository?.pullsUrl)!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +82,16 @@ extension PullRequestListViewController: PullRequestProtocol {
         
         self.countPullsClosed.text = self.modelPullRequest?.getPullsClosed()
         self.countPullsOpened.text = self.modelPullRequest?.getPullsOpened()
+    }
+    
+    func existData(result: Bool) {
+        if result {
+            self.tablePullRequest.isHidden = false
+            self.labelMessage.isHidden = true
+        } else {
+            self.tablePullRequest.isHidden = true
+            self.labelMessage.isHidden = false
+        }
     }
 }
 

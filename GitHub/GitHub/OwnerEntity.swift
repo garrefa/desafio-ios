@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftyJSON
-import Alamofire
 
 class OwnerEntidy: NSObject {
     
@@ -37,9 +36,12 @@ class OwnerEntidy: NSObject {
     
     func getFullname(callback: @escaping (OwnerEntidy) -> Void) {
         GitHubAPI.getFullNameOwner(url: self.infoUrl!) { (statusCode, result) in
-            if statusCode {
-                self.name = result.name
-                callback(result)
+            if statusCode == GitHubAPI.statusCodes.resultOk.rawValue {
+                
+                let owner = result[0]
+                self.name = owner.name
+                
+                callback(self)
             }
         }
     }

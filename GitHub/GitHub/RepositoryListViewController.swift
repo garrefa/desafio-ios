@@ -11,20 +11,29 @@ import UIKit
 class RepositoryListViewController: UIViewController {
 
     @IBOutlet weak var tableRepository: UITableView!
+    @IBOutlet weak var viewMessage: UIView!
+    
     fileprivate var modelRepository: RepositoryViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupView()
+        
         self.modelRepository = RepositoryViewModel()
+        self.modelRepository?.assignController(controller: self)
+        self.modelRepository?.requestRepositories()
+    }
+    
+    func setupView() {
+        
+        self.tableRepository.isHidden = true
+        self.viewMessage.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "GitHub JavaPop"
-        
-        self.modelRepository?.assignController(controller: self)
-        self.modelRepository?.requestRepositories()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,12 +46,26 @@ class RepositoryListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func reloadRepositories(_ sender: Any) {
+        self.modelRepository?.requestRepositories()
+    }
 }
 
 extension RepositoryListViewController: RepositoryProtocol {
     
     func reloadTable() {
         self.tableRepository.reloadData()
+    }
+    
+    func existData(result: Bool) {
+        if result {
+            self.tableRepository.isHidden = false
+            self.viewMessage.isHidden = true
+        } else {
+            
+            self.tableRepository.isHidden = true
+            self.viewMessage.isHidden = false
+        }
     }
 }
 

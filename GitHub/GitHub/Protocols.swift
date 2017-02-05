@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 import PKHUD
 
-
 protocol ControllersProtocol {
 
     func showLoading()
     func hideLoading()
-    func showAlert(message: String)
+    func showAlert(title: String, message: String)
 }
 
 extension ControllersProtocol where Self: UIViewController {
@@ -28,10 +27,10 @@ extension ControllersProtocol where Self: UIViewController {
         HUD.flash(.success, delay: 0.2)
     }
     
-    func showAlert(message: String) {
+    func showAlert(title: String, message: String) {
         self.hideLoading()
         
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

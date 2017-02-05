@@ -12,19 +12,25 @@ import SwiftyJSON
 
 class GitHubAPI {
     
-    enum api_urls: String {
+    enum urlsAPI: String {
         case urlBase = "https://api.github.com"
         case urlSearchRepositories = "https://api.github.com/search/repositories"
     }
     
-    class func getRepositories(page: Int, language: String, sort: String, handler: @escaping (_ statusCode: Bool, _ result:[RepositoryEntity])->Void) {
+    enum statusCodes: Int {
+        case errorNetwork = 2
+        case errorServidor = 3
+        case resultOk = 4
+    }
+    
+    class func getRepositories(page: Int, language: String, sort: String, handler: @escaping (_ statusCode: Int, _ result:[RepositoryEntity])->Void) {
         
         guard Reachability.isConnectedToNetwork() else {
-            handler(false, [])
+            handler(statusCodes.errorNetwork.rawValue, [])
             return
         }
         
-        let url = api_urls.urlSearchRepositories.rawValue + "?q=language:\(language)&sort=\(sort)&page=\(page)"
+        let url = urlsAPI.urlSearchRepositories.rawValue + "?q=language:\(language)&sort=\(sort)&page=\(page)"
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
@@ -34,18 +40,17 @@ class GitHubAPI {
                     
                     var repositories = [RepositoryEntity]()
                     let json = JSON(data)
-                    //print(json)
 
                     for (_,subJson) in json["items"] {
                         repositories.append(RepositoryEntity(rawData: subJson))
                     }
                     
-                    handler(true, repositories)
+                    handler(statusCodes.resultOk.rawValue, repositories)
                 }
                 break
                 
             case .failure(_):
-                handler(false, [])
+                handler(statusCodes.errorServidor.rawValue, [])
                 break
                 
             }
@@ -53,10 +58,10 @@ class GitHubAPI {
         }
     }
     
-    class func getFullNameOwner(url: String, handler: @escaping (_ statusCode: Bool, _ result: OwnerEntidy)->Void) {
+    class func getFullNameOwner(url: String, handler: @escaping (_ statusCode: Int, _ result: [OwnerEntidy])->Void) {
         
         guard Reachability.isConnectedToNetwork() else {
-            handler(false, OwnerEntidy(rawData: JSON.null))
+            handler(statusCodes.errorNetwork.rawValue, [])
             return
         }
         
@@ -66,15 +71,17 @@ class GitHubAPI {
             case .success(_):
                 if let data = response.result.value{
                     
+                    var list = [OwnerEntidy]()
                     let json = JSON(data)
 
-                    let owner = OwnerEntidy(rawData: json)
-                    handler(true, owner)
+                    list.append(OwnerEntidy(rawData: json))
+
+                    handler(statusCodes.resultOk.rawValue, list)
                 }
                 break
                 
             case .failure(_):
-                handler(false, OwnerEntidy(rawData: JSON.null))
+                handler(statusCodes.errorServidor.rawValue, [])
                 break
                 
             }
@@ -83,10 +90,10 @@ class GitHubAPI {
         
     }
     
-    class func getPullRequests(url: String, handler: @escaping (_ statusCode: Bool, _ result: [PullRequestEntidy])->Void) {
+    class func getPullRequests(url: String, handler: @escaping (_ statusCode: Int, _ result: [PullRequestEntidy])->Void) {
         
         guard Reachability.isConnectedToNetwork() else {
-            handler(false, [])
+            handler(statusCodes.errorNetwork.rawValue, [])
             return
         }
         
@@ -98,23 +105,21 @@ class GitHubAPI {
                     
                     var pulls = [PullRequestEntidy]()
                     let json = JSON(data)
-                    //print(json)
                     
                     for (_,subJson) in json {
                         pulls.append(PullRequestEntidy(rawData: subJson))
                     }
                     
-                    handler(true, pulls)
+                    handler(statusCodes.resultOk.rawValue, pulls)
                 }
                 break
                 
             case .failure(_):
-                handler(false, [])
+                handler(statusCodes.errorServidor.rawValue, [])
                 break
                 
             }
         }
-
         
     }
 }
