@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0920EF1E1E47A8F1007FFFE7 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0920EF1D1E47A8F1007FFFE7 /* RepositoryTests.swift */; };
+		0920EF201E47A907007FFFE7 /* PullRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0920EF1F1E47A907007FFFE7 /* PullRequestTests.swift */; };
 		092424811E46398700244F5F /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092424801E46398700244F5F /* GitHubAPI.swift */; };
 		092424841E4643FF00244F5F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092424831E4643FF00244F5F /* UIImageView+Extension.swift */; };
 		092424861E46466B00244F5F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092424851E46466B00244F5F /* Reachability.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0920EF1D1E47A8F1007FFFE7 /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		0920EF1F1E47A907007FFFE7 /* PullRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestTests.swift; sourceTree = "<group>"; };
 		092424801E46398700244F5F /* GitHubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		092424831E4643FF00244F5F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		092424851E46466B00244F5F /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		099DE83C1E450D8A005BB4E2 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				099DE83D1E450D8A005BB4E2 /* AppDelegate.swift */,
 				092424821E46435800244F5F /* Extensions */,
 				099DE86B1E450E7B005BB4E2 /* Configuration */,
 				099DE86D1E450E93005BB4E2 /* Resources */,
@@ -156,6 +161,8 @@
 			children = (
 				099DE8521E450D8A005BB4E2 /* GitHubTests.swift */,
 				099DE8541E450D8A005BB4E2 /* Info.plist */,
+				0920EF1D1E47A8F1007FFFE7 /* RepositoryTests.swift */,
+				0920EF1F1E47A907007FFFE7 /* PullRequestTests.swift */,
 			);
 			path = GitHubTests;
 			sourceTree = "<group>";
@@ -163,7 +170,6 @@
 		099DE86B1E450E7B005BB4E2 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				099DE83D1E450D8A005BB4E2 /* AppDelegate.swift */,
 				092424801E46398700244F5F /* GitHubAPI.swift */,
 			);
 			name = Configuration;
@@ -508,6 +514,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				099DE8531E450D8A005BB4E2 /* GitHubTests.swift in Sources */,
+				0920EF201E47A907007FFFE7 /* PullRequestTests.swift in Sources */,
+				0920EF1E1E47A8F1007FFFE7 /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U7Z5QZ278W;
 				INFOPLIST_FILE = GitHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -648,6 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U7Z5QZ278W;
 				INFOPLIST_FILE = GitHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

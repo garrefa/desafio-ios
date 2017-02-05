@@ -37,7 +37,9 @@ class PullRequestEntidy: NSObject {
         self.title = rawData["title"].string!
         self.body = rawData["body"].string!
         
-        self.user = OwnerEntidy(rawData: rawData["user"])
+        if (rawData["user"] != JSON.null) {
+            self.user = OwnerEntidy(rawData: rawData["user"])
+        }
         
         self.state = rawData["state"].string!
         

@@ -30,7 +30,9 @@ class RepositoryEntity: NSObject {
         self.forksNum = rawData["forks_count"].int
         self.startsNum = rawData["stargazers_count"].int
         
-        self.owner = OwnerEntidy(rawData: rawData["owner"])
+        if (rawData["owner"] != JSON.null) {
+            self.owner = OwnerEntidy(rawData: rawData["owner"])
+        }
         
         //get url and adjust html for get all pulls
         let url = rawData["pulls_url"].string!

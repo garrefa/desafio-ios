@@ -18,10 +18,15 @@ class RepositoryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupView()
-        
         self.modelRepository = RepositoryViewModel()
         self.modelRepository?.assignController(controller: self)
+        
+        self.setupView()
+        self.loadData()
+        
+    }
+    
+    func loadData() {
         self.modelRepository?.requestRepositories()
     }
     
