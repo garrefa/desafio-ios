@@ -18,6 +18,11 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     
     private let repositoryService: RepositoryService
     
+    /// We use a semaphore to guarantee that we only have 1 request at a time and we don't messing up with the page index
+    private let semaphore = DispatchSemaphore(value: 1)
+    
+    private var nextPage: UInt = 0
+    
     init(repositoryService: RepositoryService) {
         self.repositoryService = repositoryService
     }
@@ -25,28 +30,59 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     // MARK: - Business logic
     
     func loadInitialRepositories() {
-        repositoryService.findRepositories(
+        nextPage = 0
+        findRepositories(
             language: .java,
             sortBy: SortMethod(key: .stars, direction: .descending),
-            page: 0,
+            page: nextPage,
             onCompletion: { repositories, hasMorePages in
-                                            
+                nextPage += 1
+            },
+            onError: { error in
+                
+            }
+        )
+    }
+    
+    func loadMoreRepositories() {
+        guard nextPage > 0 else {
+            debugPrint("Warning: trying to load more repos when `nextPage` is 0.")
+            loadInitialRepositories()
+            return
+        }
+        
+        findRepositories(
+            language: .java,
+            sortBy: SortMethod(key: .stars, direction: .descending),
+            page: nextPage,
+            onCompletion: { repositories, hasMorePages in
+                nextPage += 1
             },
             onError: { error in
             }
         )
     }
     
-    func loadMoreRepositories() {
+    // a private `findRepositories` which just forwards the request to `repositoryService` making sure that we don't 
+    // have concurrent requests
+    private func findRepositories(language: ProgrammingLanguage,
+                                  sortBy sortMethod: SortMethod?,
+                                  page: UInt,
+                                  onCompletion completionBlock: ([Repository], Bool) -> Void,
+                                  onError errorBlock: (Error) -> Void) {
+        semaphore.wait()
         repositoryService.findRepositories(
             language: .java,
             sortBy: SortMethod(key: .stars, direction: .descending),
-            page: 0,
+            page: page,
             onCompletion: { repositories, hasMorePages in
-                
-        },
+                completionBlock(repositories, hasMorePages)
+                semaphore.signal()
+            },
             onError: { error in
-        }
+                errorBlock(error)
+                semaphore.signal()
+            }
         )
     }
 }

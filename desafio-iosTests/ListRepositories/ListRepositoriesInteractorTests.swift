@@ -14,13 +14,20 @@ import XCTest
 
 class RepositoryServiceMock: RepositoryService {
 
-    var lastSearchParameters: (language: ProgrammingLanguage, sortMethod: SortMethod?, page: UInt)?
+    var findRepositoriesExpectedResult: (repositories: [Repository], hasMorePages: Bool) = ([], false)
+    var latestSearchParameters: (language: ProgrammingLanguage, sortMethod: SortMethod?, page: UInt)!
+    var findRepositoriesShouldFail = false
     func findRepositories(language: ProgrammingLanguage,
                           sortBy sortMethod: SortMethod?,
                           page: UInt,
                           onCompletion completionBlock: ([Repository], Bool) -> Void,
                           onError errorBlock: (Error) -> Void) {
-        lastSearchParameters = (language: language, sortMethod: sortMethod, page: page)
+        latestSearchParameters = (language: language, sortMethod: sortMethod, page: page)
+        if findRepositoriesShouldFail {
+            errorBlock(NSError(domain: "", code: 0, userInfo: .none))
+        } else {
+            completionBlock(findRepositoriesExpectedResult.repositories, findRepositoriesExpectedResult.hasMorePages)
+        }
     }
 }
 
@@ -50,13 +57,13 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     private func verifySearchParameters() {
         
-        guard let lastSearchParameters = repositoryServiceMock.lastSearchParameters else {
-            XCTFail("findRepositories was not called on the repository service")
+        guard let latestSearchParameters = repositoryServiceMock.latestSearchParameters else {
+            XCTFail("latestSearchParameters is nil, so `findRepositories` was not called on the repository service")
             return
         }
-        XCTAssert(lastSearchParameters.language == .java, "interactor should be searching for java repositories")
+        XCTAssert(latestSearchParameters.language == .java, "interactor should be searching for java repositories")
         
-        guard let sortMethod = lastSearchParameters.sortMethod else {
+        guard let sortMethod = latestSearchParameters.sortMethod else {
             XCTFail("interactor should have passed a sort method to the seach")
             return
         }
@@ -67,5 +74,23 @@ class ListRepositoriesInteractorTests: XCTestCase {
     func testSearchParameters_onLoadMoreRepositories() {
         interactor.loadMoreRepositories()
         verifySearchParameters()
+    }
+    
+    func testPageIndex_whenFindRepositoriesSucceeds() {
+        interactor.loadInitialRepositories()
+        XCTAssert(repositoryServiceMock.latestSearchParameters.page == 0,
+                  "Unxpected page index on when loading the initial repositories")
+        interactor.loadMoreRepositories()
+        XCTAssert(repositoryServiceMock.latestSearchParameters.page == 1,
+                  "Unxpected page index on when loading more repositories")
+    }
+    
+    func testPageIndex_whenFindRepositoriesFails() {
+        interactor.loadInitialRepositories()
+        repositoryServiceMock.findRepositoriesShouldFail = true
+        interactor.loadMoreRepositories()
+        interactor.loadMoreRepositories()
+        XCTAssert(repositoryServiceMock.latestSearchParameters.page == 1,
+                  "Unxpected page index on after repository service fails on `findRepositories`")
     }
 }
