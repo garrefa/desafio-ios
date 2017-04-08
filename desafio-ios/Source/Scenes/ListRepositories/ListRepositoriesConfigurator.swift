@@ -31,7 +31,7 @@ class ListRepositoriesConfigurator: NSObject {
         let presenter = DefaultListRepositoriesPresenter()
         presenter.viewController = viewController
         
-        let interactor = DefaultListRepositoriesInteractor()
+        let interactor = DefaultListRepositoriesInteractor(repositoryService: GithubRepositoryService())
         interactor.presenter = presenter
         
         viewController.interactor = interactor
