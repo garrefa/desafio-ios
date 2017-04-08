@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2F1D6D6D1E98F618005D663E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D6D6C1E98F618005D663E /* AppDelegate.swift */; };
-		2F1D6D6F1E98F618005D663E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D6D6E1E98F618005D663E /* ViewController.swift */; };
 		2F1D6D721E98F618005D663E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1D6D701E98F618005D663E /* Main.storyboard */; };
 		2F1D6D741E98F618005D663E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1D6D731E98F618005D663E /* Assets.xcassets */; };
 		2F1D6D771E98F618005D663E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1D6D751E98F618005D663E /* LaunchScreen.storyboard */; };
 		2F1D6D821E98F618005D663E /* desafio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D6D811E98F618005D663E /* desafio_iosTests.swift */; };
 		2F1D6D8D1E98F618005D663E /* desafio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D6D8C1E98F618005D663E /* desafio_iosUITests.swift */; };
+		2F742E5C1E99060C00602C05 /* DefaultListRepositoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E4D1E99060C00602C05 /* DefaultListRepositoriesInteractor.swift */; };
+		2F742E5D1E99060C00602C05 /* ListRepositoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E4E1E99060C00602C05 /* ListRepositoriesInteractor.swift */; };
+		2F742E5E1E99060C00602C05 /* ListRepositoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E4F1E99060C00602C05 /* ListRepositoriesConfigurator.swift */; };
+		2F742E5F1E99060C00602C05 /* ListRepositoriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E511E99060C00602C05 /* ListRepositoriesModels.swift */; };
+		2F742E601E99060C00602C05 /* DefaultListRepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E531E99060C00602C05 /* DefaultListRepositoriesPresenter.swift */; };
+		2F742E611E99060C00602C05 /* ListRepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E541E99060C00602C05 /* ListRepositoriesPresenter.swift */; };
+		2F742E621E99060C00602C05 /* DefaultListRepositoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E561E99060C00602C05 /* DefaultListRepositoriesRouter.swift */; };
+		2F742E631E99060C00602C05 /* ListRepositoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E571E99060C00602C05 /* ListRepositoriesRouter.swift */; };
+		2F742E641E99060C00602C05 /* ListRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E5A1E99060C00602C05 /* ListRepositoriesViewController.swift */; };
+		2F742E651E99060C00602C05 /* ListRepositoriesViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F742E5B1E99060C00602C05 /* ListRepositoriesViewControllerInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,6 @@
 /* Begin PBXFileReference section */
 		2F1D6D691E98F618005D663E /* desafio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1D6D6C1E98F618005D663E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F1D6D6E1E98F618005D663E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F1D6D711E98F618005D663E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F1D6D731E98F618005D663E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F1D6D761E98F618005D663E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,16 @@
 		2F1D6D881E98F618005D663E /* desafio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1D6D8C1E98F618005D663E /* desafio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_iosUITests.swift; sourceTree = "<group>"; };
 		2F1D6D8E1E98F618005D663E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F742E4D1E99060C00602C05 /* DefaultListRepositoriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListRepositoriesInteractor.swift; sourceTree = "<group>"; };
+		2F742E4E1E99060C00602C05 /* ListRepositoriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesInteractor.swift; sourceTree = "<group>"; };
+		2F742E4F1E99060C00602C05 /* ListRepositoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesConfigurator.swift; sourceTree = "<group>"; };
+		2F742E511E99060C00602C05 /* ListRepositoriesModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesModels.swift; sourceTree = "<group>"; };
+		2F742E531E99060C00602C05 /* DefaultListRepositoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListRepositoriesPresenter.swift; sourceTree = "<group>"; };
+		2F742E541E99060C00602C05 /* ListRepositoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesPresenter.swift; sourceTree = "<group>"; };
+		2F742E561E99060C00602C05 /* DefaultListRepositoriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListRepositoriesRouter.swift; sourceTree = "<group>"; };
+		2F742E571E99060C00602C05 /* ListRepositoriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesRouter.swift; sourceTree = "<group>"; };
+		2F742E5A1E99060C00602C05 /* ListRepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesViewController.swift; sourceTree = "<group>"; };
+		2F742E5B1E99060C00602C05 /* ListRepositoriesViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesViewControllerInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				2F1D6D6C1E98F618005D663E /* AppDelegate.swift */,
-				2F1D6D6E1E98F618005D663E /* ViewController.swift */,
 				2F1D6D701E98F618005D663E /* Main.storyboard */,
 				2F1D6D731E98F618005D663E /* Assets.xcassets */,
 				2F1D6D751E98F618005D663E /* LaunchScreen.storyboard */,
 				2F1D6D781E98F618005D663E /* Info.plist */,
+				2F742E4A1E99060C00602C05 /* Scenes */,
 			);
 			path = "desafio-ios";
 			sourceTree = "<group>";
@@ -123,6 +141,71 @@
 				2F1D6D8E1E98F618005D663E /* Info.plist */,
 			);
 			path = "desafio-iosUITests";
+			sourceTree = "<group>";
+		};
+		2F742E4A1E99060C00602C05 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E4B1E99060C00602C05 /* ListRepositories */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2F742E4B1E99060C00602C05 /* ListRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E4F1E99060C00602C05 /* ListRepositoriesConfigurator.swift */,
+				2F742E4C1E99060C00602C05 /* Interactor */,
+				2F742E501E99060C00602C05 /* Models */,
+				2F742E521E99060C00602C05 /* Presenter */,
+				2F742E551E99060C00602C05 /* Router */,
+				2F742E591E99060C00602C05 /* ViewController */,
+			);
+			path = ListRepositories;
+			sourceTree = "<group>";
+		};
+		2F742E4C1E99060C00602C05 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E4D1E99060C00602C05 /* DefaultListRepositoriesInteractor.swift */,
+				2F742E4E1E99060C00602C05 /* ListRepositoriesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2F742E501E99060C00602C05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E511E99060C00602C05 /* ListRepositoriesModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F742E521E99060C00602C05 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E531E99060C00602C05 /* DefaultListRepositoriesPresenter.swift */,
+				2F742E541E99060C00602C05 /* ListRepositoriesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2F742E551E99060C00602C05 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E561E99060C00602C05 /* DefaultListRepositoriesRouter.swift */,
+				2F742E571E99060C00602C05 /* ListRepositoriesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		2F742E591E99060C00602C05 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F742E5A1E99060C00602C05 /* ListRepositoriesViewController.swift */,
+				2F742E5B1E99060C00602C05 /* ListRepositoriesViewControllerInput.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +345,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F1D6D6F1E98F618005D663E /* ViewController.swift in Sources */,
+				2F742E5D1E99060C00602C05 /* ListRepositoriesInteractor.swift in Sources */,
+				2F742E5F1E99060C00602C05 /* ListRepositoriesModels.swift in Sources */,
+				2F742E651E99060C00602C05 /* ListRepositoriesViewControllerInput.swift in Sources */,
+				2F742E621E99060C00602C05 /* DefaultListRepositoriesRouter.swift in Sources */,
+				2F742E641E99060C00602C05 /* ListRepositoriesViewController.swift in Sources */,
+				2F742E601E99060C00602C05 /* DefaultListRepositoriesPresenter.swift in Sources */,
 				2F1D6D6D1E98F618005D663E /* AppDelegate.swift in Sources */,
+				2F742E631E99060C00602C05 /* ListRepositoriesRouter.swift in Sources */,
+				2F742E5E1E99060C00602C05 /* ListRepositoriesConfigurator.swift in Sources */,
+				2F742E611E99060C00602C05 /* ListRepositoriesPresenter.swift in Sources */,
+				2F742E5C1E99060C00602C05 /* DefaultListRepositoriesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +604,7 @@
 				2F1D6D931E98F618005D663E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F1D6D941E98F618005D663E /* Build configuration list for PBXNativeTarget "desafio-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +613,7 @@
 				2F1D6D961E98F618005D663E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F1D6D971E98F618005D663E /* Build configuration list for PBXNativeTarget "desafio-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +622,7 @@
 				2F1D6D991E98F618005D663E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
