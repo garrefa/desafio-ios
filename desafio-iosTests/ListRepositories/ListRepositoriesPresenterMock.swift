@@ -11,14 +11,9 @@ import Foundation
 
 class ListRepositoriesPresenterMock: ListRepositoriesPresenter {
     
-    var latestDataReceivedOnReloadRepositories: (repositories: [Repository], hasMore: Bool)?
-    func reloadRepositories(_ repositories: [Repository], hasMore: Bool) {
-        latestDataReceivedOnReloadRepositories = (repositories: repositories, hasMore: hasMore)
-    }
-    
-    var latestDataReceivedOnAppendRepositories: (repositories: [Repository], hasMore: Bool)?
-    func appendRepositories(_ repositories: [Repository], hasMore: Bool) {
-        latestDataReceivedOnAppendRepositories = (repositories: repositories, hasMore: hasMore)
+    var latestDataReceivedOnPresentRepositories: (repositories: [Repository], shouldAppend: Bool, hasMore: Bool)?
+    func presentRepositories(_ repositories: [Repository], shouldAppend: Bool, hasMore: Bool) {
+        latestDataReceivedOnPresentRepositories = (repositories: repositories, shouldAppend: shouldAppend, hasMore: hasMore)
     }
     
     var presentRequestErrorWasCalled = false

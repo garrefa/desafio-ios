@@ -184,8 +184,8 @@
 		2F98CB151E9909A3006C8D38 /* ListRepositories */ = {
 			isa = PBXGroup;
 			children = (
-				2F98CB161E9909A3006C8D38 /* Interactor */,
 				2F98CB191E9909A3006C8D38 /* ListRepositoriesConfigurator.swift */,
+				2F98CB161E9909A3006C8D38 /* Interactor */,
 				2F98CB1A1E9909A3006C8D38 /* Models */,
 				2F98CB1C1E9909A3006C8D38 /* Presenter */,
 				2F98CB1F1E9909A3006C8D38 /* Router */,

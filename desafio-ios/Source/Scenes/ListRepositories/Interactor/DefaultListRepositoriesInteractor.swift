@@ -31,16 +31,45 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     
     func loadInitialRepositories() {
         nextPage = 0
+        requestNextPageOfRepositories(shouldAppendResults: false)
+    }
+    
+    private func requestNextPageOfRepositories(shouldAppendResults: Bool) {
         findRepositories(
             language: .java,
             sortBy: SortMethod(key: .stars, direction: .descending),
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
                 nextPage += 1
-                presenter.reloadRepositories(repositories, hasMore: hasMorePages)
+                presenter.presentRepositories(repositories, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
             },
             onError: { error in
                 presenter.presentRequestError()
+            }
+        )
+    }
+    
+    // a private `findRepositories` which just forwards the request to `repositoryService` making sure that we don't
+    // have concurrent requests
+    private func findRepositories(language: ProgrammingLanguage,
+                                  sortBy sortMethod: SortMethod?,
+                                  page: UInt,
+                                  onCompletion completionBlock: ([Repository], Bool) -> Void,
+                                  onError errorBlock: (Error) -> Void) {
+        
+        semaphore.wait()
+        
+        repositoryService.findRepositories(
+            language: language,
+            sortBy: sortMethod,
+            page: page,
+            onCompletion: { repositories, hasMorePages in
+                completionBlock(repositories, hasMorePages)
+                semaphore.signal()
+            },
+            onError: { error in
+                errorBlock(error)
+                semaphore.signal()
             }
         )
     }
@@ -52,40 +81,6 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             return
         }
         
-        findRepositories(
-            language: .java,
-            sortBy: SortMethod(key: .stars, direction: .descending),
-            page: nextPage,
-            onCompletion: { repositories, hasMorePages in
-                nextPage += 1
-                presenter.appendRepositories(repositories, hasMore: hasMorePages)
-            },
-            onError: { error in
-                presenter.presentRequestError()
-            }
-        )
-    }
-    
-    // a private `findRepositories` which just forwards the request to `repositoryService` making sure that we don't 
-    // have concurrent requests
-    private func findRepositories(language: ProgrammingLanguage,
-                                  sortBy sortMethod: SortMethod?,
-                                  page: UInt,
-                                  onCompletion completionBlock: ([Repository], Bool) -> Void,
-                                  onError errorBlock: (Error) -> Void) {
-        semaphore.wait()
-        repositoryService.findRepositories(
-            language: .java,
-            sortBy: SortMethod(key: .stars, direction: .descending),
-            page: page,
-            onCompletion: { repositories, hasMorePages in
-                completionBlock(repositories, hasMorePages)
-                semaphore.signal()
-            },
-            onError: { error in
-                errorBlock(error)
-                semaphore.signal()
-            }
-        )
+        requestNextPageOfRepositories(shouldAppendResults: true)
     }
 }

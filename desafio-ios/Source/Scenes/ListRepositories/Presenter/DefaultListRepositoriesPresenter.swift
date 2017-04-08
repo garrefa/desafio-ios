@@ -13,17 +13,13 @@ import Foundation
 
 /// Prepares data for presentation in ListRepositoriesViewController
 class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
-	
+    
 	weak var viewController: ListRepositoriesViewControllerInput!
   
 	// MARK: - Presentation logic
     
-    func reloadRepositories(_ repositories: [Repository], hasMore: Bool) {
-    
-    }
-    
-    func appendRepositories(_ repositories: [Repository], hasMore: Bool) {
-    
+    func presentRepositories(_ repositories: [Repository], shouldAppend: Bool, hasMore: Bool) {
+        
     }
     
     func presentRequestError() {

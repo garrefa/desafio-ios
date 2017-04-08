@@ -19,6 +19,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     var interactor: DefaultListRepositoriesInteractor!
 
     // MARK: - Test doubles
+    
     var repositoryServiceMock: RepositoryServiceMock!
     var presenterMock: ListRepositoriesPresenterMock!
 
@@ -86,14 +87,16 @@ class ListRepositoriesInteractorTests: XCTestCase {
         interactor.loadInitialRepositories()
         
         // Assert that presenter has received the data accordingly
-        guard let latestDataReceivedOnReloadRepositories = presenterMock.latestDataReceivedOnReloadRepositories else {
+        guard let latestDataReceivedOnPresentRepositories = presenterMock.latestDataReceivedOnPresentRepositories else {
             XCTFail("`reloadRepositories` was not called on the presenter")
             return
         }
-        XCTAssert(latestDataReceivedOnReloadRepositories.repositories == expected.repositories,
+        XCTAssert(latestDataReceivedOnPresentRepositories.repositories == expected.repositories,
                   "Unexpected repositories were passed to the presenter")
-        XCTAssert(latestDataReceivedOnReloadRepositories.hasMore == expected.hasMorePages,
+        XCTAssert(latestDataReceivedOnPresentRepositories.hasMore == expected.hasMorePages,
                   "An unexpected value of `hasMore` was passed to the presenter")
+        XCTAssertFalse(latestDataReceivedOnPresentRepositories.shouldAppend,
+                       "Presenter should not append the data received here")
     }
     
     func testFailureForwarding_onLoadInitialRepositories() {
@@ -113,14 +116,16 @@ class ListRepositoriesInteractorTests: XCTestCase {
         interactor.loadMoreRepositories()
         
         // Assert that presenter has received the data accordingly
-        guard let latestDataReceivedOnAppendRepositories = presenterMock.latestDataReceivedOnAppendRepositories else {
+        guard let latestDataReceivedOnPresentRepositories = presenterMock.latestDataReceivedOnPresentRepositories else {
             XCTFail("`reloadRepositories` was not called on the presenter")
             return
         }
-        XCTAssert(latestDataReceivedOnAppendRepositories.repositories == expected.repositories,
+        XCTAssert(latestDataReceivedOnPresentRepositories.repositories == expected.repositories,
                   "Unexpected repositories were passed to the presenter")
-        XCTAssert(latestDataReceivedOnAppendRepositories.hasMore == expected.hasMorePages,
+        XCTAssert(latestDataReceivedOnPresentRepositories.hasMore == expected.hasMorePages,
                   "An unexpected value of `hasMore` was passed to the presenter")
+        XCTAssert(latestDataReceivedOnPresentRepositories.shouldAppend,
+                  "Presenter should append the data received here")
     }
     
     func testFailureForwarding_onLoadMoreRepositories() {
