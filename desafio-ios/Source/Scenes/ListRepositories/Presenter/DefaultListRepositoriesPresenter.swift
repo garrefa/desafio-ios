@@ -17,4 +17,16 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
 	weak var viewController: ListRepositoriesViewControllerInput!
   
 	// MARK: - Presentation logic
+    
+    func reloadRepositories(_ repositories: [Repository], hasMore: Bool) {
+    
+    }
+    
+    func appendRepositories(_ repositories: [Repository], hasMore: Bool) {
+    
+    }
+    
+    func presentRequestError() {
+    
+    }
 }

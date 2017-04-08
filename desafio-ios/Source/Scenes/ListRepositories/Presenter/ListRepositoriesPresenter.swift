@@ -13,5 +13,13 @@ import Foundation
 
 /// Interface provided by a ListRepositoriesPresenter to receive inputs from a Interactor
 protocol ListRepositoriesPresenter {
-
+    
+    /// function called to refresh the repositories to be presented
+    func reloadRepositories(_ repositories: [Repository], hasMore: Bool)
+    
+    /// function called to add items to the previously presented ones
+    func appendRepositories(_ repositories: [Repository], hasMore: Bool)
+    
+    /// function called to present a request error
+    func presentRequestError()
 }

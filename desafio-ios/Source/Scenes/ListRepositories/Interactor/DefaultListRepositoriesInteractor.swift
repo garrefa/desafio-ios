@@ -37,9 +37,10 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
                 nextPage += 1
+                presenter.reloadRepositories(repositories, hasMore: hasMorePages)
             },
             onError: { error in
-                
+                presenter.presentRequestError()
             }
         )
     }
@@ -57,8 +58,10 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
                 nextPage += 1
+                presenter.appendRepositories(repositories, hasMore: hasMorePages)
             },
             onError: { error in
+                presenter.presentRequestError()
             }
         )
     }

@@ -12,25 +12,6 @@
 @testable import desafio_ios
 import XCTest
 
-class RepositoryServiceMock: RepositoryService {
-
-    var findRepositoriesExpectedResult: (repositories: [Repository], hasMorePages: Bool) = ([], false)
-    var latestSearchParameters: (language: ProgrammingLanguage, sortMethod: SortMethod?, page: UInt)!
-    var findRepositoriesShouldFail = false
-    func findRepositories(language: ProgrammingLanguage,
-                          sortBy sortMethod: SortMethod?,
-                          page: UInt,
-                          onCompletion completionBlock: ([Repository], Bool) -> Void,
-                          onError errorBlock: (Error) -> Void) {
-        latestSearchParameters = (language: language, sortMethod: sortMethod, page: page)
-        if findRepositoriesShouldFail {
-            errorBlock(NSError(domain: "", code: 0, userInfo: .none))
-        } else {
-            completionBlock(findRepositoriesExpectedResult.repositories, findRepositoriesExpectedResult.hasMorePages)
-        }
-    }
-}
-
 class ListRepositoriesInteractorTests: XCTestCase {
 
     // MARK: - Subject under test
@@ -39,6 +20,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
 
     // MARK: - Test doubles
     var repositoryServiceMock: RepositoryServiceMock!
+    var presenterMock: ListRepositoriesPresenterMock!
 
     // MARK: - Test lifecycle
     
@@ -46,6 +28,8 @@ class ListRepositoriesInteractorTests: XCTestCase {
         super.setUp()
         repositoryServiceMock = RepositoryServiceMock()
         interactor = DefaultListRepositoriesInteractor(repositoryService: repositoryServiceMock)
+        presenterMock = ListRepositoriesPresenterMock()
+        interactor.presenter = presenterMock
     }
     
     // MARK: - Tests
@@ -93,4 +77,57 @@ class ListRepositoriesInteractorTests: XCTestCase {
         XCTAssert(repositoryServiceMock.latestSearchParameters.page == 1,
                   "Unxpected page index on after repository service fails on `findRepositories`")
     }
+    
+    func testResultForwarding_onLoadInitialRepositories() {
+        // Config repositoryServiceMock to answer what we need
+        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        repositoryServiceMock.findRepositoriesExpectedResult = expected
+        
+        interactor.loadInitialRepositories()
+        
+        // Assert that presenter has received the data accordingly
+        guard let latestDataReceivedOnReloadRepositories = presenterMock.latestDataReceivedOnReloadRepositories else {
+            XCTFail("`reloadRepositories` was not called on the presenter")
+            return
+        }
+        XCTAssert(latestDataReceivedOnReloadRepositories.repositories == expected.repositories,
+                  "Unexpected repositories were passed to the presenter")
+        XCTAssert(latestDataReceivedOnReloadRepositories.hasMore == expected.hasMorePages,
+                  "An unexpected value of `hasMore` was passed to the presenter")
+    }
+    
+    func testFailureForwarding_onLoadInitialRepositories() {
+        repositoryServiceMock.findRepositoriesShouldFail = true
+        interactor.loadInitialRepositories()
+        XCTAssert(presenterMock.presentRequestErrorWasCalled, "presenter should have been requested to present an error")
+    }
+    
+    func testResultForwarding_onLoadMoreRepositories() {
+        
+        interactor.loadInitialRepositories()
+        
+        // Config repositoryServiceMock to answer what we need
+        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        repositoryServiceMock.findRepositoriesExpectedResult = expected
+        
+        interactor.loadMoreRepositories()
+        
+        // Assert that presenter has received the data accordingly
+        guard let latestDataReceivedOnAppendRepositories = presenterMock.latestDataReceivedOnAppendRepositories else {
+            XCTFail("`reloadRepositories` was not called on the presenter")
+            return
+        }
+        XCTAssert(latestDataReceivedOnAppendRepositories.repositories == expected.repositories,
+                  "Unexpected repositories were passed to the presenter")
+        XCTAssert(latestDataReceivedOnAppendRepositories.hasMore == expected.hasMorePages,
+                  "An unexpected value of `hasMore` was passed to the presenter")
+    }
+    
+    func testFailureForwarding_onLoadMoreRepositories() {
+        interactor.loadInitialRepositories()
+        repositoryServiceMock.findRepositoriesShouldFail = true
+        interactor.loadMoreRepositories()
+        XCTAssert(presenterMock.presentRequestErrorWasCalled, "presenter should have been requested to present an error")
+    }
+    
 }
