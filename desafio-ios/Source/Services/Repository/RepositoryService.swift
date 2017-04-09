@@ -35,14 +35,14 @@ protocol RepositoryService {
     ///
     /// - Parameters:
     /// 	- repository: The repository for which we want to fetch the pull requests
-    ///     - state: A filter to be applied based on the pull requests' state
+    ///     - state: An optional filter to be applied on the pull requests' state
     /// 	- sortMethod: An optional method to sort the results
     ///		- page: the offset from the beginning of the result set
     ///		- completionBlock: a closure that's called when the search succeeds, passing the pull requests found and a
     ///         bool value indicating if there are more pages of results to be fetched
     /// 	- errorBlock: a closure that's called when the search fails, passing an error object
     func pullRequests(for repository: Repository,
-                      filterBy state: PullRequestsStateFilter,
+                      filterByState state: PullRequest.State?,
                       sortBy sortMethod: SortMethod<PullRequestsSortKey>?,
                       page: UInt,
                       onCompletion completionBlock: @escaping ([PullRequest], Bool) -> Void,

@@ -38,7 +38,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     private func requestNextPageOfRepositories(shouldAppendResults: Bool) {
         findRepositories(
             language: .java,
-            sortBy: SortMethod(key: .stars, direction: .descending),
+            sortBy: SortMethod<RepositoriesSortKey>(key: .stars, direction: .descending),
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
                 self.nextPage += 1

@@ -38,7 +38,7 @@
 		2F98CB611E99C6A6006C8D38 /* ListRepositoriesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F98CB631E99C6A6006C8D38 /* ListRepositoriesViewController.strings */; };
 		2F98CB671E99C924006C8D38 /* OwnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB661E99C924006C8D38 /* OwnerViewModel.swift */; };
 		2F98CB6D1E99EA34006C8D38 /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB6C1E99EA34006C8D38 /* CustomNavigationViewController.swift */; };
-		2F98CB6F1E9A065F006C8D38 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB6E1E9A065F006C8D38 /* Owner.swift */; };
+		2F98CB6F1E9A065F006C8D38 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB6E1E9A065F006C8D38 /* User.swift */; };
 		2F98CB741E9A0C27006C8D38 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB731E9A0C27006C8D38 /* AsyncImageView.swift */; };
 		2F98CB9A1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB8B1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift */; };
 		2F98CB9B1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB8D1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift */; };
@@ -115,7 +115,7 @@
 		2F98CB641E99C6AA006C8D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ListRepositoriesViewController.strings; sourceTree = "<group>"; };
 		2F98CB661E99C924006C8D38 /* OwnerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerViewModel.swift; sourceTree = "<group>"; };
 		2F98CB6C1E99EA34006C8D38 /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
-		2F98CB6E1E9A065F006C8D38 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		2F98CB6E1E9A065F006C8D38 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F98CB731E9A0C27006C8D38 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		2F98CB8B1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPullRequestsConfigurator.swift; sourceTree = "<group>"; };
 		2F98CB8D1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListPullRequestsInteractor.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 			children = (
 				2F98CB341E991CD0006C8D38 /* ProgrammingLanguages.swift */,
 				2F98CB381E991CF1006C8D38 /* Repository.swift */,
-				2F98CB6E1E9A065F006C8D38 /* Owner.swift */,
+				2F98CB6E1E9A065F006C8D38 /* User.swift */,
 				2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */,
 			);
 			path = Models;
@@ -808,7 +808,7 @@
 				2F98CB6D1E99EA34006C8D38 /* CustomNavigationViewController.swift in Sources */,
 				2F98CB281E9909A3006C8D38 /* ListRepositoriesInteractor.swift in Sources */,
 				2F98CB9E1E9A8CDA006C8D38 /* DefaultListPullRequestsPresenter.swift in Sources */,
-				2F98CB6F1E9A065F006C8D38 /* Owner.swift in Sources */,
+				2F98CB6F1E9A065F006C8D38 /* User.swift in Sources */,
 				2F98CBAA1E9A9F7F006C8D38 /* RepositoryServiceParameters.swift in Sources */,
 				2F98CB501E99BB21006C8D38 /* ViewControllerExtensions.swift in Sources */,
 				2F98CB2A1E9909A3006C8D38 /* ListRepositoriesModels.swift in Sources */,

@@ -46,6 +46,6 @@ extension ListRepositories.ViewModel.Repository {
         description = repository.description ?? ""
         forks = "\(repository.forksCount)"
         stars = "\(repository.stargazersCount)"
-        owner = OwnerViewModel(owner: repository.owner)
+        owner = UserViewModel(owner: repository.owner)
     }
 }

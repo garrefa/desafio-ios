@@ -1,5 +1,5 @@
 //
-//  OwnerViewModel.swift
+//  UserViewModel.swift
 //  desafio-ios
 //
 //  Created by Cicero Camargo on 08/04/17.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct OwnerViewModel {
+struct UserViewModel {
     let profilePictureURL: URL?
     let userName: String
     let displayName: String
     
-    init(owner: Owner) {
+    init(owner: User) {
         profilePictureURL = owner.avatarURL
         userName = owner.login
         displayName = "" // TODO: fetch owner name in the API

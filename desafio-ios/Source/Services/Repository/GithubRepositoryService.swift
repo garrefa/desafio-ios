@@ -66,7 +66,7 @@ class GithubRepositoryService: RepositoryService {
     }
     
     func pullRequests(for repository: Repository,
-                      filterBy state: PullRequestsStateFilter,
+                      filterByState state: PullRequest.State?,
                       sortBy sortMethod: SortMethod<PullRequestsSortKey>?,
                       page: UInt,
                       onCompletion completionBlock: @escaping ([PullRequest], Bool) -> Void,
@@ -83,7 +83,7 @@ class GithubRepositoryService: RepositoryService {
         // setup parameters
         var params: Parameters = [:]
         params["page"] = adjustPageIndex(page)
-        params["state"] = state.rawValue
+        params["state"] = state?.rawValue ?? "all"
         if let sortMethod = sortMethod {
             params["sort"] = sortMethod.key.rawValue
             params["direction"] = sortMethod.direction.rawValue
