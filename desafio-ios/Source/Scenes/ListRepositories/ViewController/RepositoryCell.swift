@@ -17,7 +17,7 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
-    @IBOutlet weak var ownerProfilePictureImageView: UIImageView!
+    @IBOutlet weak var ownerProfilePictureImageView: AsyncImageView!
     @IBOutlet weak var ownerUserNameLabel: UILabel!
     @IBOutlet weak var ownerDisplayNameLabel: UILabel!
     
@@ -28,7 +28,16 @@ class RepositoryCell: UITableViewCell {
         starsLabel.text = repository.stars
         ownerUserNameLabel.text = repository.owner.userName
         ownerDisplayNameLabel.text = repository.owner.displayName
+        if let url = repository.owner.profilePictureURL {
+            ownerProfilePictureImageView.loadImageFromUrl(url)
+        } else {
+            ownerProfilePictureImageView.image = R.image.userProfilePicturePlaceholder()
+        }
         
-        // TODO: load image from url asynchronously
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        ownerProfilePictureImageView.image = nil
     }
 }
