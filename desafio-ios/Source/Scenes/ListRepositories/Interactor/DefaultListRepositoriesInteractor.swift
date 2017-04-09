@@ -19,9 +19,6 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     
     private let repositoryService: RepositoryService
     
-    /// We use a semaphore to guarantee that we only have 1 request at a time and we don't messing up with the page index
-    private let semaphore = DispatchSemaphore(value: 1)
-    
     private var nextPage: UInt = 0
     
     init(repositoryService: RepositoryService) {
@@ -36,7 +33,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     }
     
     private func requestNextPageOfRepositories(shouldAppendResults: Bool) {
-        findRepositories(
+        repositoryService.findRepositories(
             language: .java,
             sortBy: SortMethod<RepositoriesSortKey>(key: .stars, direction: .descending),
             page: nextPage,
@@ -51,31 +48,6 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             },
             onError: { error in
                 self.presenter.presentRequestError()
-            }
-        )
-    }
-    
-    // a private `findRepositories` which just forwards the request to `repositoryService` making sure that we don't
-    // have concurrent requests
-    private func findRepositories(language: ProgrammingLanguage,
-                                  sortBy sortMethod: SortMethod<RepositoriesSortKey>?,
-                                  page: UInt,
-                                  onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
-                                  onError errorBlock: @escaping (Error) -> Void) {
-        
-        semaphore.wait()
-        
-        repositoryService.findRepositories(
-            language: language,
-            sortBy: sortMethod,
-            page: page,
-            onCompletion: { repositories, hasMorePages in
-                completionBlock(repositories, hasMorePages)
-                self.semaphore.signal()
-            },
-            onError: { error in
-                errorBlock(error)
-                self.semaphore.signal()
             }
         )
     }

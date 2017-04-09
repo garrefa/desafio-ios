@@ -17,6 +17,7 @@ class DefaultListPullRequestsInteractor: ListPullRequestsInteractor {
     var presenter: ListPullRequestsPresenter!
     
     var repository: Repository!
+    private(set) var pullRequests: [PullRequest] = []
     
     // MARK: - Business logic
     

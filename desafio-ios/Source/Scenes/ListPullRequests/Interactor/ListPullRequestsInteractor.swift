@@ -16,6 +16,8 @@ protocol ListPullRequestsInteractor {
 
     var repository: Repository! { get set } // the repository for which we'll retrieve the pull requests
     
+    var pullRequests: [PullRequest] { get }
+    
     /// loads the first page of pull requests
     func reloadPullRequests()
     
