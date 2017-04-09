@@ -10,34 +10,105 @@
 //
 
 import UIKit
+import MBProgressHUD
+
+fileprivate typealias LocalizedString = R.string.listPullRequestsViewController
 
 class ListPullRequestsViewController: UITableViewController, ListPullRequestsViewControllerInput {
 
     var interactor: ListPullRequestsInteractor!
     var router: ListPullRequestsRouter!
     
-    var repository: Repository! // the repository for which we'll retrieve the pull requests
+    // the repository for which we'll retrieve the pull requests
+    var repository: Repository! {
+        didSet {
+            interactor.repository = repository
+        }
+    }
+    
+    // the selected pull request, so the router knows what to do
+    var selectedPullRequest: PullRequest?
     
     fileprivate var viewModel = ListPullRequests.ViewModel.initialState
+    fileprivate weak var progressHUD: MBProgressHUD?
     
     // MARK: - View lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = repository.name
-        GithubRepositoryService().pullRequests(for: repository, filterByState: nil, sortBy: nil, page: 0, onCompletion: { _,_ in
-            
-        }) { _ in
-            
-        }
+        showProgressHUD()
+        interactor.reloadPullRequests()
     }
     
     // MARK: - Display logic
+    
+    func displayViewModel(_ viewModel: ListPullRequests.ViewModel) {
+        DispatchQueue.main.async {
+            self._displayViewModel(viewModel)
+        }
+    }
+    
+    // private clone of the func above to avoid always referencing self explicitly in each line of the async closure
+    private func _displayViewModel(_ viewModel: ListPullRequests.ViewModel) {
+        self.viewModel = viewModel
+        tableView.reloadData()
+        hideProgressHUD()
+        if viewModel.pullRequests.count == 0 {
+            presentDismissableAlert(title: LocalizedString.displayViewModel_emptyPullRequests_alertTitle(),
+                                    message: nil,
+                                    dismissActionTitle: LocalizedString.displayViewModel_emptyPullRequests_alertAction())
+        }
+    }
+    
+    func updateViewModel(with pullRequests: [ListPullRequests.ViewModel.PullRequest], shouldShowLoadMore: Bool) {
+        DispatchQueue.main.async {
+            self._updateViewModel(with: pullRequests, shouldShowLoadMore: shouldShowLoadMore)
+        }
+    }
+    
+    // private clone of the func above to avoid always referencing self explicitly in each line of the async closure
+    private func _updateViewModel(with pullRequests: [ListPullRequests.ViewModel.PullRequest], shouldShowLoadMore: Bool) {
+        if pullRequests.count > 0 {
+            
+            // calculate the indexPaths for the tableView animation
+            let range = viewModel.pullRequests.count..<(viewModel.pullRequests.count + pullRequests.count)
+            let indexPaths = range.map { IndexPath(row: $0, section: Section.pullRequests) }
+            
+            // udpate data source
+            viewModel.pullRequests.append(contentsOf: pullRequests)
+            
+            // animate row insertion
+            tableView.insertRows(at: indexPaths, with: .top)
+            
+            tableView.scrollToRow(at: indexPaths[0], at: .top, animated: true)
+        }
+        
+        // udpate data source
+        viewModel.shouldShowLoadMore = shouldShowLoadMore
+        if !shouldShowLoadMore {
+            // delete `loadMore` section animated
+            tableView.deleteSections([Section.loadMore], with: .automatic)
+        }
+        
+        hideProgressHUD()
+    }
+    
+    // MARK: - Helper functions
+    
+    fileprivate func showProgressHUD() {
+        progressHUD = MBProgressHUD.showAdded(to: navigationController?.view ?? view, animated: true)
+        progressHUD?.label.text = LocalizedString.progressHUD_description_loading()
+    }
+    
+    fileprivate func hideProgressHUD() {
+        progressHUD?.hide(animated: true)
+    }
 }
 
 /// Constants to define the semantics associated to each table view section index
 fileprivate struct Section {
-    static let repositories = 0
+    static let pullRequests = 0
     static let loadMore = 1
 }
 
@@ -50,7 +121,7 @@ extension ListPullRequestsViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case Section.repositories:
+        case Section.pullRequests:
             return viewModel.pullRequests.count
         case Section.loadMore:
             return 1
@@ -62,16 +133,16 @@ extension ListPullRequestsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case Section.repositories:
-            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repositoryCell.identifier,
-                                                     for: indexPath) as! RepositoryCell
-            _ = viewModel.pullRequests[indexPath.row]
-            //cell.load(from: repository)
+        case Section.pullRequests:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.pullRequestCell.identifier,
+                                                     for: indexPath) as! PullRequestCell
+            let pullRequest = viewModel.pullRequests[indexPath.row]
+            cell.load(from: pullRequest)
             return cell
         case Section.loadMore:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadMoreCell.identifier,
                                                      for: indexPath)
-            //cell.textLabel?.text = LocalizedString.loadMoreCell_text()
+            cell.textLabel?.text = LocalizedString.loadMoreCell_text()
             return cell
         default:
             debugPrint("Warning: unexpected section index")
@@ -85,8 +156,8 @@ extension ListPullRequestsViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case Section.repositories:
-            return RepositoryCell.estimatedRowHeight
+        case Section.pullRequests:
+            return PullRequestCell.estimatedRowHeight
         case Section.loadMore:
             return 50
         default:
@@ -99,16 +170,16 @@ extension ListPullRequestsViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        switch indexPath.section {
-//        case Section.repositories:
-//            selectedRepository = interactor.repositories[indexPath.row]
-//            router.showPullRequests()
-//        case Section.loadMore:
-//            showProgressHUD()
-//            interactor.loadMoreRepositories()
-//        default:
-//            debugPrint("Warning: unexpected section index")
-//        }
+        switch indexPath.section {
+        case Section.pullRequests:
+            selectedPullRequest = interactor.pullRequests[indexPath.row]
+            router.showPullRequestDetail()
+        case Section.loadMore:
+            showProgressHUD()
+            interactor.loadMorePullRequests()
+        default:
+            debugPrint("Warning: unexpected section index")
+        }
     }
 }
 

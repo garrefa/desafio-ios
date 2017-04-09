@@ -13,8 +13,44 @@ import Foundation
 
 /// Prepares data for presentation in ListPullRequestsViewController
 class DefaultListPullRequestsPresenter: ListPullRequestsPresenter {
-	
+
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
+    
 	weak var viewController: ListPullRequestsViewControllerInput!
   
 	// MARK: - Presentation logic
+    
+    func presentPullRequests(_ pullRequests: [PullRequest], shouldAppend: Bool, hasMore: Bool) {
+        let pullRequestViewModels = pullRequests.map { ListPullRequests.ViewModel.PullRequest(pullRequest: $0) }
+        if shouldAppend {
+            viewController.updateViewModel(with: pullRequestViewModels, shouldShowLoadMore: hasMore)
+        } else {
+            let viewModel = ListPullRequests.ViewModel(pullRequests: pullRequestViewModels, shouldShowLoadMore: hasMore)
+            viewController.displayViewModel(viewModel)
+        }
+    }
+    
+    func presentRequestError(_ error: Error) {
+        // TODO: implement / localize
+        viewController.presentDismissableAlert(
+            title: "Disconnected",
+            message: "",
+            dismissActionTitle: "OK"
+        )
+    }
+}
+
+extension ListPullRequests.ViewModel.PullRequest {
+    init(pullRequest: PullRequest) {
+        title = pullRequest.title
+        description = pullRequest.body ?? "No description" // TODO: localize
+        author = UserViewModel(user: pullRequest.author)
+        dateInfo = "Created: \(DefaultListPullRequestsPresenter.dateFormatter.string(from: pullRequest.createdAt))" // TODO: localize
+    }
 }

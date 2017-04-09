@@ -13,9 +13,9 @@ struct UserViewModel {
     let userName: String
     let displayName: String
     
-    init(owner: User) {
-        profilePictureURL = owner.avatarURL
-        userName = owner.login
+    init(user: User) {
+        profilePictureURL = user.avatarURL
+        userName = user.login
         displayName = "" // TODO: fetch owner name in the API
     }
 }

@@ -1,0 +1,15 @@
+/* 
+  ListPullRequestsViewController.strings
+  desafio-ios
+
+  Created by Cicero Camargo on 09/04/17.
+  Copyright © 2017 Stationfy. All rights reserved.
+*/
+
+"loadMoreCell_text" = "Load more Pull Requests";
+
+"displayViewModel_emptyPullRequests_alertTitle" = "No Pull Requests were found in this repository";
+
+"displayViewModel_emptyPullRequests_alertAction" = "OK";
+
+"progressHUD_description_loading" = "Loading";

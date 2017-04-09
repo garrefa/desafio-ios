@@ -15,13 +15,49 @@ import Foundation
 class DefaultListPullRequestsInteractor: ListPullRequestsInteractor {
 
     var presenter: ListPullRequestsPresenter!
-    
     var repository: Repository!
     private(set) var pullRequests: [PullRequest] = []
+    private let repositoryService: RepositoryService
+    private var nextPage: UInt = 0
+    
+    init(repositoryService: RepositoryService) {
+        self.repositoryService = repositoryService
+    }
     
     // MARK: - Business logic
     
-    func reloadPullRequests() {}
+    func reloadPullRequests() {
+        nextPage = 0
+        requestNextPageOfPullRequests(shouldAppendResults: false)
+    }
     
-    func loadMorePullRequests() {}
+    private func requestNextPageOfPullRequests(shouldAppendResults: Bool) {
+        repositoryService.pullRequests(
+            for: repository,
+            filterByState: nil,
+            sortBy: nil,
+            page: nextPage,
+            onCompletion: { pullRequests, hasMorePages in
+                self.nextPage += 1
+                if shouldAppendResults {
+                    self.pullRequests.append(contentsOf: pullRequests)
+                } else {
+                    self.pullRequests = pullRequests
+                }
+                self.presenter.presentPullRequests(pullRequests, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
+            }, onError: { error in
+                self.presenter.presentRequestError(error)
+            }
+        )
+    }
+    
+    func loadMorePullRequests() {
+        guard nextPage > 0 else {
+            debugPrint("Warning: trying to load more repos when `nextPage` is 0.")
+            reloadPullRequests()
+            return
+        }
+        
+        requestNextPageOfPullRequests(shouldAppendResults: true)
+    }
 }

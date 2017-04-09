@@ -53,6 +53,9 @@
 		2F98CBA61E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA51E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift */; };
 		2F98CBA81E9A9E81006C8D38 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */; };
 		2F98CBAA1E9A9F7F006C8D38 /* RepositoryServiceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA91E9A9F7F006C8D38 /* RepositoryServiceParameters.swift */; };
+		2F98CBAD1E9AB4BF006C8D38 /* ListPullRequestsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F98CBAF1E9AB4BF006C8D38 /* ListPullRequestsViewController.strings */; };
+		2F98CBB31E9AB51F006C8D38 /* DefaultListPullRequestsPresenter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F98CBB51E9AB51F006C8D38 /* DefaultListPullRequestsPresenter.strings */; };
+		2F98CBB81E9AB8DA006C8D38 /* PullRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBB71E9AB8DA006C8D38 /* PullRequestCell.swift */; };
 		30D718F04D75EAF04F855432 /* Pods_desafio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4AC332F76B257DDBA2B6B2 /* Pods_desafio_ios.framework */; };
 		55A2C70C7F29FA9D637B5D24 /* Pods_desafio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DF253A560977E432E7E739 /* Pods_desafio_iosUITests.framework */; };
 		ED025E14DF8CB6649C52879B /* Pods_desafio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2EE5F219F0406A1666CA3A /* Pods_desafio_iosTests.framework */; };
@@ -130,6 +133,11 @@
 		2F98CBA51E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesConfigurator.swift; sourceTree = "<group>"; };
 		2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		2F98CBA91E9A9F7F006C8D38 /* RepositoryServiceParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryServiceParameters.swift; sourceTree = "<group>"; };
+		2F98CBAE1E9AB4BF006C8D38 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ListPullRequestsViewController.strings"; sourceTree = "<group>"; };
+		2F98CBB01E9AB4C1006C8D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ListPullRequestsViewController.strings; sourceTree = "<group>"; };
+		2F98CBB41E9AB51F006C8D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/DefaultListPullRequestsPresenter.strings; sourceTree = "<group>"; };
+		2F98CBB61E9AB520006C8D38 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/DefaultListPullRequestsPresenter.strings"; sourceTree = "<group>"; };
+		2F98CBB71E9AB8DA006C8D38 /* PullRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestCell.swift; sourceTree = "<group>"; };
 		4D2EE5F219F0406A1666CA3A /* Pods_desafio_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A2CB5BB5B339BB3CDB835A /* Pods-desafio-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosUITests/Pods-desafio-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BDEF49C35B79A9C2E95BBB /* Pods-desafio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosTests/Pods-desafio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -359,7 +367,9 @@
 			children = (
 				2F98CB531E99BC65006C8D38 /* R.generated.swift */,
 				2F98CB591E99BCC3006C8D38 /* DefaultListRepositoriesPresenter.strings */,
+				2F98CBB51E9AB51F006C8D38 /* DefaultListPullRequestsPresenter.strings */,
 				2F98CB631E99C6A6006C8D38 /* ListRepositoriesViewController.strings */,
+				2F98CBAF1E9AB4BF006C8D38 /* ListPullRequestsViewController.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 			children = (
 				2F98CB981E9A8CDA006C8D38 /* ListPullRequestsViewController.swift */,
 				2F98CB991E9A8CDA006C8D38 /* ListPullRequestsViewControllerInput.swift */,
+				2F98CBB71E9AB8DA006C8D38 /* PullRequestCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -597,9 +608,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F98CBAD1E9AB4BF006C8D38 /* ListPullRequestsViewController.strings in Resources */,
 				2F1D6D771E98F618005D663E /* LaunchScreen.storyboard in Resources */,
 				2F98CB571E99BCC3006C8D38 /* DefaultListRepositoriesPresenter.strings in Resources */,
 				2F1D6D741E98F618005D663E /* Assets.xcassets in Resources */,
+				2F98CBB31E9AB51F006C8D38 /* DefaultListPullRequestsPresenter.strings in Resources */,
 				2F98CB611E99C6A6006C8D38 /* ListRepositoriesViewController.strings in Resources */,
 				2F1D6D721E98F618005D663E /* Main.storyboard in Resources */,
 			);
@@ -785,6 +798,7 @@
 				2F98CB391E991CF1006C8D38 /* Repository.swift in Sources */,
 				2F98CBA11E9A8CDA006C8D38 /* ListPullRequestsRouter.swift in Sources */,
 				2F98CB9C1E9A8CDA006C8D38 /* ListPullRequestsInteractor.swift in Sources */,
+				2F98CBB81E9AB8DA006C8D38 /* PullRequestCell.swift in Sources */,
 				2F98CBA01E9A8CDA006C8D38 /* DefaultListPullRequestsRouter.swift in Sources */,
 				2F98CB9F1E9A8CDA006C8D38 /* ListPullRequestsPresenter.swift in Sources */,
 				2F98CBA61E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift in Sources */,
@@ -884,6 +898,24 @@
 				2F98CB641E99C6AA006C8D38 /* Base */,
 			);
 			name = ListRepositoriesViewController.strings;
+			sourceTree = "<group>";
+		};
+		2F98CBAF1E9AB4BF006C8D38 /* ListPullRequestsViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F98CBAE1E9AB4BF006C8D38 /* pt-BR */,
+				2F98CBB01E9AB4C1006C8D38 /* Base */,
+			);
+			name = ListPullRequestsViewController.strings;
+			sourceTree = "<group>";
+		};
+		2F98CBB51E9AB51F006C8D38 /* DefaultListPullRequestsPresenter.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F98CBB41E9AB51F006C8D38 /* Base */,
+				2F98CBB61E9AB520006C8D38 /* pt-BR */,
+			);
+			name = DefaultListPullRequestsPresenter.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

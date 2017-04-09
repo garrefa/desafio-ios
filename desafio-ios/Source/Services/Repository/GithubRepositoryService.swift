@@ -12,6 +12,8 @@ import Alamofire
 /// A class that implements RepositoryService, fetching data from the Github API
 class GithubRepositoryService: RepositoryService {
 
+    static let shared = GithubRepositoryService()
+    
     let baseURL = URL(string: "https://api.github.com")!
     
     func findRepositories(language: ProgrammingLanguage,

@@ -26,7 +26,7 @@ struct PullRequest {
     let body: String?
     let createdAt: Date
     let htmlURL: URL
-    let user: User
+    let author: User
     
     init?(dictionary: [String: Any]) {
         guard
@@ -35,7 +35,7 @@ struct PullRequest {
             let title = dictionary["title"] as? String,
             let createdAt = PullRequest.dateFormatter.date(from: dictionary["created_at"] as? String ?? ""),
             let htmlURL = URL(string: dictionary["html_url"] as? String ?? ""),
-            let user = User(dictionary: dictionary["user"] as? [String: Any] ?? [:])
+            let author = User(dictionary: dictionary["user"] as? [String: Any] ?? [:])
         else {
             debugPrint("Can't parse PullRequest from dictionary: \(dictionary)")
             return nil
@@ -45,7 +45,7 @@ struct PullRequest {
         self.title = title
         self.createdAt = createdAt
         self.htmlURL = htmlURL
-        self.user = user
+        self.author = author
         body = dictionary["body"] as? String
     }
 }

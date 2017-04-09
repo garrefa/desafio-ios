@@ -30,12 +30,21 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
         }
     }
     
-    func presentRequestError() {
-        viewController.presentDismissableAlert(
-            title: LocalizedString.presentRequestError_alert_unknownErrorTitle(),
-            message: LocalizedString.presentRequestError_alert_unknownErrorMessage(),
-            dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
-        )
+    func presentRequestError(_ error: Error) {
+        if let error = error as? RepositoryServiceError, error == .notConnected {
+            viewController.presentDismissableAlert(
+                // TODO: localize
+                title: "Disconnected",
+                message: "",
+                dismissActionTitle: "OK"
+            )
+        } else {
+            viewController.presentDismissableAlert(
+                title: LocalizedString.presentRequestError_alert_unknownErrorTitle(),
+                message: LocalizedString.presentRequestError_alert_unknownErrorMessage(),
+                dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
+            )
+        }
     }
 }
 
@@ -46,6 +55,6 @@ extension ListRepositories.ViewModel.Repository {
         description = repository.description ?? ""
         forks = "\(repository.forksCount)"
         stars = "\(repository.stargazersCount)"
-        owner = UserViewModel(owner: repository.owner)
+        owner = UserViewModel(user: repository.owner)
     }
 }

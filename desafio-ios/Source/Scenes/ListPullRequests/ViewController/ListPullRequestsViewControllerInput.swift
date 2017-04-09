@@ -12,6 +12,11 @@
 import Foundation
 
 /// Interface provided by ListPullRequestsViewController to refresh its views on state updates
-protocol ListPullRequestsViewControllerInput: class {
+protocol ListPullRequestsViewControllerInput: class, AlertPresenter {
     
+    // TODO: add documentation to the methods below
+    
+    func displayViewModel(_ viewModel: ListPullRequests.ViewModel)
+    
+    func updateViewModel(with pullRequests: [ListPullRequests.ViewModel.PullRequest], shouldShowLoadMore: Bool)
 }

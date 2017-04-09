@@ -31,7 +31,7 @@ class ListPullRequestsConfigurator: NSObject {
         let presenter = DefaultListPullRequestsPresenter()
         presenter.viewController = viewController
         
-        let interactor = DefaultListPullRequestsInteractor()
+        let interactor = DefaultListPullRequestsInteractor(repositoryService: GithubRepositoryService.shared)
         interactor.presenter = presenter
         
         viewController.interactor = interactor

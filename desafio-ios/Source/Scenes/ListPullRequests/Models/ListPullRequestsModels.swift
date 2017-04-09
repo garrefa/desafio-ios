@@ -17,7 +17,10 @@ struct ListPullRequests {
     struct ViewModel {
         
         struct PullRequest {
-            
+            let title: String
+            let dateInfo: String
+            let description: String
+            let author: UserViewModel
         }
         
         var pullRequests: [PullRequest]

@@ -14,4 +14,10 @@ import Foundation
 /// Interface provided by a ListPullRequestsPresenter to receive inputs from a Interactor
 protocol ListPullRequestsPresenter {
 
+    /// function called to present an array of pull requests; `shouldAppend` adds the pull requests to the previously
+    /// presented ones
+    func presentPullRequests(_ pullRequests: [PullRequest], shouldAppend: Bool, hasMore: Bool)
+    
+    /// function called to present a request error
+    func presentRequestError(_ error: Error)
 }

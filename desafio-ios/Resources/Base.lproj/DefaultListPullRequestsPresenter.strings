@@ -1,8 +1,8 @@
 /* 
-  DefaultListRepositoriesPresenter.strings
+  DefaultListPullRequestsPresenter.strings
   desafio-ios
 
-  Created by Cicero Camargo on 08/04/17.
+  Created by Cicero Camargo on 09/04/17.
   Copyright © 2017 Stationfy. All rights reserved.
 */
 
@@ -12,6 +12,6 @@
 
 "presentRequestError_alert_unknownErrorTitle" = "Error";
 
-"presentRequestError_alert_unknownErrorMessage" = "An unexpected error happened when loading the repositories";
+"presentRequestError_alert_unknownErrorMessage" = "An unexpected error happened when loading the pull requests";
 
 "presentRequestError_alert_dismissActionTitle" = "OK";

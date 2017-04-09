@@ -34,11 +34,6 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
         interactor.reloadRepositories()
     }
     
-    fileprivate func showProgressHUD() {
-        progressHUD = MBProgressHUD.showAdded(to: navigationController?.view ?? view, animated: true)
-        progressHUD?.label.text = LocalizedString.progressHUD_description_loading()
-    }
-    
     // MARK: - Display logic
     
     func displayViewModel(_ viewModel: ListRepositories.ViewModel) {
@@ -57,10 +52,6 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
                                     message: nil,
                                     dismissActionTitle: LocalizedString.displayViewModel_emptyRepositories_alertAction())
         }
-    }
-    
-    private func hideProgressHUD() {
-        progressHUD?.hide(animated: true)
     }
     
     func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
@@ -95,6 +86,18 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
         
         hideProgressHUD()
     }
+    
+    // MARK: - Helper functions
+    
+    fileprivate func showProgressHUD() {
+        progressHUD = MBProgressHUD.showAdded(to: navigationController?.view ?? view, animated: true)
+        progressHUD?.label.text = LocalizedString.progressHUD_description_loading()
+    }
+    
+    fileprivate func hideProgressHUD() {
+        progressHUD?.hide(animated: true)
+    }
+
 }
 
 /// Constants to define the semantics associated to each table view section index

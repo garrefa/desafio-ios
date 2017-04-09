@@ -17,6 +17,10 @@ class DefaultListPullRequestsRouter: ListPullRequestsRouter {
     
     // MARK: - Communication
     
+    func showPullRequestDetail() {
+    
+    }
+    
     func passDataToNextScene(segue: UIStoryboardSegue) {
         
     }

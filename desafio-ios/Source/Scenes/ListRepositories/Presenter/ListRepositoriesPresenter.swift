@@ -19,5 +19,5 @@ protocol ListRepositoriesPresenter {
     func presentRepositories(_ repositories: [Repository], shouldAppend: Bool, hasMore: Bool)
     
     /// function called to present a request error
-    func presentRequestError()
+    func presentRequestError(_ error: Error)
 }

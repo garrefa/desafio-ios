@@ -47,7 +47,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
                 self.presenter.presentRepositories(repositories, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
             },
             onError: { error in
-                self.presenter.presentRequestError()
+                self.presenter.presentRequestError(error)
             }
         )
     }
