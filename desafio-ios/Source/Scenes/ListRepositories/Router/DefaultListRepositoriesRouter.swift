@@ -13,11 +13,22 @@ import UIKit
 
 /// This component handles the transitions and the data flow from ListRepositories scene to other scenes
 class DefaultListRepositoriesRouter: ListRepositoriesRouter {
+    
     weak var viewController: ListRepositoriesViewController!
     
-    // MARK: - Communication
+    func showPullRequests() {
+        guard viewController.selectedRepository != nil else {
+            debugPrint("Error: trying to show the pull requests for a nil repository! Aborting.")
+            return
+        }
+        let segueID = R.segue.listRepositoriesViewController.showPullRequests.identifier
+        viewController.performSegue(withIdentifier: segueID, sender: nil)
+    }
     
     func passDataToNextScene(segue: UIStoryboardSegue) {
-        
+        if segue.identifier == R.segue.listRepositoriesViewController.showPullRequests.identifier {
+            let pullRequestsViewController = segue.destination as! ListPullRequestsViewController
+            pullRequestsViewController.repository = viewController.selectedRepository
+        }
     }
 }

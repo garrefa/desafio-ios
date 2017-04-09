@@ -20,6 +20,7 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
     var interactor: ListRepositoriesInteractor!
     var router: ListRepositoriesRouter!
     
+    var selectedRepository: Repository?
     fileprivate var viewModel =  ListRepositories.ViewModel.initialState
     fileprivate weak var progressHUD: MBProgressHUD?
     
@@ -162,8 +163,8 @@ extension ListRepositoriesViewController {
         
         switch indexPath.section {
         case Section.repositories:
-            break
-            // TODO:
+            selectedRepository = interactor.repositories[indexPath.row]
+            router.showPullRequests()
         case Section.loadMore:
             showProgressHUD()
             interactor.loadMoreRepositories()

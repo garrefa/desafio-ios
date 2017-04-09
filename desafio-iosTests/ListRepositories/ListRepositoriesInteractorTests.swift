@@ -135,4 +135,18 @@ class ListRepositoriesInteractorTests: XCTestCase {
         XCTAssert(presenterMock.presentRequestErrorWasCalled, "presenter should have been requested to present an error")
     }
     
+    func testRepositoriesPropertyUpdate() {
+        // Config repositoryServiceMock to answer what we need
+        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        repositoryServiceMock.findRepositoriesExpectedResult = expected
+        
+        interactor.reloadRepositories()
+        
+        XCTAssert(interactor.repositories == expected.repositories,
+                  "interactor.repositories were not updated correctly after `reloadRepositories`")
+        
+        interactor.loadMoreRepositories()
+        XCTAssert(interactor.repositories == (expected.repositories + expected.repositories),
+                  "interactor.repositories were not updated correctly after `loadMoreRepositories`")
+    }
 }

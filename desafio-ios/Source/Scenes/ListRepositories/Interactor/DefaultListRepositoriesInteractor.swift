@@ -15,6 +15,7 @@ import Foundation
 class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
 
     var presenter: ListRepositoriesPresenter!
+    private(set) var repositories: [Repository] = []
     
     private let repositoryService: RepositoryService
     
@@ -41,6 +42,11 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
                 self.nextPage += 1
+                if shouldAppendResults {
+                    self.repositories.append(contentsOf: repositories)
+                } else {
+                    self.repositories = repositories
+                }
                 self.presenter.presentRepositories(repositories, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
             },
             onError: { error in

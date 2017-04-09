@@ -188,7 +188,12 @@ Outra linha</string>
                             <outlet property="delegate" destination="ZTQ-5h-xzC" id="hUg-XO-Ug5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Github JavaPop" id="Bh3-vC-7VV"/>
+                    <navigationItem key="navigationItem" title="Github JavaPop" id="Bh3-vC-7VV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Yse-eD-jXZ"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="xas-oS-sOS" kind="show" identifier="showPullRequests" id="5Bu-w3-7NQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBA-WX-9cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="ZC2-Al-AO3" customClass="ListRepositoriesConfigurator" customModule="desafio_ios" customModuleProvider="target">
@@ -197,16 +202,51 @@ Outra linha</string>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="604" y="134.48275862068968"/>
+            <point key="canvasLocation" x="651" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b62-ND-U3p">
+            <objects>
+                <tableViewController id="xas-oS-sOS" customClass="ListPullRequestsViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXI-qI-z8C">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euo-VQ-X5L">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euo-VQ-X5L" id="UxQ-zN-KVQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xas-oS-sOS" id="x5m-SE-UNQ"/>
+                            <outlet property="delegate" destination="xas-oS-sOS" id="rx1-JK-DPr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PUC-Lb-OUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="irh-xF-pl5" customClass="ListPullRequestsConfigurator" customModule="desafio_ios" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="xas-oS-sOS" id="2Dy-Dg-7RU"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1410" y="134"/>
         </scene>
         <!--Custom Navigation View Controller-->
         <scene sceneID="0N5-fh-r6G">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZN-cM-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPf-sV-SAg" customClass="CustomNavigationViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ocR-pe-2iM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ocR-pe-2iM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.20384445786476135" green="0.20363253355026245" blue="0.22019615769386292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
@@ -218,7 +258,6 @@ Outra linha</string>
                         <segue destination="ZTQ-5h-xzC" kind="relationship" relationship="rootViewController" id="21e-rP-HDL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IZN-cM-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335.19999999999999" y="134.48275862068968"/>
         </scene>
