@@ -19,10 +19,25 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
 	// MARK: - Presentation logic
     
     func presentRepositories(_ repositories: [Repository], shouldAppend: Bool, hasMore: Bool) {
-        
+        let repositoryViewModels = repositories.map { ListRepositories.ViewModel.Repository(repository: $0) }
+        if shouldAppend {
+            viewController.updateViewModel(with: repositoryViewModels, shouldShowLoadMore: hasMore)
+        } else {
+            let viewModel = ListRepositories.ViewModel(repositories: repositoryViewModels, shouldShowLoadMore: hasMore)
+            viewController.displayViewModel(viewModel)
+        }
     }
     
     func presentRequestError() {
+        viewController.presentDismissableAlert(title: "Error",
+                                               message: "An unexpected error happened",
+                                               dismissActionTitle: "OK")
+    }
+}
+
+extension ListRepositories.ViewModel.Repository {
     
+    init(repository: Repository) {
+        // TODO: implement this
     }
 }

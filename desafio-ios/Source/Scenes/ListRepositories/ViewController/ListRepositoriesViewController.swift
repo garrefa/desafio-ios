@@ -24,4 +24,12 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     }
     
     // MARK: - Display logic
+    
+    func displayViewModel(_ viewModel: ListRepositories.ViewModel) {
+    
+    }
+    
+    func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
+    
+    }
 }

@@ -15,8 +15,16 @@ struct ListRepositories {
 
 	/// Describes the view state of ListRepositoriesViewController
 	struct ViewModel {
+        
+        struct Repository {
+            
+        }
+        
+        var repositories: [Repository]
+        var shouldShowLoadMore: Bool
+        
 		static var initialState: ViewModel {
-            return ViewModel()
+            return ViewModel(repositories: [], shouldShowLoadMore: false)
         }
 	}
 }

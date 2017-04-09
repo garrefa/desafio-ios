@@ -12,6 +12,11 @@
 import Foundation
 
 /// Interface provided by ListRepositoriesViewController to refresh its views on state updates
-protocol ListRepositoriesViewControllerInput: class {
+protocol ListRepositoriesViewControllerInput: class, AlertPresenter {
     
+    // TODO: add documentation to the methods below
+    
+    func displayViewModel(_ viewModel: ListRepositories.ViewModel)
+    
+    func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool)
 }
