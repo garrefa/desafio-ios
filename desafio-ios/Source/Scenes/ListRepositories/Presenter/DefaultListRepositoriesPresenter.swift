@@ -11,6 +11,8 @@
 
 import Foundation
 
+fileprivate typealias StringProvider = R.string.defaultListRepositoriesPresenter
+
 /// Prepares data for presentation in ListRepositoriesViewController
 class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
     
@@ -29,9 +31,11 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
     }
     
     func presentRequestError() {
-        viewController.presentDismissableAlert(title: "Error",
-                                               message: "An unexpected error happened",
-                                               dismissActionTitle: "OK")
+        viewController.presentDismissableAlert(
+            title: StringProvider.presentRequestError_alert_unknownErrorTitle(),
+            message: StringProvider.presentRequestError_alert_unknownErrorMessage(),
+            dismissActionTitle: StringProvider.presentRequestError_alert_dismissActionTitle()
+        )
     }
 }
 

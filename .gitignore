@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+desafio-ios/Resources/R.generated.swift
 
 ## Various settings
 *.pbxuser
