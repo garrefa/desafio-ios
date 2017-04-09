@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.3.0)
+  - MBProgressHUD (1.0.0)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - MBProgressHUD (= 1.0.0)
+  - R.swift (= 3.2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+
+PODFILE CHECKSUM: 84012fd5b413b28833448b0604eb176a871f1799
+
+COCOAPODS: 1.1.1

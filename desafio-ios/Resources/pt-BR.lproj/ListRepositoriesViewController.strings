@@ -1,0 +1,15 @@
+/* 
+  ListRepositoriesViewController.strings
+  desafio-ios
+
+  Created by Cicero Camargo on 08/04/17.
+  Copyright © 2017 Stationfy. All rights reserved.
+*/
+
+"loadMoreCell_text" = "Carregar mais repositórios";
+
+"displayViewModel_emptyRepositories_alertTitle" = "Não foram encontrados repositórios";
+
+"displayViewModel_emptyRepositories_alertAction" = "OK";
+
+"progressHUD_description_loading" = "Carregando";
