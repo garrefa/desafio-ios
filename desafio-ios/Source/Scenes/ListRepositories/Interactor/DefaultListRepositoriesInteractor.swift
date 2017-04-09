@@ -58,7 +58,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     // a private `findRepositories` which just forwards the request to `repositoryService` making sure that we don't
     // have concurrent requests
     private func findRepositories(language: ProgrammingLanguage,
-                                  sortBy sortMethod: SortMethod?,
+                                  sortBy sortMethod: SortMethod<RepositoriesSortKey>?,
                                   page: UInt,
                                   onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
                                   onError errorBlock: @escaping (Error) -> Void) {

@@ -23,7 +23,6 @@
 		2F98CB301E9909A3006C8D38 /* ListRepositoriesViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB241E9909A3006C8D38 /* ListRepositoriesViewControllerInput.swift */; };
 		2F98CB321E991221006C8D38 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB311E991221006C8D38 /* RepositoryService.swift */; };
 		2F98CB351E991CD0006C8D38 /* ProgrammingLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB341E991CD0006C8D38 /* ProgrammingLanguages.swift */; };
-		2F98CB371E991CE5006C8D38 /* SortMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB361E991CE5006C8D38 /* SortMethod.swift */; };
 		2F98CB391E991CF1006C8D38 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB381E991CF1006C8D38 /* Repository.swift */; };
 		2F98CB3B1E991DFF006C8D38 /* GithubRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB3A1E991DFF006C8D38 /* GithubRepositoryService.swift */; };
 		2F98CB401E99216C006C8D38 /* ListRepositoriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB3D1E99216C006C8D38 /* ListRepositoriesInteractorTests.swift */; };
@@ -52,6 +51,8 @@
 		2F98CBA21E9A8CDA006C8D38 /* ListPullRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB981E9A8CDA006C8D38 /* ListPullRequestsViewController.swift */; };
 		2F98CBA31E9A8CDA006C8D38 /* ListPullRequestsViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB991E9A8CDA006C8D38 /* ListPullRequestsViewControllerInput.swift */; };
 		2F98CBA61E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA51E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift */; };
+		2F98CBA81E9A9E81006C8D38 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */; };
+		2F98CBAA1E9A9F7F006C8D38 /* RepositoryServiceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CBA91E9A9F7F006C8D38 /* RepositoryServiceParameters.swift */; };
 		30D718F04D75EAF04F855432 /* Pods_desafio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4AC332F76B257DDBA2B6B2 /* Pods_desafio_ios.framework */; };
 		55A2C70C7F29FA9D637B5D24 /* Pods_desafio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DF253A560977E432E7E739 /* Pods_desafio_iosUITests.framework */; };
 		ED025E14DF8CB6649C52879B /* Pods_desafio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2EE5F219F0406A1666CA3A /* Pods_desafio_iosTests.framework */; };
@@ -97,7 +98,6 @@
 		2F98CB241E9909A3006C8D38 /* ListRepositoriesViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesViewControllerInput.swift; sourceTree = "<group>"; };
 		2F98CB311E991221006C8D38 /* RepositoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		2F98CB341E991CD0006C8D38 /* ProgrammingLanguages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguages.swift; sourceTree = "<group>"; };
-		2F98CB361E991CE5006C8D38 /* SortMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortMethod.swift; sourceTree = "<group>"; };
 		2F98CB381E991CF1006C8D38 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2F98CB3A1E991DFF006C8D38 /* GithubRepositoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepositoryService.swift; sourceTree = "<group>"; };
 		2F98CB3D1E99216C006C8D38 /* ListRepositoriesInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesInteractorTests.swift; sourceTree = "<group>"; };
@@ -128,6 +128,8 @@
 		2F98CB981E9A8CDA006C8D38 /* ListPullRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPullRequestsViewController.swift; sourceTree = "<group>"; };
 		2F98CB991E9A8CDA006C8D38 /* ListPullRequestsViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPullRequestsViewControllerInput.swift; sourceTree = "<group>"; };
 		2F98CBA51E9A8CF3006C8D38 /* ListRepositoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRepositoriesConfigurator.swift; sourceTree = "<group>"; };
+		2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
+		2F98CBA91E9A9F7F006C8D38 /* RepositoryServiceParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryServiceParameters.swift; sourceTree = "<group>"; };
 		4D2EE5F219F0406A1666CA3A /* Pods_desafio_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A2CB5BB5B339BB3CDB835A /* Pods-desafio-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosUITests/Pods-desafio-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BDEF49C35B79A9C2E95BBB /* Pods-desafio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosTests/Pods-desafio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		2F98CB261E9909A3006C8D38 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				2F98CBA91E9A9F7F006C8D38 /* RepositoryServiceParameters.swift */,
 				2F98CB311E991221006C8D38 /* RepositoryService.swift */,
 				2F98CB3A1E991DFF006C8D38 /* GithubRepositoryService.swift */,
 			);
@@ -324,9 +327,9 @@
 			isa = PBXGroup;
 			children = (
 				2F98CB341E991CD0006C8D38 /* ProgrammingLanguages.swift */,
-				2F98CB361E991CE5006C8D38 /* SortMethod.swift */,
 				2F98CB381E991CF1006C8D38 /* Repository.swift */,
 				2F98CB6E1E9A065F006C8D38 /* Owner.swift */,
+				2F98CBA71E9A9E81006C8D38 /* PullRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				2F98CB321E991221006C8D38 /* RepositoryService.swift in Sources */,
 				2F98CB2C1E9909A3006C8D38 /* ListRepositoriesPresenter.swift in Sources */,
 				2F98CB671E99C924006C8D38 /* OwnerViewModel.swift in Sources */,
+				2F98CBA81E9A9E81006C8D38 /* PullRequest.swift in Sources */,
 				2F98CB2E1E9909A3006C8D38 /* ListRepositoriesRouter.swift in Sources */,
 				2F98CB271E9909A3006C8D38 /* DefaultListRepositoriesInteractor.swift in Sources */,
 				2F98CB351E991CD0006C8D38 /* ProgrammingLanguages.swift in Sources */,
@@ -804,8 +808,8 @@
 				2F98CB6D1E99EA34006C8D38 /* CustomNavigationViewController.swift in Sources */,
 				2F98CB281E9909A3006C8D38 /* ListRepositoriesInteractor.swift in Sources */,
 				2F98CB9E1E9A8CDA006C8D38 /* DefaultListPullRequestsPresenter.swift in Sources */,
-				2F98CB371E991CE5006C8D38 /* SortMethod.swift in Sources */,
 				2F98CB6F1E9A065F006C8D38 /* Owner.swift in Sources */,
+				2F98CBAA1E9A9F7F006C8D38 /* RepositoryServiceParameters.swift in Sources */,
 				2F98CB501E99BB21006C8D38 /* ViewControllerExtensions.swift in Sources */,
 				2F98CB2A1E9909A3006C8D38 /* ListRepositoriesModels.swift in Sources */,
 			);

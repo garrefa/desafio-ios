@@ -25,6 +25,11 @@ class ListPullRequestsViewController: UITableViewController, ListPullRequestsVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = repository.name
+        GithubRepositoryService().pullRequests(for: repository, filterBy: .all, sortBy: nil, page: 0, onCompletion: { _,_ in
+            
+        }) { _ in
+            
+        }
     }
     
     // MARK: - Display logic
