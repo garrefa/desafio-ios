@@ -11,10 +11,14 @@
 
 import UIKit
 
-class ListRepositoriesViewController: UIViewController, ListRepositoriesViewControllerInput {
+fileprivate typealias LocalizedString = R.string.listRepositoriesViewController
+
+class ListRepositoriesViewController: UITableViewController, ListRepositoriesViewControllerInput {
 
     var interactor: ListRepositoriesInteractor!
     var router: ListRepositoriesRouter!
+    
+    fileprivate var viewModel =  ListRepositories.ViewModel.initialState
     
     // MARK: - View lifecycle
     
@@ -31,5 +35,66 @@ class ListRepositoriesViewController: UIViewController, ListRepositoriesViewCont
     
     func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
     
+    }
+}
+
+/// Constants to define the semantics associated to each table view section index
+fileprivate struct Section {
+    static let repositories = 0
+    static let loadMore = 1
+}
+
+// MARK: - Table view data source
+extension ListRepositoriesViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.shouldShowLoadMore ? 2 : 1 // "load more button" is a cell on the second section
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case Section.repositories:
+            return viewModel.repositories.count
+        case Section.loadMore:
+            return 1
+        default:
+            debugPrint("Warning: unexpected section index")
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case Section.repositories:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repositoryCell.identifier,
+                                                     for: indexPath) as! RepositoryCell
+            let repository = viewModel.repositories[indexPath.row]
+            cell.load(from: repository)
+            return cell
+        case Section.loadMore:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadMoreCell.identifier,
+                                                     for: indexPath)
+            cell.textLabel?.text = LocalizedString.loadMoreCell_text()
+            return cell
+        default:
+            debugPrint("Warning: unexpected section index")
+            return UITableViewCell()
+        }
+    }
+}
+
+// MARK: - Table view delegate
+extension ListRepositoriesViewController {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case Section.repositories:
+            return RepositoryCell.estimatedRowHeight
+        case Section.loadMore:
+            return 50
+        default:
+            debugPrint("Warning: unexpected section index")
+            return 0
+        }
     }
 }

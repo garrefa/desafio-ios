@@ -11,7 +11,7 @@
 
 import Foundation
 
-fileprivate typealias StringProvider = R.string.defaultListRepositoriesPresenter
+fileprivate typealias LocalizedString = R.string.defaultListRepositoriesPresenter
 
 /// Prepares data for presentation in ListRepositoriesViewController
 class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
@@ -32,9 +32,9 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
     
     func presentRequestError() {
         viewController.presentDismissableAlert(
-            title: StringProvider.presentRequestError_alert_unknownErrorTitle(),
-            message: StringProvider.presentRequestError_alert_unknownErrorMessage(),
-            dismissActionTitle: StringProvider.presentRequestError_alert_dismissActionTitle()
+            title: LocalizedString.presentRequestError_alert_unknownErrorTitle(),
+            message: LocalizedString.presentRequestError_alert_unknownErrorMessage(),
+            dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
         )
     }
 }
@@ -42,6 +42,13 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
 extension ListRepositories.ViewModel.Repository {
     
     init(repository: Repository) {
-        // TODO: implement this
+        // TODO; implement
+        name = ""
+        description = ""
+        forks = ""
+        stars = ""
+        owner = OwnerViewModel(profilePictureURL: nil,
+                               userName: "",
+                               displayName: "")
     }
 }
