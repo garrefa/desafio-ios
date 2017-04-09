@@ -10,6 +10,8 @@ import Foundation
 
 enum SortKey {
     case stars
+    case forks
+    case updated
 }
 
 enum SortDirection {

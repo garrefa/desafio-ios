@@ -42,13 +42,10 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
 extension ListRepositories.ViewModel.Repository {
     
     init(repository: Repository) {
-        // TODO; implement
-        name = ""
-        description = ""
-        forks = ""
-        stars = ""
-        owner = OwnerViewModel(profilePictureURL: nil,
-                               userName: "",
-                               displayName: "")
+        name = repository.name
+        description = repository.description ?? ""
+        forks = "\(repository.forksCount)"
+        stars = "\(repository.stargazersCount)"
+        owner = OwnerViewModel(owner: repository.owner)
     }
 }

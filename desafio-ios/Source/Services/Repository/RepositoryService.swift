@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum RepositoryServiceError: Error {
+    case notConnected
+    case unableToParseResponse
+    case unableToParseHeaders
+}
+
 protocol RepositoryService {
     
     /// Fetches the n-th page of repositories for a given language, sorted by a given mehod.
