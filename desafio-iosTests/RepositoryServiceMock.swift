@@ -17,8 +17,8 @@ class RepositoryServiceMock: RepositoryService {
     func findRepositories(language: ProgrammingLanguage,
                           sortBy sortMethod: SortMethod?,
                           page: UInt,
-                          onCompletion completionBlock: ([Repository], Bool) -> Void,
-                          onError errorBlock: (Error) -> Void) {
+                          onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
+                          onError errorBlock: @escaping (Error) -> Void) {
         latestSearchParameters = (language: language, sortMethod: sortMethod, page: page)
         if findRepositoriesShouldFail {
             errorBlock(NSError(domain: "", code: 0, userInfo: .none))

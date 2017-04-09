@@ -11,7 +11,10 @@ import Foundation
 
 extension Repository {
     static func fake() -> Repository {
-        return Repository()
+        return Repository(dictionary: ["name": "",
+                                       "forks_count": 0,
+                                       "stargazers_count": 0,
+                                       "owner": ["login": "asdf"]])!
     }
 }
 

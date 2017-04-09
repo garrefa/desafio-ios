@@ -22,7 +22,7 @@ class ListRepositoriesViewControllerMock: ListRepositoriesViewControllerInput {
     }
     
     var didPresentAlert = false
-    func presentDismissableAlert(title: String, message: String, dismissActionTitle: String) {
+    func presentDismissableAlert(title: String?, message: String?, dismissActionTitle: String?) {
         didPresentAlert = true
     }
 }
