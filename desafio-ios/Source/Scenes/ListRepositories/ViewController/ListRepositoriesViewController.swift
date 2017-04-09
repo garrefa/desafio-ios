@@ -10,31 +10,89 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 fileprivate typealias LocalizedString = R.string.listRepositoriesViewController
 
 class ListRepositoriesViewController: UITableViewController, ListRepositoriesViewControllerInput {
 
+    // MARK: - Collaborators
     var interactor: ListRepositoriesInteractor!
     var router: ListRepositoriesRouter!
     
     fileprivate var viewModel =  ListRepositories.ViewModel.initialState
+    fileprivate weak var progressHUD: MBProgressHUD?
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // send request to interactor object
+        
+        // request data
+        showProgressHUD()
+        interactor.reloadRepositories()
+    }
+    
+    fileprivate func showProgressHUD() {
+        progressHUD = MBProgressHUD.showAdded(to: navigationController?.view ?? view, animated: true)
+        progressHUD?.label.text = LocalizedString.progressHUD_description_loading()
     }
     
     // MARK: - Display logic
     
     func displayViewModel(_ viewModel: ListRepositories.ViewModel) {
+        DispatchQueue.main.async {
+            self._displayViewModel(viewModel)
+        }
+    }
     
+    // private clone of the func above to avoid always referencing self explicitly in each line of the async closure
+    private func _displayViewModel(_ viewModel: ListRepositories.ViewModel) {
+        self.viewModel = viewModel
+        tableView.reloadData()
+        hideProgressHUD()
+        if viewModel.repositories.count == 0 {
+            presentDismissableAlert(title: LocalizedString.displayViewModel_emptyRepositories_alertTitle(),
+                                    message: nil,
+                                    dismissActionTitle: LocalizedString.displayViewModel_emptyRepositories_alertAction())
+        }
+    }
+    
+    private func hideProgressHUD() {
+        progressHUD?.hide(animated: true)
     }
     
     func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
+        DispatchQueue.main.async {
+            self._updateViewModel(with: repositories, shouldShowLoadMore: shouldShowLoadMore)
+        }
+    }
     
+    // private clone of the func above to avoid always referencing self explicitly in each line of the async closure
+    private func _updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
+        if repositories.count > 0 {
+            
+            // calculate the indexPaths for the tableView animation
+            let range = viewModel.repositories.count..<(viewModel.repositories.count+repositories.count)
+            let indexPaths = range.map { IndexPath(row: $0, section: Section.repositories) }
+            
+            // udpate data source
+            viewModel.repositories.append(contentsOf: repositories)
+            
+            // animate row insertion
+            tableView.insertRows(at: indexPaths, with: .top)
+            
+            tableView.scrollToRow(at: indexPaths[0], at: .top, animated: true)
+        }
+        
+        // udpate data source
+        viewModel.shouldShowLoadMore = shouldShowLoadMore
+        if !shouldShowLoadMore {
+            // delete `loadMore` section animated
+            tableView.deleteSections([Section.loadMore], with: .automatic)
+        }
+        
+        hideProgressHUD()
     }
 }
 
@@ -95,6 +153,22 @@ extension ListRepositoriesViewController {
         default:
             debugPrint("Warning: unexpected section index")
             return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.section {
+        case Section.repositories:
+            break
+            // TODO:
+        case Section.loadMore:
+            showProgressHUD()
+            interactor.loadMoreRepositories()
+        default:
+            debugPrint("Warning: unexpected section index")
         }
     }
 }

@@ -7,3 +7,9 @@
 */
 
 "loadMoreCell_text" = "Carregar mais repositórios";
+
+"displayViewModel_emptyRepositories_alertTitle" = "Não foram encontrados repositórios";
+
+"displayViewModel_emptyRepositories_alertAction" = "OK";
+
+"progressHUD_description_loading" = "Carregando";

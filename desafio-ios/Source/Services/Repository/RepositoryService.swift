@@ -22,6 +22,6 @@ protocol RepositoryService {
     func findRepositories(language: ProgrammingLanguage,
                           sortBy sortMethod: SortMethod?,
                           page: UInt,
-                          onCompletion completionBlock: ([Repository], Bool) -> Void,
-                          onError errorBlock: (Error) -> Void)
+                          onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
+                          onError errorBlock: @escaping (Error) -> Void)
 }

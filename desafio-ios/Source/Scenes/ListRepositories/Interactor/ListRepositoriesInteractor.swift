@@ -15,7 +15,7 @@ import Foundation
 protocol ListRepositoriesInteractor {
 
     /// loads the the first page of repositories
-    func loadInitialRepositories()
+    func reloadRepositories()
     
     /// loads the next page of repositories
     func loadMoreRepositories()

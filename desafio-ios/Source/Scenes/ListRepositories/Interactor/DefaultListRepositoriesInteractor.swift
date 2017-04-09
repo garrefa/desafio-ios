@@ -29,7 +29,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     
     // MARK: - Business logic
     
-    func loadInitialRepositories() {
+    func reloadRepositories() {
         nextPage = 0
         requestNextPageOfRepositories(shouldAppendResults: false)
     }
@@ -40,11 +40,11 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             sortBy: SortMethod(key: .stars, direction: .descending),
             page: nextPage,
             onCompletion: { repositories, hasMorePages in
-                nextPage += 1
-                presenter.presentRepositories(repositories, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
+                self.nextPage += 1
+                self.presenter.presentRepositories(repositories, shouldAppend: shouldAppendResults, hasMore: hasMorePages)
             },
             onError: { error in
-                presenter.presentRequestError()
+                self.presenter.presentRequestError()
             }
         )
     }
@@ -54,8 +54,8 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     private func findRepositories(language: ProgrammingLanguage,
                                   sortBy sortMethod: SortMethod?,
                                   page: UInt,
-                                  onCompletion completionBlock: ([Repository], Bool) -> Void,
-                                  onError errorBlock: (Error) -> Void) {
+                                  onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
+                                  onError errorBlock: @escaping (Error) -> Void) {
         
         semaphore.wait()
         
@@ -65,11 +65,11 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
             page: page,
             onCompletion: { repositories, hasMorePages in
                 completionBlock(repositories, hasMorePages)
-                semaphore.signal()
+                self.semaphore.signal()
             },
             onError: { error in
                 errorBlock(error)
-                semaphore.signal()
+                self.semaphore.signal()
             }
         )
     }
@@ -77,7 +77,7 @@ class DefaultListRepositoriesInteractor: ListRepositoriesInteractor {
     func loadMoreRepositories() {
         guard nextPage > 0 else {
             debugPrint("Warning: trying to load more repos when `nextPage` is 0.")
-            loadInitialRepositories()
+            reloadRepositories()
             return
         }
         

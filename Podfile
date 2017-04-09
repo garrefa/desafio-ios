@@ -6,6 +6,7 @@ target 'desafio-ios' do
 
   # Pods for desafio-ios
   pod 'R.swift', "3.2.0"
+  pod 'MBProgressHUD', "1.0.0"
 
   target 'desafio-iosTests' do
     inherit! :search_paths

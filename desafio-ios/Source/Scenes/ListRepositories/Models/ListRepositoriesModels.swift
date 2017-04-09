@@ -28,17 +28,7 @@ struct ListRepositories {
         var shouldShowLoadMore: Bool
         
 		static var initialState: ViewModel {
-            var repos = [Repository]()
-            for i in 0..<30 {
-                let owner = OwnerViewModel(profilePictureURL: nil, userName: "User\(i)", displayName: "John Doe \(i)")
-                let repo = Repository(name: "Repo \(i)",
-                                      description: "Description \(i)",
-                                      forks: "\(arc4random() % 100000)",
-                                      stars: "\(arc4random() % 100000)",
-                                      owner: owner)
-                repos.append(repo)
-            }
-            return ViewModel(repositories: repos, shouldShowLoadMore: true)
+            return ViewModel(repositories: [], shouldShowLoadMore: false)
         }
 	}
 }

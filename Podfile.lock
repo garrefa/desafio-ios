@@ -1,15 +1,18 @@
 PODS:
+  - MBProgressHUD (1.0.0)
   - R.swift (3.2.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
 
 DEPENDENCIES:
+  - MBProgressHUD
   - R.swift (= 3.2.0)
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
 
-PODFILE CHECKSUM: 618771a98bd211009a438974104859db0adec61b
+PODFILE CHECKSUM: a2122a25166e2b5b14336e2c94260dd1fb4db71d
 
 COCOAPODS: 1.1.1

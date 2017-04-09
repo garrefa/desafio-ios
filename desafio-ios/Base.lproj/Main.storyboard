@@ -14,7 +14,7 @@
         <scene sceneID="QXH-eC-uFN">
             <objects>
                 <tableViewController id="ZTQ-5h-xzC" customClass="ListRepositoriesViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NTp-wK-PMC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="28" sectionFooterHeight="28" id="NTp-wK-PMC">
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,12 +199,12 @@ Outra linha</string>
             </objects>
             <point key="canvasLocation" x="604" y="134.48275862068968"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation View Controller-->
         <scene sceneID="0N5-fh-r6G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPf-sV-SAg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPf-sV-SAg" customClass="CustomNavigationViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ocR-pe-2iM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ocR-pe-2iM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20384445786476135" green="0.20363253355026245" blue="0.22019615769386292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

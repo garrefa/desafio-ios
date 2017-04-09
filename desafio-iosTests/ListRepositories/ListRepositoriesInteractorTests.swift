@@ -35,8 +35,8 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     // MARK: - Tests
     
-    func testSearchParameters_onLoadInitialRepositories() {
-        interactor.loadInitialRepositories()
+    func testSearchParameters_onReloadRepositories() {
+        interactor.reloadRepositories()
         verifySearchParameters()
     }
     
@@ -62,7 +62,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     }
     
     func testPageIndex_whenFindRepositoriesSucceeds() {
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         XCTAssert(repositoryServiceMock.latestSearchParameters.page == 0,
                   "Unxpected page index on when loading the initial repositories")
         interactor.loadMoreRepositories()
@@ -71,7 +71,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     }
     
     func testPageIndex_whenFindRepositoriesFails() {
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         repositoryServiceMock.findRepositoriesShouldFail = true
         interactor.loadMoreRepositories()
         interactor.loadMoreRepositories()
@@ -79,12 +79,12 @@ class ListRepositoriesInteractorTests: XCTestCase {
                   "Unxpected page index on after repository service fails on `findRepositories`")
     }
     
-    func testResultForwarding_onLoadInitialRepositories() {
+    func testResultForwarding_onReloadRepositories() {
         // Config repositoryServiceMock to answer what we need
         let expected = (repositories: [Repository.fake()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         
         // Assert that presenter has received the data accordingly
         guard let latestDataReceivedOnPresentRepositories = presenterMock.latestDataReceivedOnPresentRepositories else {
@@ -99,15 +99,15 @@ class ListRepositoriesInteractorTests: XCTestCase {
                        "Presenter should not append the data received here")
     }
     
-    func testFailureForwarding_onLoadInitialRepositories() {
+    func testFailureForwarding_onReloadRepositories() {
         repositoryServiceMock.findRepositoriesShouldFail = true
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         XCTAssert(presenterMock.presentRequestErrorWasCalled, "presenter should have been requested to present an error")
     }
     
     func testResultForwarding_onLoadMoreRepositories() {
         
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         
         // Config repositoryServiceMock to answer what we need
         let expected = (repositories: [Repository.fake()], hasMorePages: true)
@@ -129,7 +129,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     }
     
     func testFailureForwarding_onLoadMoreRepositories() {
-        interactor.loadInitialRepositories()
+        interactor.reloadRepositories()
         repositoryServiceMock.findRepositoriesShouldFail = true
         interactor.loadMoreRepositories()
         XCTAssert(presenterMock.presentRequestErrorWasCalled, "presenter should have been requested to present an error")
