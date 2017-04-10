@@ -12,32 +12,68 @@
 @testable import desafio_ios
 import XCTest
 
-/*
+
 class ListPullRequestsPresenterTests: XCTestCase {
 
     // MARK: - Subject under test
     
-    var presenter: ListPullRequestsPresenter!
+    var presenter: DefaultListPullRequestsPresenter!
 
     // MARK: - Test doubles
-
+    
+    var viewControllerMock: ListPullRequestsViewControllerMock!
     
     // MARK: - Test lifecycle
     
     override func setUp() {
         super.setUp()
-        
-        presenter = ListPullRequestsPresenter()
+        viewControllerMock = ListPullRequestsViewControllerMock()
+        presenter = DefaultListPullRequestsPresenter()
+        presenter.viewController = viewControllerMock
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
     // MARK: - Tests
     
-    func testSomething() {
+    func testPresentPullRequestsCount_successSendsTextToViewController() {
+        presenter.presentPullRequestsCount(.success(openCount: 0, closedCount: 1))
+        XCTAssertNotNil(viewControllerMock.displayPullRequestsCountText_latestText)
+        XCTAssertFalse(viewControllerMock.displayPullRequestsCountText_latestText!.string.isEmpty)
         
     }
+    
+    func testPresentPullRequestsCount_failureSendsTextToViewController() {
+        presenter.presentPullRequestsCount(.error)
+        XCTAssertNotNil(viewControllerMock.displayPullRequestsCountText_latestText)
+        XCTAssertFalse(viewControllerMock.displayPullRequestsCountText_latestText!.string.isEmpty)
+    }
+    
+    func testPresentPullRequests_dontAppend() {
+        let pullRequests = [PullRequest.example()]
+        let hasMore = true
+        presenter.presentPullRequests(pullRequests, shouldAppend: false, hasMore: hasMore)
+        if let viewModel = viewControllerMock.viewModelDisplayed {
+            XCTAssert(viewModel.pullRequests.count == pullRequests.count && viewModel.shouldShowLoadMore == hasMore,
+                      "View Controller received an unexpected view model")
+        } else {
+            XCTFail("presentPullRequests with shouldAppend = false should cause a new viewModel to be displayed")
+        }
+    }
+    
+    func testPresentPullRequests_appending() {
+        let pullRequests = [PullRequest.example()]
+        let hasMore = true
+        presenter.presentPullRequests(pullRequests, shouldAppend: true, hasMore: hasMore)
+        if let result = viewControllerMock.updateViewModel_result {
+            XCTAssert(result.pullRequests.count == pullRequests.count && result.shouldShowLoadMore == hasMore,
+                      "View Controller received unexpected values from presenter")
+        } else {
+            XCTFail("presentPullRequests with shouldAppend = true should cause a new viewModel to be displayed")
+        }
+    }
+    
+    func testPresentRequestError() {
+        presenter.presentRequestError(anyError())
+        XCTAssert(viewControllerMock.didPresentAlert,
+                  "viewController should have presented an alert notifying the user about the error")
+    }
 }
- */

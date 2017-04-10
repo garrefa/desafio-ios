@@ -9,7 +9,7 @@
 import Foundation
 @testable import desafio_ios
 
-class ListRepositoriesViewControllerMock: ListRepositoriesViewControllerInput {
+class ListRepositoriesViewControllerMock: AlertPresenterMock, ListRepositoriesViewControllerInput {
 
     var latestViewModelDisplayed: ListRepositories.ViewModel?
     func displayViewModel(_ viewModel: ListRepositories.ViewModel) {
@@ -19,10 +19,5 @@ class ListRepositoriesViewControllerMock: ListRepositoriesViewControllerInput {
     var latestUpdateViewModelData: (repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool)?
     func updateViewModel(with repositories: [ListRepositories.ViewModel.Repository], shouldShowLoadMore: Bool) {
         latestUpdateViewModelData = (repositories: repositories, shouldShowLoadMore: shouldShowLoadMore)
-    }
-    
-    var didPresentAlert = false
-    func presentDismissableAlert(title: String?, message: String?, dismissActionTitle: String?) {
-        didPresentAlert = true
     }
 }
