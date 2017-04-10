@@ -40,7 +40,6 @@
 		2F98CB671E99C924006C8D38 /* OwnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB661E99C924006C8D38 /* OwnerViewModel.swift */; };
 		2F98CB6D1E99EA34006C8D38 /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB6C1E99EA34006C8D38 /* CustomNavigationViewController.swift */; };
 		2F98CB6F1E9A065F006C8D38 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB6E1E9A065F006C8D38 /* User.swift */; };
-		2F98CB741E9A0C27006C8D38 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB731E9A0C27006C8D38 /* AsyncImageView.swift */; };
 		2F98CB9A1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB8B1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift */; };
 		2F98CB9B1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB8D1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift */; };
 		2F98CB9C1E9A8CDA006C8D38 /* ListPullRequestsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98CB8E1E9A8CDA006C8D38 /* ListPullRequestsInteractor.swift */; };
@@ -124,7 +123,6 @@
 		2F98CB661E99C924006C8D38 /* OwnerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerViewModel.swift; sourceTree = "<group>"; };
 		2F98CB6C1E99EA34006C8D38 /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		2F98CB6E1E9A065F006C8D38 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2F98CB731E9A0C27006C8D38 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		2F98CB8B1E9A8CDA006C8D38 /* ListPullRequestsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPullRequestsConfigurator.swift; sourceTree = "<group>"; };
 		2F98CB8D1E9A8CDA006C8D38 /* DefaultListPullRequestsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListPullRequestsInteractor.swift; sourceTree = "<group>"; };
 		2F98CB8E1E9A8CDA006C8D38 /* ListPullRequestsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPullRequestsInteractor.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		2F98CB131E9909A3006C8D38 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2F98CB701E9A0BF3006C8D38 /* Components */,
 				2F98CB4E1E99BB21006C8D38 /* Extensions */,
 				2F98CB331E991CB6006C8D38 /* Models */,
 				2F98CB651E99C90D006C8D38 /* SharedViewModels */,
@@ -388,14 +385,6 @@
 				2F98CB661E99C924006C8D38 /* OwnerViewModel.swift */,
 			);
 			path = SharedViewModels;
-			sourceTree = "<group>";
-		};
-		2F98CB701E9A0BF3006C8D38 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				2F98CB731E9A0C27006C8D38 /* AsyncImageView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		2F98CB751E9A8C68006C8D38 /* ListPullRequests */ = {
@@ -803,7 +792,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F98CB741E9A0C27006C8D38 /* AsyncImageView.swift in Sources */,
 				2F98CB301E9909A3006C8D38 /* ListRepositoriesViewControllerInput.swift in Sources */,
 				2F98CB2F1E9909A3006C8D38 /* ListRepositoriesViewController.swift in Sources */,
 				2F98CBA21E9A8CDA006C8D38 /* ListPullRequestsViewController.swift in Sources */,

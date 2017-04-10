@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PullRequestCell: UITableViewCell {
 
@@ -16,7 +17,7 @@ class PullRequestCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var authorProfilePictureImageView: AsyncImageView!
+    @IBOutlet weak var authorProfilePictureImageView: UIImageView!
     @IBOutlet weak var authorUserNameLabel: UILabel!
     @IBOutlet weak var authorDisplayNameLabel: UILabel!
     
@@ -26,10 +27,12 @@ class PullRequestCell: UITableViewCell {
         descriptionLabel.text = pullRequest.description
         authorUserNameLabel.text = pullRequest.author.userName
         authorDisplayNameLabel.text = pullRequest.author.displayName
+        
+        let placeholder = R.image.userProfilePicturePlaceholder()
         if let url = pullRequest.author.profilePictureURL {
-            authorProfilePictureImageView.loadImageFromUrl(url)
+            authorProfilePictureImageView.sd_setImage(with: url, placeholderImage: placeholder)
         } else {
-            authorProfilePictureImageView.image = R.image.userProfilePicturePlaceholder()
+            authorProfilePictureImageView.image = placeholder
         }
         
     }

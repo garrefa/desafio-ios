@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RepositoryCell: UITableViewCell {
 
@@ -17,7 +18,7 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
-    @IBOutlet weak var ownerProfilePictureImageView: AsyncImageView!
+    @IBOutlet weak var ownerProfilePictureImageView: UIImageView!
     @IBOutlet weak var ownerUserNameLabel: UILabel!
     @IBOutlet weak var ownerDisplayNameLabel: UILabel!
     
@@ -28,10 +29,12 @@ class RepositoryCell: UITableViewCell {
         starsLabel.text = repository.stars
         ownerUserNameLabel.text = repository.owner.userName
         ownerDisplayNameLabel.text = repository.owner.displayName
+        
+        let placeholder = R.image.userProfilePicturePlaceholder()
         if let url = repository.owner.profilePictureURL {
-            ownerProfilePictureImageView.loadImageFromUrl(url)
+            ownerProfilePictureImageView.sd_setImage(with: url, placeholderImage: placeholder)
         } else {
-            ownerProfilePictureImageView.image = R.image.userProfilePicturePlaceholder()
+            ownerProfilePictureImageView.image = placeholder
         }
         
     }
