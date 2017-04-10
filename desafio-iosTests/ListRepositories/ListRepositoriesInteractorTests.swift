@@ -28,8 +28,8 @@ class ListRepositoriesInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         repositoryServiceMock = RepositoryServiceMock()
-        interactor = DefaultListRepositoriesInteractor(repositoryService: repositoryServiceMock)
         presenterMock = ListRepositoriesPresenterMock()
+        interactor = DefaultListRepositoriesInteractor(repositoryService: repositoryServiceMock)
         interactor.presenter = presenterMock
     }
     
@@ -81,7 +81,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     func testResultForwarding_onReloadRepositories() {
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        let expected = (repositories: [Repository.example()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.reloadRepositories()
@@ -110,7 +110,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
         interactor.reloadRepositories()
         
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        let expected = (repositories: [Repository.example()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.loadMoreRepositories()
@@ -137,7 +137,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     func testRepositoriesPropertyUpdate() {
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.fake()], hasMorePages: true)
+        let expected = (repositories: [Repository.example()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.reloadRepositories()

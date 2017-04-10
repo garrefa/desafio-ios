@@ -27,17 +27,44 @@ class RepositoryServiceMock: RepositoryService {
         }
     }
     
+    var pullRequests_expectedResult: (pullRequests: [PullRequest], hasMorePages: Bool) = ([], false)
+    var pullRequests_shouldFail = false
     func pullRequests(for repository: Repository,
                       filterByState state: PullRequest.State?,
                       sortBy sortMethod: SortMethod<PullRequestsSortKey>?,
                       page: UInt,
                       onCompletion completionBlock: @escaping ([PullRequest], Bool) -> Void,
                       onError errorBlock: @escaping (Error) -> Void) {
+        if pullRequests_shouldFail {
+            errorBlock(anyError())
+        } else {
+            completionBlock(pullRequests_expectedResult.pullRequests, pullRequests_expectedResult.hasMorePages)
+        }
+        
     }
     
+    var pullRequestsCount_wasCalledForClosedPRs = false
+    var pullRequestsCount_wasCalledForOpenPRs = false
+    var expected_closedPRsCount = 0
+    var expected_openPRsCount = 0
+    var pullRequestsCount_shouldFailForClosedPRs = false
     func pullRequestsCount(for repository: Repository,
                            filterByState state: PullRequest.State?,
                            onCompletion completionBlock: @escaping (Int) -> Void,
                            onError errorBlock: @escaping (Error) -> Void) {
+        if let state = state {
+            switch state {
+            case .closed:
+                pullRequestsCount_wasCalledForClosedPRs = true
+                if pullRequestsCount_shouldFailForClosedPRs {
+                    errorBlock(anyError())
+                } else {
+                    completionBlock(expected_closedPRsCount)
+                }
+            case .open:
+                pullRequestsCount_wasCalledForOpenPRs = true
+                completionBlock(expected_openPRsCount)
+            }
+        }
     }
 }
