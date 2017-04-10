@@ -16,13 +16,13 @@ class GithubRepositoryService: RepositoryService {
     
     let baseURL = URL(string: "https://api.github.com")!
     
+    // TODO: verify connection before in all requests
+    
     func findRepositories(language: ProgrammingLanguage,
                           sortBy sortMethod: SortMethod<RepositoriesSortKey>?,
                           page: UInt,
                           onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
                           onError errorBlock: @escaping (Error) -> Void) {
-        
-        // TODO: verify connection before
         
         // setup url
         let url = baseURL.appendingPathComponent("search").appendingPathComponent("repositories")
@@ -73,8 +73,6 @@ class GithubRepositoryService: RepositoryService {
                       page: UInt,
                       onCompletion completionBlock: @escaping ([PullRequest], Bool) -> Void,
                       onError errorBlock: @escaping (Error) -> Void) {
-    
-        // TODO: verify connection before
         
         // setup url
         let url = baseURL.appendingPathComponent("repos")
@@ -120,7 +118,46 @@ class GithubRepositoryService: RepositoryService {
                 completionBlock(pullRequests, morePages)
             }
         }
+    }
+    
+    func pullRequestsCount(for repository: Repository,
+                           filterByState state: PullRequest.State?,
+                           onCompletion completionBlock: @escaping (Int) -> Void,
+                           onError errorBlock: @escaping (Error) -> Void) {
         
+//        errorBlock(RepositoryServiceError.unableToParseResponse)
+//        return
+    
+        // setup url
+        let url = baseURL.appendingPathComponent("search").appendingPathComponent("issues")
+        
+        // setup query string
+        var queryString = "?q=repo:\(repository.owner.login)/\(repository.name)+type:pr"
+        if let state = state {
+            queryString += "+is:\(state.rawValue)"
+        }
+        
+        _ = Alamofire.request(url.absoluteString + queryString,
+                              method: .get,
+                              parameters: [:],
+                              encoding: URLEncoding.default,
+                              headers: defaultHeaders()).responseJSON { response in
+                                
+            switch response.result {
+                
+            case .failure(let error):
+                errorBlock(error)
+                
+            case .success(let value):
+                // parse pull requests
+                guard let JSON = value as? [String: Any], let totalCount = JSON["total_count"] as? Int else {
+                    errorBlock(RepositoryServiceError.unableToParseResponse)
+                    return
+                }
+                
+                completionBlock(totalCount)
+            }
+        }
     }
     
     // MARK: - Helper methods

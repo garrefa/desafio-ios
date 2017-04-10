@@ -16,6 +16,8 @@ protocol ListPullRequestsViewControllerInput: class, AlertPresenter {
     
     // TODO: add documentation to the methods below
     
+    func displayPullRequestsCountText(_ text: NSAttributedString)
+    
     func displayViewModel(_ viewModel: ListPullRequests.ViewModel)
     
     func updateViewModel(with pullRequests: [ListPullRequests.ViewModel.PullRequest], shouldShowLoadMore: Bool)

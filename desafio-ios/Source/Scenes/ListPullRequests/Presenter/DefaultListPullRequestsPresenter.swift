@@ -10,10 +10,15 @@
 //
 
 import Foundation
+import UIKit
+
+fileprivate typealias LocalizedString = R.string.defaultListPullRequestsPresenter
 
 /// Prepares data for presentation in ListPullRequestsViewController
 class DefaultListPullRequestsPresenter: ListPullRequestsPresenter {
-
+    
+	weak var viewController: ListPullRequestsViewControllerInput!
+    
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -21,10 +26,42 @@ class DefaultListPullRequestsPresenter: ListPullRequestsPresenter {
         formatter.doesRelativeDateFormatting = true
         return formatter
     }()
-    
-	weak var viewController: ListPullRequestsViewControllerInput!
   
 	// MARK: - Presentation logic
+    
+    func presentPullRequestsCount(_ count: PullRequestsCountResult) {
+        let text: NSMutableAttributedString
+        let fullText: String
+        
+        let defaultColor = UIColor.darkGray
+        
+        switch count {
+        case .success(let openCount, let closedCount):
+            let textOpen = LocalizedString.presentPullRequestsCount_success_open(String(openCount))
+            let textClosed = LocalizedString.presentPullRequestsCount_success_closed(String(closedCount))
+            fullText = "\(textOpen) / \(textClosed)"
+            text = NSMutableAttributedString(string: fullText)
+            
+            // configure default text color
+            text.addAttribute(NSForegroundColorAttributeName, value: defaultColor, range: NSMakeRange(0, fullText.characters.count))
+            
+            // configure text color for the "open" part
+            let openColor = UIColor(colorLiteralRed: 223.0/255.0, green: 147/255.0, blue: 5/255.0, alpha: 1)
+            text.addAttribute(NSForegroundColorAttributeName, value: openColor, range: NSMakeRange(0, textOpen.characters.count))
+        case .error:
+            fullText = LocalizedString.presentPullRequestsCount_error_message()
+            text = NSMutableAttributedString(string: fullText)
+            // configure default text color
+            text.addAttribute(NSForegroundColorAttributeName, value: defaultColor, range: NSMakeRange(0, fullText.characters.count))
+        }
+        
+        
+        text.addAttribute(NSFontAttributeName,
+                          value: UIFont.boldSystemFont(ofSize: 14),
+                          range: NSMakeRange(0, fullText.characters.count))
+        
+        viewController.displayPullRequestsCountText(text)
+    }
     
     func presentPullRequests(_ pullRequests: [PullRequest], shouldAppend: Bool, hasMore: Bool) {
         let pullRequestViewModels = pullRequests.map { ListPullRequests.ViewModel.PullRequest(pullRequest: $0) }

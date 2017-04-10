@@ -15,3 +15,9 @@
 "presentRequestError_alert_unknownErrorMessage" = "Um erro inesperado aconteceu ao carregar as pull requests";
 
 "presentRequestError_alert_dismissActionTitle" = "OK";
+
+"presentPullRequestsCount_success_open" = "%@ abertas";
+
+"presentPullRequestsCount_success_closed" = "%@ fechadas";
+
+"presentPullRequestsCount_error_message" = "Falha ao buscar dados! Puxe para recarregar.";

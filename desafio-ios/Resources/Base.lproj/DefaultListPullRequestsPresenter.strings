@@ -15,3 +15,9 @@
 "presentRequestError_alert_unknownErrorMessage" = "An unexpected error happened when loading the pull requests";
 
 "presentRequestError_alert_dismissActionTitle" = "OK";
+
+"presentPullRequestsCount_success_open" = "%@ open";
+
+"presentPullRequestsCount_success_closed" = "%@ closed";
+
+"presentPullRequestsCount_error_message" = "Failed to retrieve stats! Pull to refresh.";

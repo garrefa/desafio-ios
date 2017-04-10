@@ -11,9 +11,17 @@
 
 import Foundation
 
+enum PullRequestsCountResult {
+    case success(openCount: Int, closedCount: Int)
+    case error
+}
+
 /// Interface provided by a ListPullRequestsPresenter to receive inputs from a Interactor
 protocol ListPullRequestsPresenter {
 
+    /// function called to prepare the pull requests count for presentation
+    func presentPullRequestsCount(_ count: PullRequestsCountResult)
+    
     /// function called to present an array of pull requests; `shouldAppend` adds the pull requests to the previously
     /// presented ones
     func presentPullRequests(_ pullRequests: [PullRequest], shouldAppend: Bool, hasMore: Bool)

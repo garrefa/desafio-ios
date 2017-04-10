@@ -47,4 +47,16 @@ protocol RepositoryService {
                       page: UInt,
                       onCompletion completionBlock: @escaping ([PullRequest], Bool) -> Void,
                       onError errorBlock: @escaping (Error) -> Void)
+    
+    /// Fetches the total count of pull requests for a repository on a given state.
+    ///
+    /// - Parameters:
+    /// 	- repository: The repository for which we want to fetch the pull requests
+    ///     - state: An optional filter to be applied on the pull requests' state
+    ///		- completionBlock: a closure that's called when the search succeeds, passing the resulting count
+    /// 	- errorBlock: a closure that's called when the search fails, passing an error object
+    func pullRequestsCount(for repository: Repository,
+                           filterByState state: PullRequest.State?,
+                           onCompletion completionBlock: @escaping (Int) -> Void,
+                           onError errorBlock: @escaping (Error) -> Void)
 }

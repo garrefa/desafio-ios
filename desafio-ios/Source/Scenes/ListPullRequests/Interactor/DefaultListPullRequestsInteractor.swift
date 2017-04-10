@@ -19,6 +19,7 @@ class DefaultListPullRequestsInteractor: ListPullRequestsInteractor {
     private(set) var pullRequests: [PullRequest] = []
     private let repositoryService: RepositoryService
     private var nextPage: UInt = 0
+    private let dispatchQueue = DispatchQueue(label: "ListPullRequestsInteractor Queue")
     
     init(repositoryService: RepositoryService) {
         self.repositoryService = repositoryService
@@ -29,6 +30,7 @@ class DefaultListPullRequestsInteractor: ListPullRequestsInteractor {
     func reloadPullRequests() {
         nextPage = 0
         requestNextPageOfPullRequests(shouldAppendResults: false)
+        requestPullRequestsCount()
     }
     
     private func requestNextPageOfPullRequests(shouldAppendResults: Bool) {
@@ -49,6 +51,41 @@ class DefaultListPullRequestsInteractor: ListPullRequestsInteractor {
                 self.presenter.presentRequestError(error)
             }
         )
+    }
+    
+    private func requestPullRequestsCount() {
+        
+        dispatchQueue.async {
+            var _openCount: Int?
+            var _closedCount: Int?
+            
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            self.repositoryService.pullRequestsCount(for: self.repository, filterByState: .open, onCompletion: { openCount in
+                _openCount = openCount
+                semaphore.signal()
+            }, onError: { error in
+                semaphore.signal()
+            })
+            
+            self.repositoryService.pullRequestsCount(for: self.repository, filterByState: .closed, onCompletion: { closedCount in
+                _closedCount = closedCount
+                semaphore.signal()
+            }, onError: { error in
+                semaphore.signal()
+            })
+            
+            // we call `semaphore.wait()` 2 times here to wait for the two requests above
+            semaphore.wait()
+            semaphore.wait()
+            
+            guard let openCount = _openCount, let closedCount = _closedCount else {
+                self.presenter.presentPullRequestsCount(.error)
+                return
+            }
+            
+            self.presenter.presentPullRequestsCount(.success(openCount: openCount, closedCount: closedCount))
+        }
     }
     
     func loadMorePullRequests() {

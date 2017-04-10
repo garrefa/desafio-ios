@@ -31,17 +31,31 @@ class ListPullRequestsViewController: UITableViewController, ListPullRequestsVie
     
     fileprivate var viewModel = ListPullRequests.ViewModel.initialState
     fileprivate weak var progressHUD: MBProgressHUD?
+    fileprivate let tableHeader: PullRequestsTableHeader = {
+        return R.nib.pullRequestsTableHeader().instantiate(withOwner: nil, options: .none)[0] as! PullRequestsTableHeader
+    }()
     
     // MARK: - View lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = repository.name
+        reloadData()
+    }
+    
+    fileprivate func reloadData() {
+        tableHeader.activityIndicator.startAnimating()
         showProgressHUD()
         interactor.reloadPullRequests()
     }
     
     // MARK: - Display logic
+    
+    func displayPullRequestsCountText(_ text: NSAttributedString) {
+        DispatchQueue.main.async {
+            self.tableHeader.attributedText = text
+        }
+    }
     
     func displayViewModel(_ viewModel: ListPullRequests.ViewModel) {
         DispatchQueue.main.async {
@@ -153,6 +167,20 @@ extension ListPullRequestsViewController {
 
 // MARK: - Table view delegate
 extension ListPullRequestsViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == Section.pullRequests else {
+            return nil
+        }
+        return tableHeader
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard section == Section.pullRequests else {
+            return 0
+        }
+        return PullRequestsTableHeader.estimatedHeight
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
