@@ -28,8 +28,10 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // request data
+        reloadData()
+    }
+    
+    @IBAction func reloadData() {
         showProgressHUD()
         interactor.reloadRepositories()
     }
@@ -85,6 +87,11 @@ class ListRepositoriesViewController: UITableViewController, ListRepositoriesVie
         }
         
         hideProgressHUD()
+    }
+    
+    override func presentDismissableAlert(title: String?, message: String?, dismissActionTitle: String?) {    
+        hideProgressHUD()
+        super.presentDismissableAlert(title: title, message: message, dismissActionTitle: dismissActionTitle)
     }
     
     // MARK: - Helper functions

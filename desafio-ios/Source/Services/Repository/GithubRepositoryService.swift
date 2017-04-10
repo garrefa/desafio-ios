@@ -23,7 +23,7 @@ class GithubRepositoryService: RepositoryService {
                           page: UInt,
                           onCompletion completionBlock: @escaping ([Repository], Bool) -> Void,
                           onError errorBlock: @escaping (Error) -> Void) {
-        
+
         // setup url
         let url = baseURL.appendingPathComponent("search").appendingPathComponent("repositories")
         
@@ -125,9 +125,6 @@ class GithubRepositoryService: RepositoryService {
                            onCompletion completionBlock: @escaping (Int) -> Void,
                            onError errorBlock: @escaping (Error) -> Void) {
         
-//        errorBlock(RepositoryServiceError.unableToParseResponse)
-//        return
-    
         // setup url
         let url = baseURL.appendingPathComponent("search").appendingPathComponent("issues")
         

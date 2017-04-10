@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-// TODO: add activity indicator during image load
 class AsyncImageView: UIImageView {
     
     var request: Alamofire.DataRequest?

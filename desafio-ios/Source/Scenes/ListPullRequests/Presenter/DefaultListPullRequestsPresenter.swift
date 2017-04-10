@@ -30,10 +30,9 @@ class DefaultListPullRequestsPresenter: ListPullRequestsPresenter {
 	// MARK: - Presentation logic
     
     func presentPullRequestsCount(_ count: PullRequestsCountResult) {
+        let defaultColor = UIColor.darkGray
         let text: NSMutableAttributedString
         let fullText: String
-        
-        let defaultColor = UIColor.darkGray
         
         switch count {
         case .success(let openCount, let closedCount):
@@ -74,20 +73,28 @@ class DefaultListPullRequestsPresenter: ListPullRequestsPresenter {
     }
     
     func presentRequestError(_ error: Error) {
-        // TODO: implement / localize
-        viewController.presentDismissableAlert(
-            title: "Disconnected",
-            message: "",
-            dismissActionTitle: "OK"
-        )
+        if let error = error as? RepositoryServiceError, error == .notConnected {
+            viewController.presentDismissableAlert(
+                title: LocalizedString.presentRequestError_alert_notConnectedErrorTitle(),
+                message: LocalizedString.presentRequestError_alert_notConnectedErrorMessage(),
+                dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
+            )
+        } else {
+            viewController.presentDismissableAlert(
+                title: LocalizedString.presentRequestError_alert_unknownErrorTitle(),
+                message: LocalizedString.presentRequestError_alert_unknownErrorMessage(),
+                dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
+            )
+        }
     }
 }
 
 extension ListPullRequests.ViewModel.PullRequest {
     init(pullRequest: PullRequest) {
         title = pullRequest.title
-        description = pullRequest.body ?? "No description" // TODO: localize
+        description = pullRequest.body ?? LocalizedString.pullRequest_viewModel_emptyDescription()
         author = UserViewModel(user: pullRequest.author)
-        dateInfo = "Created: \(DefaultListPullRequestsPresenter.dateFormatter.string(from: pullRequest.createdAt))" // TODO: localize
+        let dateText = DefaultListPullRequestsPresenter.dateFormatter.string(from: pullRequest.createdAt)
+        dateInfo = LocalizedString.pullRequest_viewModel_dateInfo(dateText)
     }
 }

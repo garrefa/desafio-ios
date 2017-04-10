@@ -40,10 +40,8 @@ class ListPullRequestsViewController: UITableViewController, ListPullRequestsVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = repository.name
-        reloadData()
-    }
-    
-    fileprivate func reloadData() {
+        
+        // load data
         tableHeader.activityIndicator.startAnimating()
         showProgressHUD()
         interactor.reloadPullRequests()
@@ -106,6 +104,11 @@ class ListPullRequestsViewController: UITableViewController, ListPullRequestsVie
         }
         
         hideProgressHUD()
+    }
+    
+    override func presentDismissableAlert(title: String?, message: String?, dismissActionTitle: String?) {
+        hideProgressHUD()
+        super.presentDismissableAlert(title: title, message: message, dismissActionTitle: dismissActionTitle)
     }
     
     // MARK: - Helper functions

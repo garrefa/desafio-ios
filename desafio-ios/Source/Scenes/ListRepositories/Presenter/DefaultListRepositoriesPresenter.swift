@@ -33,10 +33,9 @@ class DefaultListRepositoriesPresenter: ListRepositoriesPresenter {
     func presentRequestError(_ error: Error) {
         if let error = error as? RepositoryServiceError, error == .notConnected {
             viewController.presentDismissableAlert(
-                // TODO: localize
-                title: "Disconnected",
-                message: "",
-                dismissActionTitle: "OK"
+                title: LocalizedString.presentRequestError_alert_notConnectedErrorTitle(),
+                message: LocalizedString.presentRequestError_alert_notConnectedErrorMessage(),
+                dismissActionTitle: LocalizedString.presentRequestError_alert_dismissActionTitle()
             )
         } else {
             viewController.presentDismissableAlert(

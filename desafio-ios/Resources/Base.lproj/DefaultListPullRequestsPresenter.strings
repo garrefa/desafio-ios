@@ -20,4 +20,8 @@
 
 "presentPullRequestsCount_success_closed" = "%@ closed";
 
-"presentPullRequestsCount_error_message" = "Failed to retrieve stats! Pull to refresh.";
+"presentPullRequestsCount_error_message" = "Failed to retrieve stats!";
+
+"pullRequest_viewModel_emptyDescription" = "No description available";
+
+"pullRequest_viewModel_dateInfo" = "Created: %@";

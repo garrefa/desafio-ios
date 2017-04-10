@@ -169,11 +169,11 @@ Outra linha</string>
                                 <rect key="frame" x="0.0" y="164" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBd-d1-Pjo" id="Im9-6I-oU0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Load More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FJs-IP-cIa">
-                                            <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
+                                            <rect key="frame" x="15" y="0.0" width="384" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -190,6 +190,11 @@ Outra linha</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Github JavaPop" id="Bh3-vC-7VV">
                         <barButtonItem key="backBarButtonItem" title=" " id="Yse-eD-jXZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="BT0-n4-jw2">
+                            <connections>
+                                <action selector="reloadData" destination="ZTQ-5h-xzC" id="nbF-Gr-QNQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="xas-oS-sOS" kind="show" identifier="showPullRequests" id="5Bu-w3-7NQ"/>
@@ -303,11 +308,11 @@ Outra linha</string>
                                 <rect key="frame" x="0.0" y="158" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euo-VQ-X5L" id="UxQ-zN-KVQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Load More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M46-4X-mYP">
-                                            <rect key="frame" x="15" y="0.0" width="384" height="149.66666666666666"/>
+                                            <rect key="frame" x="15" y="0.0" width="384" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.2038444579" green="0.2036325336" blue="0.22019615770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -335,10 +340,9 @@ Outra linha</string>
         <!--Custom Navigation View Controller-->
         <scene sceneID="0N5-fh-r6G">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IZN-cM-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPf-sV-SAg" customClass="CustomNavigationViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ocR-pe-2iM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ocR-pe-2iM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -353,6 +357,7 @@ Outra linha</string>
                         <segue destination="ZTQ-5h-xzC" kind="relationship" relationship="rootViewController" id="21e-rP-HDL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZN-cM-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335.19999999999999" y="134.48275862068968"/>
         </scene>
