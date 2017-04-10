@@ -17,7 +17,7 @@ class ListRepositoriesPresenterMock: ListRepositoriesPresenter {
     }
     
     var presentRequestErrorWasCalled = false
-    func presentRequestError() {
+    func presentRequestError(_ error: Error) {
         presentRequestErrorWasCalled = true
     }
 }

@@ -11,6 +11,8 @@
 
 import UIKit
 
+fileprivate typealias LocalizableString = R.string.defaultListPullRequestsRouter
+
 /// This component handles the transitions and the data flow from ListPullRequests scene to other scenes
 class DefaultListPullRequestsRouter: ListPullRequestsRouter {
     weak var viewController: ListPullRequestsViewController!
@@ -18,10 +20,21 @@ class DefaultListPullRequestsRouter: ListPullRequestsRouter {
     // MARK: - Communication
     
     func showPullRequestDetail() {
-    
+        guard
+            let pullRequest = viewController.selectedPullRequest,
+            UIApplication.shared.canOpenURL(pullRequest.htmlURL)
+        else {
+            alertPullRequestDetailFailure()
+            return
+        }
+        UIApplication.shared.openURL(pullRequest.htmlURL)
     }
     
-    func passDataToNextScene(segue: UIStoryboardSegue) {
-        
+    private func alertPullRequestDetailFailure() {
+        viewController.presentDismissableAlert(
+            title: LocalizableString.alertPullRequestDetailFailure_title(),
+            message: LocalizableString.alertPullRequestDetailFailure_message(),
+            dismissActionTitle: LocalizableString.alertPullRequestDetailFailure_dismiss()
+        )
     }
 }

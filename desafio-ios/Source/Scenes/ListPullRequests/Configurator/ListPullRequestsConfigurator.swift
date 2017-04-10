@@ -11,13 +11,6 @@
 
 import UIKit
 
-/// Intercepts "prepare for segue" and delegates storyboard transition handling to the Router
-extension ListPullRequestsViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(segue: segue)
-    }
-}
-
 /// Configurator composes the ListPullRequests scene by connecting View, Interactor, and Presenter
 /// and injecting their dependencies.
 class ListPullRequestsConfigurator: NSObject {

@@ -75,7 +75,7 @@ class ListRepositoriesPresenterTests: XCTestCase {
     }
     
     func testPresentRequestError() {
-        presenter.presentRequestError()
+        presenter.presentRequestError(anyError())
         XCTAssert(viewControllerMock.didPresentAlert,
                   "viewController should have presented an alert notifying the user about the error")
     }

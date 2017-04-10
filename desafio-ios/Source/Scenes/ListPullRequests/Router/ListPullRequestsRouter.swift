@@ -14,7 +14,6 @@ import UIKit
 /// Interface provided by a router that navigates from ListPullRequestsViewController to other scenes
 protocol ListPullRequestsRouter {
     
+    /// shows details for the last pull request selected on the view controller
     func showPullRequestDetail()
-    
-    func passDataToNextScene(segue: UIStoryboardSegue)
 }
