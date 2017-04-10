@@ -36,21 +36,8 @@ class desafio_iosUITests: XCTestCase {
         expectation(for: thereAreCells, evaluatedWith: repositoriesTable.cells, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
         
-        // scroll to "load more repos" cell
-        let originalRepositoriesTableCount = repositoriesTable.cells.count
-        let loadMoreReposCell = repositoriesTable.cells.element(boundBy: originalRepositoriesTableCount - 1)
-        repositoriesTable.scrollToElement(loadMoreReposCell)
-        
-        // tap on it
-        loadMoreReposCell.tap()
-        
-        // now we wait for some time and assert that we have more items
-        let thereAreMoreCells = NSPredicate(format: "count > %d", originalRepositoriesTableCount)
-        expectation(for: thereAreMoreCells, evaluatedWith: repositoriesTable.cells, handler: nil)
-        waitForExpectations(timeout: 10, handler: nil)
-        
         // now, at the same index of the "load more" cell, we'll have a RepositoryCell
-        let repositoryCell = repositoriesTable.cells.element(boundBy: originalRepositoriesTableCount - 1)
+        let repositoryCell = repositoriesTable.cells.element(boundBy: 0)
         
         // tap on it!
         repositoryCell.tap()
@@ -82,7 +69,20 @@ class desafio_iosUITests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
         
         // if we tap on a PR we'll go to Safari and the test fails
-        // so let's just go back
+        // so let's just go back and load some more repositories
         backButton.tap()
+        
+        // scroll to "load more repos" cell
+        let originalRepositoriesTableCount = repositoriesTable.cells.count
+        let loadMoreReposCell = repositoriesTable.cells.element(boundBy: originalRepositoriesTableCount - 1)
+        repositoriesTable.scrollToElement(loadMoreReposCell)
+        
+        // tap on it
+        loadMoreReposCell.tap()
+        
+        // now we wait for some time and assert that we have more items
+        let thereAreMoreRepoCells = NSPredicate(format: "count > %d", originalRepositoriesTableCount)
+        expectation(for: thereAreMoreRepoCells, evaluatedWith: repositoriesTable.cells, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
     }
 }
