@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.3.0)
+  - MBProgressHUD (1.0.0)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.3.0)
+  - MBProgressHUD (= 1.0.0)
+  - R.swift (= 3.2.0)
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: 90a4d6a22cb4a77ce072b34ce3118f7ac802d02f
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="PRR-rB-CpP" customClass="PullRequestsTableHeader" customModule="desafio_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-PP-9A7">
+                    <rect key="frame" x="-0.5" y="0.0" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-E9-KkW">
+                    <rect key="frame" x="0.0" y="35" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="KpK-ST-dY5"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AAR-jp-9WQ">
+                    <rect key="frame" x="177" y="8" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="aaS-PP-9A7" firstAttribute="width" secondItem="PRR-rB-CpP" secondAttribute="width" id="2E2-ZB-nFB"/>
+                <constraint firstItem="aaS-PP-9A7" firstAttribute="centerY" secondItem="PRR-rB-CpP" secondAttribute="centerY" id="5Gw-Uw-2Ki"/>
+                <constraint firstAttribute="bottom" secondItem="WAV-E9-KkW" secondAttribute="bottom" id="AIj-hD-EB8"/>
+                <constraint firstItem="AAR-jp-9WQ" firstAttribute="centerY" secondItem="PRR-rB-CpP" secondAttribute="centerY" id="AcT-iW-RsU"/>
+                <constraint firstItem="aaS-PP-9A7" firstAttribute="height" secondItem="PRR-rB-CpP" secondAttribute="height" id="UGP-Hk-23y"/>
+                <constraint firstItem="AAR-jp-9WQ" firstAttribute="centerX" secondItem="PRR-rB-CpP" secondAttribute="centerX" id="Uve-Sv-6Tu"/>
+                <constraint firstItem="WAV-E9-KkW" firstAttribute="leading" secondItem="PRR-rB-CpP" secondAttribute="leading" id="rhZ-bD-ZwT"/>
+                <constraint firstAttribute="trailing" secondItem="WAV-E9-KkW" secondAttribute="trailing" id="ug6-Ys-KFu"/>
+                <constraint firstItem="aaS-PP-9A7" firstAttribute="centerX" secondItem="PRR-rB-CpP" secondAttribute="centerX" id="xTa-cr-v65"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicator" destination="AAR-jp-9WQ" id="oLb-l5-Y4U"/>
+                <outlet property="titleLabel" destination="aaS-PP-9A7" id="VLj-2g-TYL"/>
+            </connections>
+            <point key="canvasLocation" x="-12.5" y="-371"/>
+        </view>
+    </objects>
+</document>

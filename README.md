@@ -1,42 +1,27 @@
-# Criar um aplicativo de consulta a API do [GitHub](https://github.com)#
+# Github JavaPop
+This app navigates through all public repositories on Github where the main programming language is Java.
 
-Criar um aplicativo para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Java. Basear-se no mockup fornecido:
+## Developer notes
 
-![mock.png](./mock.png)
+This repository doesn't squash commits, so that anyone can follow the complete development process, commit by commit.
 
+The scenes were composed using a customized version of the Clean Swift templates. You can find the original ones at http://clean-swift.com/.
 
-### **Deve conter** ###
+The RepositoryService defines several enums and structs that makes the API very extensible if we want to, in the future, support more programming languages, change sort parameters and filters, etc.
 
-- __Lista de repositórios__. Exemplo de chamada na API: `https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1`
-  * Paginação na tela de lista, com endless scroll / scroll infinito (incrementando o parâmetro `page`).
-  * Cada repositório deve exibir Nome do repositório, Descrição do Repositório, Nome / Foto do autor, Número de Stars, Número de Forks
-  * Ao tocar em um item, deve levar a lista de Pull Requests do repositório
-- __Pull Requests de um repositório__. Exemplo de chamada na API: `https://api.github.com/repos/<criador>/<repositório>/pulls`
-  * Cada item da lista deve exibir Nome / Foto do autor do PR, Título do PR, Data do PR e Body do PR
-  * Ao tocar em um item, deve abrir no browser a página do Pull Request em questão
+The app is already localized for en_US and pt-BR.
 
-### **A solução DEVE conter** ##
+There are a couple of TODOs, including the one for fetching the full name from a GitHub user.
 
-* Versão mínima do iOS : 8.*
-* Arquivo .gitignore
-* Layout ajustável para diferentes telas de iPhone em portrait
-* Gestão de dependências no projeto
-* Framework para Comunicação com API
-* Mapeamento json -> Objeto
+## Running the project
 
-### **Ganha + pontos** ###
+This project was built using Xcode 8.2.
 
-* Testes unitários no projeto
-* Testes funcionais
-* Cache de Imagens
+The minimum iOS version is 9.0 (despite the constraint to iOS 8.0 in the task description). This was necessary to enable some APIs for UI tests.
 
-### **Processo de submissão** ###
+Pods are tracked in the repository and Pod's versions are fixed, so every commit carries all the dependencies and you shouldn't need to run `pod install` before.
 
-O candidato deverá implementar a solução e enviar um pull request para este repositório com a solução.
+Before you build the project you may notice a missing file called `R.generated.swift`; This file will be generated in a build phase.
 
-O processo de Pull Request funciona da seguinte maneira:
-
-1. Candidato fará um fork desse repositório (não irá clonar direto!)
-2. Fará seu projeto nesse fork
-3. Commitará e subirá as alterações para o __SEU__ fork
-4. Enviar um pull request pela interface do Github
+## Maintainers
+* Cicero Camargo - camargo _dot_ cicero _at_ gmail _dot_ com

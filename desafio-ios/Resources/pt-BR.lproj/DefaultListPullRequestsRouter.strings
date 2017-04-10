@@ -1,0 +1,13 @@
+/* 
+  DefaultListPullRequestsRouter.strings
+  desafio-ios
+
+  Created by Cicero Camargo on 09/04/17.
+  Copyright © 2017 Stationfy. All rights reserved.
+*/
+
+"alertPullRequestDetailFailure_title" = "Desculpe";
+
+"alertPullRequestDetailFailure_message" = "Não conseguimos exibir os detalhes dessa pull request";
+
+"alertPullRequestDetailFailure_dismiss" = "OK";

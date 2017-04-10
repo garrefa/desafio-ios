@@ -1,0 +1,27 @@
+/* 
+  DefaultListPullRequestsPresenter.strings
+  desafio-ios
+
+  Created by Cicero Camargo on 09/04/17.
+  Copyright © 2017 Stationfy. All rights reserved.
+*/
+
+"presentRequestError_alert_notConnectedErrorTitle" = "Error";
+
+"presentRequestError_alert_notConnectedErrorMessage" = "Problemas na conexão. Tente novamente mais tarde";
+
+"presentRequestError_alert_unknownErrorTitle" = "Error";
+
+"presentRequestError_alert_unknownErrorMessage" = "Um erro inesperado aconteceu ao carregar as pull requests";
+
+"presentRequestError_alert_dismissActionTitle" = "OK";
+
+"presentPullRequestsCount_success_open" = "%@ abertas";
+
+"presentPullRequestsCount_success_closed" = "%@ fechadas";
+
+"presentPullRequestsCount_error_message" = "Falha ao buscar dados!";
+
+"pullRequest_viewModel_emptyDescription" = "Sem descrição disponível";
+
+"pullRequest_viewModel_dateInfo" = "Data de criação: %@";

@@ -1,0 +1,17 @@
+/* 
+  DefaultListRepositoriesPresenter.strings
+  desafio-ios
+
+  Created by Cicero Camargo on 08/04/17.
+  Copyright © 2017 Stationfy. All rights reserved.
+*/
+
+"presentRequestError_alert_notConnectedErrorTitle" = "Error";
+
+"presentRequestError_alert_notConnectedErrorMessage" = "Connection problems. Try again later";
+
+"presentRequestError_alert_unknownErrorTitle" = "Error";
+
+"presentRequestError_alert_unknownErrorMessage" = "An unexpected error happened when loading the repositories";
+
+"presentRequestError_alert_dismissActionTitle" = "OK";
