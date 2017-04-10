@@ -10,7 +10,7 @@ import Foundation
 @testable import desafio_ios
 
 extension Repository {
-    static func example() -> Repository {
+    static func fromExampleJSON() -> Repository {
         return Repository(dictionary: repositoryExampleJSON())!
     }
 }
@@ -26,7 +26,7 @@ extension Repository: Equatable {
 }
 
 extension PullRequest {
-    static func example() -> PullRequest {
+    static func fromExampleJSON() -> PullRequest {
         return PullRequest(dictionary: pullRequestExampleJSON())!
     }
 }

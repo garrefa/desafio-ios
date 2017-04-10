@@ -81,7 +81,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     func testResultForwarding_onReloadRepositories() {
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.example()], hasMorePages: true)
+        let expected = (repositories: [ Repository.fromExampleJSON()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.reloadRepositories()
@@ -110,7 +110,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
         interactor.reloadRepositories()
         
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.example()], hasMorePages: true)
+        let expected = (repositories: [ Repository.fromExampleJSON()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.loadMoreRepositories()
@@ -137,7 +137,7 @@ class ListRepositoriesInteractorTests: XCTestCase {
     
     func testRepositoriesPropertyUpdate() {
         // Config repositoryServiceMock to answer what we need
-        let expected = (repositories: [Repository.example()], hasMorePages: true)
+        let expected = (repositories: [ Repository.fromExampleJSON()], hasMorePages: true)
         repositoryServiceMock.findRepositoriesExpectedResult = expected
         
         interactor.reloadRepositories()

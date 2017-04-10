@@ -32,14 +32,14 @@ class ListPullRequestsInteractorTests: XCTestCase {
         presenterMock = ListPullRequestsPresenterMock()
         interactor = DefaultListPullRequestsInteractor(repositoryService: repositoryServiceMock)
         interactor.presenter = presenterMock
-        interactor.repository = Repository.example()
+        interactor.repository =  Repository.fromExampleJSON()
     }
     
     // MARK: - Tests
     
     func testPullRequestsPropertyUpdate() {
         // Config repositoryServiceMock to answer what we need
-        let expected = (pullRequests: [PullRequest.example()], hasMorePages: true)
+        let expected = (pullRequests: [PullRequest.fromExampleJSON()], hasMorePages: true)
         repositoryServiceMock.pullRequests_expectedResult = expected
         
         interactor.reloadPullRequests()
@@ -53,7 +53,7 @@ class ListPullRequestsInteractorTests: XCTestCase {
     }
     
     func testReloadPullRequests_forwardsResultsToPresenter() {
-        let expected = (pullRequests: [PullRequest.example()], hasMorePages: true)
+        let expected = (pullRequests: [PullRequest.fromExampleJSON()], hasMorePages: true)
         repositoryServiceMock.pullRequests_expectedResult = expected
         
         interactor.reloadPullRequests()
@@ -131,7 +131,7 @@ class ListPullRequestsInteractorTests: XCTestCase {
         repositoryServiceMock.pullRequests_expectedResult = (pullRequests: [], hasMorePages: true)
         interactor.reloadPullRequests()
         
-        let expectedResult = (pullRequests: [PullRequest.example()], hasMorePages: false)
+        let expectedResult = (pullRequests: [PullRequest.fromExampleJSON()], hasMorePages: false)
         repositoryServiceMock.pullRequests_expectedResult = expectedResult
         interactor.loadMorePullRequests()
         

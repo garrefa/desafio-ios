@@ -41,7 +41,7 @@ class ListRepositoriesPresenterTests: XCTestCase {
     }
     
     private func _testPresentRepositories_reloading(hasMoreEntries: Bool) {
-        let repositories = [Repository.example()]
+        let repositories = [ Repository.fromExampleJSON()]
         presenter.presentRepositories(repositories, shouldAppend: false, hasMore: hasMoreEntries)
         guard let viewModel = viewControllerMock.latestViewModelDisplayed else {
             XCTFail("viewController should have been requested to display a new ViewModel")
@@ -62,7 +62,7 @@ class ListRepositoriesPresenterTests: XCTestCase {
     }
     
     private func _testPresentRepositories_appending(hasMoreEntries: Bool) {
-        let repositories = [Repository.example()]
+        let repositories = [ Repository.fromExampleJSON()]
         presenter.presentRepositories(repositories, shouldAppend: true, hasMore: hasMoreEntries)
         guard let latestUpdateViewModelData = viewControllerMock.latestUpdateViewModelData else {
             XCTFail("viewController should have been requested to update its ViewModel data")

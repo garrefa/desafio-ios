@@ -48,7 +48,7 @@ class ListPullRequestsPresenterTests: XCTestCase {
     }
     
     func testPresentPullRequests_dontAppend() {
-        let pullRequests = [PullRequest.example()]
+        let pullRequests = [PullRequest.fromExampleJSON()]
         let hasMore = true
         presenter.presentPullRequests(pullRequests, shouldAppend: false, hasMore: hasMore)
         if let viewModel = viewControllerMock.viewModelDisplayed {
@@ -60,7 +60,7 @@ class ListPullRequestsPresenterTests: XCTestCase {
     }
     
     func testPresentPullRequests_appending() {
-        let pullRequests = [PullRequest.example()]
+        let pullRequests = [PullRequest.fromExampleJSON()]
         let hasMore = true
         presenter.presentPullRequests(pullRequests, shouldAppend: true, hasMore: hasMore)
         if let result = viewControllerMock.updateViewModel_result {
