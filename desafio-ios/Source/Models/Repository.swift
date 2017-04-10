@@ -14,7 +14,7 @@ struct Repository {
     let description: String?
     let forksCount: Int
     let stargazersCount: Int
-    let owner: Owner
+    let owner: User
     
     init?(dictionary: [String: Any]) {
         guard
@@ -22,7 +22,7 @@ struct Repository {
             let forksCount = dictionary["forks_count"] as? Int,
             let stargazersCount = dictionary["stargazers_count"] as? Int,
             let ownerDict = dictionary["owner"] as? [String: Any],
-            let owner = Owner(dictionary: ownerDict)
+            let owner = User(dictionary: ownerDict)
         else {
             debugPrint("Can't parse Repository dictionary: \(dictionary)")
             return nil

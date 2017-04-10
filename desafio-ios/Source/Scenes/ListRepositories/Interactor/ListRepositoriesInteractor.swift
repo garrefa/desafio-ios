@@ -14,6 +14,8 @@ import Foundation
 /// Interface provided by a ListRepositoriesInteractor to receive events from a ViewController
 protocol ListRepositoriesInteractor {
 
+    var repositories: [Repository] { get }
+    
     /// loads the the first page of repositories
     func reloadRepositories()
     

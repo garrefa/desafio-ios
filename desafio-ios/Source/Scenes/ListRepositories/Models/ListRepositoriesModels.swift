@@ -21,7 +21,7 @@ struct ListRepositories {
             let description: String
             let forks: String
             let stars: String
-            let owner: OwnerViewModel
+            let owner: UserViewModel
         }
         
         var repositories: [Repository]

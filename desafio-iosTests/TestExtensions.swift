@@ -23,3 +23,7 @@ extension Repository: Equatable {
         return "\(lhs)" == "\(rhs)"
     }
 }
+
+func anyError() -> Error {
+    return NSError(domain: "", code: 0, userInfo: .none)
+}

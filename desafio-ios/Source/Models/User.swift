@@ -1,5 +1,5 @@
 //
-//  Owner.swift
+//  User.swift
 //  desafio-ios
 //
 //  Created by Cicero Camargo on 09/04/17.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Owner {
+struct User {
     
     let login: String
     let avatarURL: URL?
     
     init?(dictionary: [String: Any]) {
         guard let login = dictionary["login"] as? String else {
-            debugPrint("can't parse Owner dictionary: \(dictionary)")
+            debugPrint("can't parse User dictionary: \(dictionary)")
             return nil
         }
         self.login = login

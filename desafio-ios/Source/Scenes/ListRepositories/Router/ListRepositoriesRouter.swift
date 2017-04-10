@@ -13,5 +13,8 @@ import UIKit
 
 /// Interface provided by a router that navigates from ListRepositoriesViewController to other scenes
 protocol ListRepositoriesRouter {
+    
+    func showPullRequests()
+    
     func passDataToNextScene(segue: UIStoryboardSegue)
 }

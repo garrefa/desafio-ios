@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum ProgrammingLanguage {
-    case java
+enum ProgrammingLanguage: String {
+    case java = "Java"
 }

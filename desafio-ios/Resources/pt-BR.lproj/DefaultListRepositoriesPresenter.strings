@@ -6,6 +6,10 @@
   Copyright © 2017 Stationfy. All rights reserved.
 */
 
+"presentRequestError_alert_notConnectedErrorTitle" = "Error";
+
+"presentRequestError_alert_notConnectedErrorMessage" = "Problemas na conexão. Tente novamente mais tarde";
+
 "presentRequestError_alert_unknownErrorTitle" = "Error";
 
 "presentRequestError_alert_unknownErrorMessage" = "Um erro inesperado aconteceu ao carregar os repositórios";
