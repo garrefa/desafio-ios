@@ -11,6 +11,8 @@ The RepositoryService defines several enums and structs that makes the API very 
 
 The app is already localized for en_US and pt-BR.
 
+There are a couple of TODOs, including the one for fetching the full name from a GitHub user.
+
 ## Running the project
 
 This project was built using Xcode 8.2.
