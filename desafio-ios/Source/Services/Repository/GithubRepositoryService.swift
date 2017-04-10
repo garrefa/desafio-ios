@@ -57,10 +57,7 @@ class GithubRepositoryService: RepositoryService {
                 let repositories = items.flatMap { Repository(dictionary: $0) }
                 
                 // discover if there are more pages to be requested
-                guard let morePages = self.checkIfThereAreMorePages(fromLinkHeaderIn: response.response) else {
-                    errorBlock(RepositoryServiceError.unableToParseHeaders)
-                    return
-                }
+                let morePages = self.checkIfThereAreMorePages(fromLinkHeaderIn: response.response)
                 
                 completionBlock(repositories, morePages)
             }
@@ -110,10 +107,7 @@ class GithubRepositoryService: RepositoryService {
                 let pullRequests = items.flatMap { PullRequest(dictionary: $0) }
                 
                 // discover if there are more pages to be requested
-                guard let morePages = self.checkIfThereAreMorePages(fromLinkHeaderIn: response.response) else {
-                    errorBlock(RepositoryServiceError.unableToParseHeaders)
-                    return
-                }
+                let morePages = self.checkIfThereAreMorePages(fromLinkHeaderIn: response.response)
                 
                 completionBlock(pullRequests, morePages)
             }
@@ -163,9 +157,9 @@ class GithubRepositoryService: RepositoryService {
         return ["Accept": "application/vnd.github.v3+json"] // forces the api to v3+json
     }
     
-    func checkIfThereAreMorePages(fromLinkHeaderIn response: HTTPURLResponse?) -> Bool? {
+    func checkIfThereAreMorePages(fromLinkHeaderIn response: HTTPURLResponse?) -> Bool {
         guard let linkHeaderValue = response?.allHeaderFields["Link"] as? String else {
-            return nil
+            return false
         }
         return linkHeaderValue.contains("rel=\"next\"")
     }

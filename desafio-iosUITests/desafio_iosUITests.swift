@@ -56,7 +56,8 @@ class desafio_iosUITests: XCTestCase {
         repositoryCell.tap()
         
         // make sure we have a way to go back
-        XCTAssert(navigationBar.buttons["Back"].exists)
+        let backButton = navigationBar.buttons["Back"]
+        XCTAssertTrue(backButton.exists)
         
         // assert that we have presented pull requests table
         let pullRequestsTable = app.tables.element
@@ -80,10 +81,8 @@ class desafio_iosUITests: XCTestCase {
         expectation(for: thereAreMorePRCells, evaluatedWith: pullRequestsTable.cells, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
         
-        // now, at the same index of the "load more" cell, we'll have a RepositoryCell
-        let pullRequestCell = pullRequestsTable.cells.element(boundBy: originalPRsTableCount - 1)
-        
-        // tap on it and we'll go to Safari!
-        pullRequestCell.tap()
+        // if we tap on a PR we'll go to Safari and the test fails
+        // so let's just go back
+        backButton.tap()
     }
 }
