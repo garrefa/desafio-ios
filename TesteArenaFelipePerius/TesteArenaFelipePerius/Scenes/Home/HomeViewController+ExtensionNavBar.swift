@@ -22,7 +22,7 @@ extension HomeViewController {
     private func setupLeftNavItem() {
         let menuButton = UIButton(type: .system)
         menuButton.setImage(#imageLiteral(resourceName: "ic_menu").withRenderingMode(.alwaysOriginal), for: .normal)
-        menuButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        menuButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
     }
 }

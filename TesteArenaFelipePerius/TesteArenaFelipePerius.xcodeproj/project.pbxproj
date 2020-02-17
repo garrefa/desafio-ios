@@ -18,6 +18,9 @@
 		2F5C381E23FAF97E000985E2 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381623FAF97E000985E2 /* UITableViewCellExtension.swift */; };
 		2F5C381F23FAF97E000985E2 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381723FAF97E000985E2 /* ReusableView.swift */; };
 		2F5C382023FAF97E000985E2 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381823FAF97E000985E2 /* NSObject+ClassName.swift */; };
+		2F5C382523FB0919000985E2 /* RepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C382423FB0919000985E2 /* RepositoryList.swift */; };
+		2F5C382723FB09DB000985E2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C382623FB09DB000985E2 /* Repository.swift */; };
+		2F5C382923FB12C6000985E2 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C382823FB12C6000985E2 /* Owner.swift */; };
 		2F7B7C3423F711C7006D73D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */; };
 		2F7B7C3A23F711C9006D73D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3923F711C9006D73D2 /* Assets.xcassets */; };
 		2F7B7C3D23F711C9006D73D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3C23F711C9006D73D2 /* Preview Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		2F5C381623FAF97E000985E2 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		2F5C381723FAF97E000985E2 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		2F5C381823FAF97E000985E2 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		2F5C382423FB0919000985E2 /* RepositoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryList.swift; sourceTree = "<group>"; };
+		2F5C382623FB09DB000985E2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2F5C382823FB12C6000985E2 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2F7B7C3023F711C7006D73D2 /* TesteArenaFelipePerius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteArenaFelipePerius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7B7C3923F711C9006D73D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +152,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2F5C382223FB0505000985E2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2F5C382323FB0886000985E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F5C382423FB0919000985E2 /* RepositoryList.swift */,
+				2F5C382623FB09DB000985E2 /* Repository.swift */,
+				2F5C382823FB12C6000985E2 /* Owner.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2F7B7C2723F711C7006D73D2 = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +194,11 @@
 		2F7B7C3223F711C7006D73D2 /* TesteArenaFelipePerius */ = {
 			isa = PBXGroup;
 			children = (
+				2F5C382323FB0886000985E2 /* Models */,
 				2F5C380F23FAF8E2000985E2 /* Helpers */,
 				2F7B7C6423FA00FD006D73D2 /* View */,
 				2F7B7C6323FA00E9006D73D2 /* Scenes */,
+				2F5C382223FB0505000985E2 /* Service */,
 				2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */,
 				2F7B7C3923F711C9006D73D2 /* Assets.xcassets */,
 				2F7B7C4123F711C9006D73D2 /* Info.plist */,
@@ -526,12 +551,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7B7C3423F711C7006D73D2 /* AppDelegate.swift in Sources */,
+				2F5C382923FB12C6000985E2 /* Owner.swift in Sources */,
 				2F5C381923FAF97E000985E2 /* UITableView+NibUtils.swift in Sources */,
+				2F5C382723FB09DB000985E2 /* Repository.swift in Sources */,
 				2F5C381C23FAF97E000985E2 /* UITableViewCell+Defaults.swift in Sources */,
 				2F5C381F23FAF97E000985E2 /* ReusableView.swift in Sources */,
 				2F5C382023FAF97E000985E2 /* NSObject+ClassName.swift in Sources */,
 				2F5C381A23FAF97E000985E2 /* NibLoadableView.swift in Sources */,
 				2F5C381D23FAF97E000985E2 /* AutoheightableView.swift in Sources */,
+				2F5C382523FB0919000985E2 /* RepositoryList.swift in Sources */,
 				2F7B7C6F23FA07B2006D73D2 /* HomeViewController+ExtensionNavBar.swift in Sources */,
 				2F7B7C6923FA0220006D73D2 /* HomeViewController.swift in Sources */,
 				2F5C380D23FAE992000985E2 /* HomeDataScource.swift in Sources */,

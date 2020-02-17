@@ -10,7 +10,7 @@
         <!--Home View Controller-->
         <scene sceneID="TSH-lR-yhm">
             <objects>
-                <viewController id="x0n-0T-lbR" customClass="HomeViewController" customModule="TesteArenaFelipePerius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="x0n-0T-lbR" customClass="HomeViewController" customModule="TesteArenaFelipePerius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GRy-gC-2Dt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--GitHub JavaPop-->
         <scene sceneID="ipa-y0-bci">
             <objects>
-                <navigationController title="GitHub JavaPop" id="Xjm-IQ-paU" sceneMemberID="viewController">
+                <navigationController title="GitHub JavaPop" interfaceStyle="light" id="Xjm-IQ-paU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SNd-Pu-tBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

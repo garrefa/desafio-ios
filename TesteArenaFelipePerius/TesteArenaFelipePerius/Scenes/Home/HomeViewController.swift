@@ -12,6 +12,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let dataSource = HomeDataScource()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarItems()
