@@ -40,3 +40,8 @@ O processo de Pull Request funciona da seguinte maneira:
 2. Fará seu projeto nesse fork
 3. Commitará e subirá as alterações para o __SEU__ fork
 4. Enviar um pull request pela interface do Github
+
+
+### **Comentários** ###
+
+1. ficou faltando escrever o nome completo do usuário, cheguei a fazer a label, mas não quis passar muito da hora da entrega e eu teria que fazer um request diferente pra cada usuário, sendo que tenho um numero de requests limitados, então vou ficar devendo isto.
