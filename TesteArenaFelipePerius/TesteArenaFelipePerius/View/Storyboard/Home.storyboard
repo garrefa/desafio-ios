@@ -30,6 +30,9 @@
                         <viewLayoutGuide key="safeArea" id="zm0-Jx-Uet"/>
                     </view>
                     <navigationItem key="navigationItem" id="hs8-du-INW"/>
+                    <connections>
+                        <outlet property="tableView" destination="VFw-Bn-HG5" id="Yt9-x0-FUp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWr-dw-QUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
