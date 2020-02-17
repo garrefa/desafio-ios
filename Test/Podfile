@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+use_frameworks!
+inhibit_all_warnings!
+
+target 'Test' do
+    pod "SnapKit", '~> 4.0'
+    pod "Kingfisher", '~> 4.0'
+end
+
+target 'APIKit' do
+    pod "Alamofire"
+end
+
+target 'APIKitTests' do
+    pod "Alamofire"
+end

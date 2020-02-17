@@ -1,0 +1,15 @@
+
+/* issues list screen title */
+"issuesTitle" = "Issues";
+
+/* No comment provided by engineer. */
+"issue" = "issue";
+
+/* button that opens issue in web browser */
+"open in web" = "Abrir na web";
+
+/* closed issue */
+"closed" = "Fechado";
+
+/* open issue */
+"open" = "Aberto";
