@@ -10,10 +10,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    private let dataSource = HomeDataScource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarItems()
+        configTableView()
+    }
+    
+    private func configTableView() {
+        tableView.dataSource = dataSource as? UITableViewDataSource
+        tableView.delegate = dataSource
+        dataSource.tableView = tableView
+        dataSource.registerNibs(in: tableView)
     }
     
 }

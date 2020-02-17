@@ -14,10 +14,10 @@ extension HomeViewController {
         setupLeftNavItem()
         setupTitle()
     }
+    
     private func setupTitle() {
         self.title = "GitHub JavaPop"
     }
-
     
     private func setupLeftNavItem() {
         let menuButton = UIButton(type: .system)

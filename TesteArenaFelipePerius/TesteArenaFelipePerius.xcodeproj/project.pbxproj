@@ -3,13 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2F5C380A23FA179C000985E2 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */; };
 		2F5C380B23FA179C000985E2 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */; };
 		2F5C380D23FAE992000985E2 /* HomeDataScource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C380C23FAE992000985E2 /* HomeDataScource.swift */; };
+		2F5C381923FAF97E000985E2 /* UITableView+NibUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381123FAF97D000985E2 /* UITableView+NibUtils.swift */; };
+		2F5C381A23FAF97E000985E2 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381223FAF97D000985E2 /* NibLoadableView.swift */; };
+		2F5C381B23FAF97E000985E2 /* AutosizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381323FAF97E000985E2 /* AutosizableView.swift */; };
+		2F5C381C23FAF97E000985E2 /* UITableViewCell+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381423FAF97E000985E2 /* UITableViewCell+Defaults.swift */; };
+		2F5C381D23FAF97E000985E2 /* AutoheightableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381523FAF97E000985E2 /* AutoheightableView.swift */; };
+		2F5C381E23FAF97E000985E2 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381623FAF97E000985E2 /* UITableViewCellExtension.swift */; };
+		2F5C381F23FAF97E000985E2 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381723FAF97E000985E2 /* ReusableView.swift */; };
+		2F5C382023FAF97E000985E2 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C381823FAF97E000985E2 /* NSObject+ClassName.swift */; };
 		2F7B7C3423F711C7006D73D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */; };
 		2F7B7C3A23F711C9006D73D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3923F711C9006D73D2 /* Assets.xcassets */; };
 		2F7B7C3D23F711C9006D73D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B7C3C23F711C9006D73D2 /* Preview Assets.xcassets */; };
@@ -46,6 +54,14 @@
 		2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		2F5C380C23FAE992000985E2 /* HomeDataScource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataScource.swift; sourceTree = "<group>"; };
+		2F5C381123FAF97D000985E2 /* UITableView+NibUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+NibUtils.swift"; sourceTree = "<group>"; };
+		2F5C381223FAF97D000985E2 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		2F5C381323FAF97E000985E2 /* AutosizableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutosizableView.swift; sourceTree = "<group>"; };
+		2F5C381423FAF97E000985E2 /* UITableViewCell+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Defaults.swift"; sourceTree = "<group>"; };
+		2F5C381523FAF97E000985E2 /* AutoheightableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoheightableView.swift; sourceTree = "<group>"; };
+		2F5C381623FAF97E000985E2 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		2F5C381723FAF97E000985E2 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		2F5C381823FAF97E000985E2 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		2F7B7C3023F711C7006D73D2 /* TesteArenaFelipePerius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteArenaFelipePerius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7B7C3923F711C9006D73D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +115,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F5C380F23FAF8E2000985E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F5C382123FAF9A4000985E2 /* Extension */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2F5C381023FAF969000985E2 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2F5C381523FAF97E000985E2 /* AutoheightableView.swift */,
+				2F5C381323FAF97E000985E2 /* AutosizableView.swift */,
+				2F5C381223FAF97D000985E2 /* NibLoadableView.swift */,
+				2F5C381823FAF97E000985E2 /* NSObject+ClassName.swift */,
+				2F5C381723FAF97E000985E2 /* ReusableView.swift */,
+				2F5C381123FAF97D000985E2 /* UITableView+NibUtils.swift */,
+				2F5C381423FAF97E000985E2 /* UITableViewCell+Defaults.swift */,
+				2F5C381623FAF97E000985E2 /* UITableViewCellExtension.swift */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		2F5C382123FAF9A4000985E2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2F5C381023FAF969000985E2 /* UITableViewCell */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2F7B7C2723F711C7006D73D2 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +171,7 @@
 		2F7B7C3223F711C7006D73D2 /* TesteArenaFelipePerius */ = {
 			isa = PBXGroup;
 			children = (
+				2F5C380F23FAF8E2000985E2 /* Helpers */,
 				2F7B7C6423FA00FD006D73D2 /* View */,
 				2F7B7C6323FA00E9006D73D2 /* Scenes */,
 				2F7B7C3323F711C7006D73D2 /* AppDelegate.swift */,
@@ -233,7 +281,6 @@
 				676BFE73DC18D74400BA3C6A /* Pods-TesteArenaFelipePeriusTests.debug.xcconfig */,
 				D66DA1D8C48F7B650DE8013B /* Pods-TesteArenaFelipePeriusTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -479,10 +526,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7B7C3423F711C7006D73D2 /* AppDelegate.swift in Sources */,
+				2F5C381923FAF97E000985E2 /* UITableView+NibUtils.swift in Sources */,
+				2F5C381C23FAF97E000985E2 /* UITableViewCell+Defaults.swift in Sources */,
+				2F5C381F23FAF97E000985E2 /* ReusableView.swift in Sources */,
+				2F5C382023FAF97E000985E2 /* NSObject+ClassName.swift in Sources */,
+				2F5C381A23FAF97E000985E2 /* NibLoadableView.swift in Sources */,
+				2F5C381D23FAF97E000985E2 /* AutoheightableView.swift in Sources */,
 				2F7B7C6F23FA07B2006D73D2 /* HomeViewController+ExtensionNavBar.swift in Sources */,
 				2F7B7C6923FA0220006D73D2 /* HomeViewController.swift in Sources */,
 				2F5C380D23FAE992000985E2 /* HomeDataScource.swift in Sources */,
+				2F5C381B23FAF97E000985E2 /* AutosizableView.swift in Sources */,
 				2F5C380A23FA179C000985E2 /* RepositoryTableViewCell.swift in Sources */,
+				2F5C381E23FAF97E000985E2 /* UITableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
