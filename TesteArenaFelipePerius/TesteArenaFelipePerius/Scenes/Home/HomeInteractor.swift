@@ -8,6 +8,24 @@
 
 import UIKit
 
-class HomeInteractor: NSObject {
+protocol RepositoryListBusinessLogic {
+    func fetchListRepository(page:Int)
+}
 
+class HomeInteractor: RepositoryListBusinessLogic {
+    var presenter: RepositoryListPresentationLogic?
+    
+    func fetchListRepository(page:Int) {
+        self.presenter?.loadingView(isLoading:true)
+        RepositoryWorker.getRepositories(page: page) { (repository, msgError) in
+            self.presenter?.loadingView(isLoading:false)
+            if let messsage = msgError {
+                let response = HomeModel.Response.init(repositoryList:nil, isError:true, messageError: messsage)
+                self.presenter?.presentRepositories(response:response)
+            } else {
+                let response = HomeModel.Response.init(repositoryList:repository, isError:false, messageError:nil)
+                self.presenter?.presentRepositories(response:response)
+            }
+        }
+     }
 }

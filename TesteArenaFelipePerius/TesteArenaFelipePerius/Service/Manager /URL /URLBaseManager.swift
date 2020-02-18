@@ -9,5 +9,17 @@
 import UIKit
 
 class URLBaseManager: NSObject {
+    static let serviceDomain: String = "https://api.github.com/"
+     
+    class var baseURL: URL {
+         return URL(string: "\(serviceDomain)")!
+    }
+    
+    static func queryURL(queryParam query: String) -> URL? {
 
+        guard let url = URL(string: "\(serviceDomain)\(query)") else {
+            return nil
+        }
+        return url
+    }
 }

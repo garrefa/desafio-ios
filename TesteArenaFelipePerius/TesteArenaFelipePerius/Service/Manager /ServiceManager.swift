@@ -7,7 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class ServiceManager: NSObject {
-
+    static var defaultClient : Alamofire.Session = {
+        // Create custom manager
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = .none
+        let man = Alamofire.Session(
+            configuration: URLSessionConfiguration.default
+        )
+        return man
+    }()
 }

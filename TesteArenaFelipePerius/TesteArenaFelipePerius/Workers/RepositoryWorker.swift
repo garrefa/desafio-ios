@@ -9,5 +9,12 @@
 import UIKit
 
 class RepositoryWorker: NSObject {
-
+    //MARK: Get Repositories
+    class func getRepositories(page:Int, completion: @escaping (_ repositoryList:RepositoryList?, _ error: String?) -> Void) {
+          _ = RepositoryService.getRepositories(page:page).subscribe(onNext: { (statements) in
+              completion(statements, nil)
+          }, onError: { (error) in
+              completion(nil, error.message())
+          }, onCompleted: nil, onDisposed: nil)
+      }
 }

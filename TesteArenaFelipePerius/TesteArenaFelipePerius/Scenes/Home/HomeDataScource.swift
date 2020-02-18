@@ -11,6 +11,12 @@ import UIKit
 class HomeDataScource: NSObject {
     weak var tableView: UITableView?
     
+    var repositories: [Repository] = [] {
+           didSet {
+               tableView?.reloadData()
+           }
+    }
+    
     func registerNibs(in tableView: UITableView) {
           tableView.registerNib(RepositoryTableViewCell.self)
     }
@@ -20,13 +26,14 @@ class HomeDataScource: NSObject {
         guard let cell = tableView.dequeueReusableCellWithDefaultIdentifier(RepositoryTableViewCell.self) else {
             return UITableViewCell()
         }
+        cell.setupCell(respository:repositories[indexPath.row])
         return cell
     }
     
 }
 
 
-// MARK: Cells creation
+// MARK: Delegate TableView
 extension HomeDataScource:UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,7 +41,7 @@ extension HomeDataScource:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

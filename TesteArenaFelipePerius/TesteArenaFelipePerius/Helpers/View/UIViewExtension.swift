@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIView {
-
+   
+    
     func constraintEdgesToSuperview() {
         
         guard let superview = self.superview else { return }
@@ -27,32 +28,24 @@ extension UIView {
             //View is already locked
         }
         else {
-            let lockView = UIView(frame: bounds)
-            lockView.backgroundColor = UIColor(white: 0.0, alpha: 0.75)
-            lockView.tag = 10
-            lockView.alpha = 0.0
-            let activity = UIActivityIndicatorView(style: .white)
-            activity.hidesWhenStopped = true
-            
-            activity.center = lockView.center
-            
-            activity.translatesAutoresizingMaskIntoConstraints = false
-            
-            lockView.addSubview(activity)
-            activity.startAnimating()
-            
-            self.addSubview(lockView)
-            
-            let xCenterConstraint = NSLayoutConstraint(item: activity, attribute: .centerX, relatedBy: .equal, toItem: lockView, attribute: .centerX, multiplier: 1, constant: 0)
-            
-            let yCenterConstraint = NSLayoutConstraint(item: activity, attribute: .centerY, relatedBy: .equal, toItem: lockView, attribute: .centerY, multiplier: 1, constant: 0)
-            
-            
-            NSLayoutConstraint.activate([xCenterConstraint, yCenterConstraint])
-            
-            UIView.animate(withDuration: duration, animations: {
-                lockView.alpha = 1.0
-            })
+            let loadingView: UIView = UIView()
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+          
+            loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            loadingView.center = CGPoint(x: self.frame.width / 2, y: self.frame.size.height / 2)
+            loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            loadingView.clipsToBounds = true
+            loadingView.layer.cornerRadius = 10
+            loadingView.tag = 10
+
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 40.0, height: 40.0)
+            activityIndicator.style = .large
+            activityIndicator.color = .white
+            activityIndicator.center = CGPoint(x: loadingView.frame.width / 2, y: loadingView.frame.size.height / 2)
+
+            loadingView.addSubview(activityIndicator)
+            self.addSubview(loadingView)
+            activityIndicator.startAnimating()
         }
     }
     
@@ -65,20 +58,5 @@ extension UIView {
                     lockView.removeFromSuperview()
             })
         }
-    }
-    
-    func dropShadow() {
-        
-        self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset = CGSize(width: -1, height: 1)
-        self.layer.shadowRadius = 6
-        
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
-        
-        self.layer.rasterizationScale = UIScreen.main.scale
-        
     }
 }

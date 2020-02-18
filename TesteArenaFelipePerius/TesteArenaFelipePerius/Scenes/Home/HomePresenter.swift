@@ -8,6 +8,21 @@
 
 import UIKit
 
-class HomePresenter: NSObject {
 
+protocol RepositoryListPresentationLogic {
+    func presentRepositories(response:HomeModel.Response)
+    func loadingView(isLoading:Bool)
+}
+
+class HomePresenter: RepositoryListPresentationLogic {
+    weak var viewController: HomeOutput?
+    
+    func loadingView(isLoading:Bool) {
+        viewController?.loadingView(isLoading:isLoading)
+    }
+    
+    func presentRepositories(response: HomeModel.Response) {
+        viewController?.displayRepositories(viewModel:response)
+    }
+    
 }
