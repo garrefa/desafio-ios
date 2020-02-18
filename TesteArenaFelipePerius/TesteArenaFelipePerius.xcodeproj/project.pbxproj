@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F317E0723FC39AC0078CFEE /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F317E0623FC39AC0078CFEE /* UIColor+Util.swift */; };
 		2F5C380A23FA179C000985E2 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */; };
 		2F5C380B23FA179C000985E2 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */; };
 		2F5C380D23FAE992000985E2 /* HomeDataScource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C380C23FAE992000985E2 /* HomeDataScource.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		048ABF9CC21A73C4F9C32A2B /* Pods_TesteArenaFelipePerius_TesteArenaFelipePeriusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TesteArenaFelipePerius_TesteArenaFelipePeriusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F317E0623FC39AC0078CFEE /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		2F5C380C23FAE992000985E2 /* HomeDataScource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataScource.swift; sourceTree = "<group>"; };
@@ -143,9 +145,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F317E0823FC3FDC0078CFEE /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				2F317E0623FC39AC0078CFEE /* UIColor+Util.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		2F5C380F23FAF8E2000985E2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2F317E0823FC3FDC0078CFEE /* Color */,
 				2F83AD5323FC2E38006CF2E5 /* View */,
 				2F83AD4E23FC2983006CF2E5 /* AlertUtils */,
 				2F5C382123FAF9A4000985E2 /* Extension */,
@@ -650,6 +661,7 @@
 				2F83AD5023FC2999006CF2E5 /* AlertUtils.swift in Sources */,
 				2F5C382023FAF97E000985E2 /* NSObject+ClassName.swift in Sources */,
 				2F5C381A23FAF97E000985E2 /* NibLoadableView.swift in Sources */,
+				2F317E0723FC39AC0078CFEE /* UIColor+Util.swift in Sources */,
 				2F5C381D23FAF97E000985E2 /* AutoheightableView.swift in Sources */,
 				2F5C382523FB0919000985E2 /* RepositoryList.swift in Sources */,
 				2F7B7C6F23FA07B2006D73D2 /* HomeViewController+ExtensionNavBar.swift in Sources */,

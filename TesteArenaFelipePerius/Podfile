@@ -9,6 +9,7 @@ target 'TesteArenaFelipePerius' do
   pod 'Alamofire', '~> 5.0'
   pod 'RxSwift',    '~> 4.0'
   pod 'ObjectMapper', '~> 3.4'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'TesteArenaFelipePeriusTests' do
     inherit! :search_paths

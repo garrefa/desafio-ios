@@ -111,6 +111,7 @@
                 <outlet property="fullName" destination="KWU-yX-QP1" id="fbb-Qg-Ton"/>
                 <outlet property="numberForks" destination="R0H-FE-jbM" id="KYM-1N-Jpa"/>
                 <outlet property="numberStars" destination="av4-CS-Uc0" id="ZWD-5V-YwL"/>
+                <outlet property="photoUser" destination="14a-Gk-wSo" id="cnl-Su-IT5"/>
                 <outlet property="starImageView" destination="60e-99-jkg" id="JLb-Fq-qGT"/>
                 <outlet property="titleRepository" destination="36w-0C-jZs" id="5vs-fO-hou"/>
                 <outlet property="usernameLabel" destination="R28-QO-imO" id="1mi-JV-TKL"/>
