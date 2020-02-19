@@ -7,8 +7,8 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 
 ### Pré-requisitos
 O que você precisa para construir, executar e testar o aplicativo:
-Xcode 9.3 ou posterior. 
-O Deployment target está configurando pra suporta iOS 11.0 ou posterior.
+Xcode 10.0 ou posterior. 
+O Deployment target está configurando pra suporta iOS 13.0 ou posterior.
 
 Faça o clone do repositório em sua máquina local.
 
