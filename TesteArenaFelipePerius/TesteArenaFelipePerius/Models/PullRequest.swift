@@ -15,6 +15,7 @@ class PullRequest: Mappable {
     var body:String?
     var url:String?
     var user:User?
+    var number:Int?
     
     required init?(map: Map) {
     
@@ -23,6 +24,7 @@ class PullRequest: Mappable {
     func mapping(map: Map) {
         title <- map["title"]
         id <- map["id"]
+        number <- map["number"]
         fullName <- map["author_association"]
         body <- map["body"]
         url <- map["html_url"]

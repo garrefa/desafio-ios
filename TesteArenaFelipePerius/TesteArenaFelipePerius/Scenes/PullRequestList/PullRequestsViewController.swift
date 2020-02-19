@@ -31,6 +31,7 @@ class PullRequestsViewController: UIViewController {
         let presenter = PullRequestPresenter()
         presenter.viewController = viewController
         interactor.presenter = presenter
+        dataSource.repository = currentRepository
         viewController.interactor = interactor as PullRequestListBusinessLogic
     }
     

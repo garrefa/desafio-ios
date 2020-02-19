@@ -10,11 +10,13 @@ import UIKit
 
 class PullRequestDataScource: NSObject {
     weak var tableView: UITableView?
+    var repository:Repository?
     var pullRequests: [PullRequest] = [] {
            didSet {
                tableView?.reloadData()
            }
     }
+    
     
     func registerNibs(in tableView: UITableView) {
         tableView.registerNib(PullRequestTableViewCell.self)
@@ -35,6 +37,7 @@ class PullRequestDataScource: NSObject {
            guard let cell = tableView.dequeueReusableCellWithDefaultIdentifier(HeaderTableViewCell.self) else {
                return UITableViewCell()
            }
+           cell.setupCell(repository:repository,totalCounts:pullRequests.count)
            return cell
     }
     

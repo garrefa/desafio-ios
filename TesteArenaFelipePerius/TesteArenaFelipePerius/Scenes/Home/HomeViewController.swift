@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = dataSource as UITableViewDataSource
         tableView.delegate = dataSource
         dataSource.tableView = tableView
+        tableView.accessibilityLabel = "hometableView"
         dataSource.registerNibs(in: tableView)
     }
     

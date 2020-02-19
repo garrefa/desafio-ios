@@ -17,6 +17,7 @@ class Repository: Mappable {
     var forksCount:Int?
     var starsCount:Int?
     var owner:Owner?
+    var issuesCount:Int?
     
     required init?(map: Map) {
     
@@ -28,6 +29,7 @@ class Repository: Mappable {
         description <- map["description"]
         forksCount <- map["forks_count"]
         starsCount <- map["stargazers_count"]
+        issuesCount <- map["open_issues"]
         error <- map["error"]
         owner <- map["owner"]
     }

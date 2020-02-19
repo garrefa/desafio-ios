@@ -19,10 +19,12 @@ class HeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setupView()
     }
 
-    func setupView(){
-    
+    func setupCell(repository:Repository?,totalCounts:Int) {
+        if let number = repository?.issuesCount {
+             titleLabel.text = "\(totalCounts) opened / \(number) closed"
+        }
+       
     }
 }
