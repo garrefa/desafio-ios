@@ -27,7 +27,6 @@ class HomeDataScource: NSObject {
     }
     
     private func generateRepositoryTableViewCell(forTableView tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCellWithDefaultIdentifier(RepositoryTableViewCell.self) else {
             return UITableViewCell()
         }

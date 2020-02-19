@@ -25,7 +25,7 @@ class PullRequest: Mappable {
         id <- map["id"]
         fullName <- map["author_association"]
         body <- map["body"]
-        url <- map["url"]
+        url <- map["html_url"]
         user <- map["user"]
     }
 }

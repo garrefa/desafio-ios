@@ -24,6 +24,7 @@ class PullRequestTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         self.setupViewCell()
     }
     

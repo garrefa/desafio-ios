@@ -9,16 +9,20 @@
 import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    static let identifier: String = "HeaderTableViewCell"
+       
+    static var cellHeight: CGFloat {
+           return 60
     }
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupView()
+    }
+
+    func setupView(){
+    
+    }
 }
