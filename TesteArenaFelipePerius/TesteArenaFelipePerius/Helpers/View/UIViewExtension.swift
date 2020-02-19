@@ -29,23 +29,28 @@ extension UIView {
         }
         else {
             let loadingView: UIView = UIView()
-            let activityIndicator = UIActivityIndicatorView(style: .large)
+            if #available(iOS 13.0, *) {
+                let activityIndicator = UIActivityIndicatorView(style: .large)
+                loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+                loadingView.center = CGPoint(x: self.frame.width / 2, y: self.frame.size.height / 2)
+                loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                loadingView.clipsToBounds = true
+                loadingView.layer.cornerRadius = 10
+                loadingView.tag = 10
+
+                activityIndicator.frame = CGRect(x: 0, y: 0, width: 40.0, height: 40.0)
+                activityIndicator.style = .large
+                activityIndicator.color = .white
+                activityIndicator.center = CGPoint(x: loadingView.frame.width / 2, y: loadingView.frame.size.height / 2)
+
+                loadingView.addSubview(activityIndicator)
+                self.addSubview(loadingView)
+                activityIndicator.startAnimating()
+            } else {
+                
+            }
           
-            loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-            loadingView.center = CGPoint(x: self.frame.width / 2, y: self.frame.size.height / 2)
-            loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-            loadingView.clipsToBounds = true
-            loadingView.layer.cornerRadius = 10
-            loadingView.tag = 10
-
-            activityIndicator.frame = CGRect(x: 0, y: 0, width: 40.0, height: 40.0)
-            activityIndicator.style = .large
-            activityIndicator.color = .white
-            activityIndicator.center = CGPoint(x: loadingView.frame.width / 2, y: loadingView.frame.size.height / 2)
-
-            loadingView.addSubview(activityIndicator)
-            self.addSubview(loadingView)
-            activityIndicator.startAnimating()
+        
         }
     }
     
