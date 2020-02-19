@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bpk-vk-0nP" customClass="PullRequestTableViewCell" customModule="TesteArenaFelipePerius" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bpk-vk-0nP" id="Sen-4s-saU">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do pull request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBO-FI-7k4">
+                        <rect key="frame" x="16" y="25" width="282" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                        <color key="textColor" red="0.4039215686" green="0.56862745100000001" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do repositorio lorem ipsum dolor sit amet lorem ipsum dolor" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7u-bu-oyb">
+                        <rect key="frame" x="17" y="52.5" width="287" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFb-B3-m6E">
+                        <rect key="frame" x="60" y="96" width="83" height="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                        <color key="textColor" red="0.4039215686" green="0.56862745100000001" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome sobrenome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLJ-a2-der">
+                        <rect key="frame" x="60" y="110" width="90" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_user" translatesAutoresizingMaskIntoConstraints="NO" id="jxc-7v-DiO">
+                        <rect key="frame" x="19" y="92" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="K0V-7e-OFe"/>
+                            <constraint firstAttribute="width" constant="35" id="fMf-eV-88i"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="T7u-bu-oyb" secondAttribute="trailing" constant="16" id="3QX-Pz-rQc"/>
+                    <constraint firstItem="BFb-B3-m6E" firstAttribute="top" secondItem="T7u-bu-oyb" secondAttribute="bottom" constant="12" id="6l5-5b-5Jn"/>
+                    <constraint firstItem="BFb-B3-m6E" firstAttribute="leading" secondItem="jxc-7v-DiO" secondAttribute="trailing" constant="6" id="BVv-aS-JIo"/>
+                    <constraint firstItem="T7u-bu-oyb" firstAttribute="top" secondItem="WBO-FI-7k4" secondAttribute="bottom" constant="4" id="CQa-5a-UzL"/>
+                    <constraint firstAttribute="trailing" secondItem="WBO-FI-7k4" secondAttribute="trailing" constant="22" id="Mrr-hX-8RS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lLJ-a2-der" secondAttribute="bottom" constant="7" id="Rss-Kb-x0p"/>
+                    <constraint firstAttribute="trailing" secondItem="BFb-B3-m6E" secondAttribute="trailing" constant="177" id="YFF-EK-MFJ"/>
+                    <constraint firstItem="jxc-7v-DiO" firstAttribute="top" secondItem="T7u-bu-oyb" secondAttribute="bottom" constant="8" id="aNn-Yf-KiB"/>
+                    <constraint firstItem="jxc-7v-DiO" firstAttribute="leading" secondItem="Sen-4s-saU" secondAttribute="leading" constant="19" id="azh-KT-DEq"/>
+                    <constraint firstItem="lLJ-a2-der" firstAttribute="leading" secondItem="jxc-7v-DiO" secondAttribute="trailing" constant="6" id="gc4-RX-dgU"/>
+                    <constraint firstItem="lLJ-a2-der" firstAttribute="top" secondItem="BFb-B3-m6E" secondAttribute="bottom" constant="2" id="kDi-yE-dru"/>
+                    <constraint firstAttribute="trailing" secondItem="lLJ-a2-der" secondAttribute="trailing" constant="170" id="kjU-pZ-qsW"/>
+                    <constraint firstAttribute="bottom" secondItem="jxc-7v-DiO" secondAttribute="bottom" constant="13" id="ur2-rk-7rk"/>
+                    <constraint firstItem="WBO-FI-7k4" firstAttribute="top" secondItem="Sen-4s-saU" secondAttribute="top" constant="24.5" id="x1x-fw-BLb"/>
+                    <constraint firstItem="WBO-FI-7k4" firstAttribute="leading" secondItem="Sen-4s-saU" secondAttribute="leading" constant="16" id="yPu-En-8eo"/>
+                    <constraint firstItem="T7u-bu-oyb" firstAttribute="leading" secondItem="Sen-4s-saU" secondAttribute="leading" constant="17" id="zqW-kD-h6c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="BAW-cT-6Rp"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="T7u-bu-oyb" id="aM7-Ar-cxo"/>
+                <outlet property="fullNameLabel" destination="lLJ-a2-der" id="3uV-VZ-E7U"/>
+                <outlet property="photoImageView" destination="jxc-7v-DiO" id="KD4-Mf-AMt"/>
+                <outlet property="titlePullRequest" destination="WBO-FI-7k4" id="wct-7d-Vlh"/>
+                <outlet property="usernameLabel" destination="BFb-B3-m6E" id="ESn-1H-bgt"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="photo_user" width="64" height="64"/>
+    </resources>
+</document>

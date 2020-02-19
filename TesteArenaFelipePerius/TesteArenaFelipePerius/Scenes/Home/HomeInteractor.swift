@@ -14,18 +14,23 @@ protocol RepositoryListBusinessLogic {
 
 class HomeInteractor: RepositoryListBusinessLogic {
     var presenter: RepositoryListPresentationLogic?
+    var isLoading = false
     
     func fetchListRepository(page:Int) {
-        self.presenter?.loadingView(isLoading:true)
-        RepositoryWorker.getRepositories(page: page) { (repository, msgError) in
-            self.presenter?.loadingView(isLoading:false)
-            if let messsage = msgError {
-                let response = HomeModel.Response.init(repositoryList:nil, isError:true, messageError: messsage)
-                self.presenter?.presentRepositories(response:response)
-            } else {
-                let response = HomeModel.Response.init(repositoryList:repository, isError:false, messageError:nil)
-                self.presenter?.presentRepositories(response:response)
-            }
+        if !isLoading {
+            isLoading = true
+            self.presenter?.loadingView(isLoading:isLoading)
+            RepositoryWorker.getRepositories(page: page) { (repository, msgError) in
+                self.isLoading = false
+                self.presenter?.loadingView(isLoading:self.isLoading)
+                if let messsage = msgError {
+                         let response = HomeModel.Response.init(repositoryList:nil, isError:true, messageError: messsage)
+                         self.presenter?.presentRepositories(response:response)
+                     } else {
+                         let response = HomeModel.Response.init(repositoryList:repository, isError:false, messageError:nil)
+                         self.presenter?.presentRepositories(response:response)
+                     }
+                 }
         }
      }
 }

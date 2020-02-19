@@ -16,7 +16,7 @@ class Routes: NSObject {
     }
     
     // MARK: - PullRequests
-    static func getStatements(owner: String, repository: String) -> URL {
+    static func getPullRequests(owner: String, repository: String) -> URL {
         return  URLBaseManager.baseURL.appendingPathComponent("repos/\(owner)/\(repository)/pulls")
     }
 }

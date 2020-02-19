@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let dataSource = HomeDataScource()
     var interactor: RepositoryListBusinessLogic?
+    var startPage = 1
+    var router = HomeRouter()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -27,10 +29,7 @@ class HomeViewController: UIViewController {
         setup()
         setupNavigationBarItems()
         configTableView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.getRepositories()
+        self.getRepositories(page:startPage)
     }
     
     // MARK: Setup
@@ -39,7 +38,10 @@ class HomeViewController: UIViewController {
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
         presenter.viewController = viewController
+        router.homeViewController = viewController
         interactor.presenter = presenter
+        dataSource.offset = startPage
+        dataSource.viewController = viewController
         viewController.interactor = interactor as RepositoryListBusinessLogic
     }
     
@@ -50,14 +52,15 @@ class HomeViewController: UIViewController {
         dataSource.registerNibs(in: tableView)
     }
     
-    func getRepositories() {
-        interactor?.fetchListRepository(page:1)
+    func getRepositories(page:Int) {
+        interactor?.fetchListRepository(page:page)
     }
-
+    
 }
 
 extension HomeViewController:HomeOutput{
     func loadingView(isLoading:Bool) {
+        dataSource.isLoading = isLoading
         if isLoading {
             self.view.loadAnimation()
         } else {
@@ -70,8 +73,19 @@ extension HomeViewController:HomeOutput{
             AlertUtils.showAlertErrorWithMessage(title:"Erro", message:viewModel.messageError ?? "erro a carregar repositorios!", viewController:self)
         } else {
             if let repositories = viewModel.repositoryList?.repositoryList {
-                    dataSource.repositories = repositories
+                    dataSource.repositories += repositories
             }
         }
     }
+}
+
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              super.prepare(for: segue, sender: sender)
+             if segue.identifier == SegueName.goToPullRequestList.rawValue {
+                 guard let destinationVC = segue.destination as? PullRequestsViewController else { return }
+                 destinationVC.currentRepository = dataSource.currentRepository
+                 destinationVC.title = dataSource.currentRepository?.name
+             }
+     }
 }

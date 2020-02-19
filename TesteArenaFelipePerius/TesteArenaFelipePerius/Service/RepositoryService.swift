@@ -27,7 +27,7 @@ class RepositoryService: NSObject {
                                                  headers:nil)
                 .validate(statusCode: 200...399)
                 .responseJSON(completionHandler: { (response) in
-                       if let dic = response.value as? [String: Any] {
+                    if let dic = response.value as? [String: Any] {
                             if let respositoryList = Mapper<RepositoryList>().map(JSON: dic) {
                                 observer.onNext(respositoryList)
                             } else {
