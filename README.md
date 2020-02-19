@@ -31,7 +31,7 @@ Nesse projeto utilizei 4 dependecias utilizando cocoaPods:
 * [SDWebImage](https://github.com/SDWebImage/SDWebImage) para download das urls de imagens e cache.
 
 ### Arquitetura Utilizada 
-A Arquitetura utilizada foi a * [Clean Architecture VIP](https://clean-swift.com/clean-swift-ios-architecture/) para mais informações segue o link com a documentação.
+A Arquitetura utilizada foi a [Clean Architecture VIP](https://clean-swift.com/clean-swift-ios-architecture/) para mais informações segue o link com a documentação.
 
 
 ### Autor 
