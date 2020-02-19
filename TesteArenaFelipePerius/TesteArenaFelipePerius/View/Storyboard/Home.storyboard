@@ -78,10 +78,11 @@
         <scene sceneID="ipa-y0-bci">
             <objects>
                 <navigationController title="GitHub JavaPop" interfaceStyle="light" id="Xjm-IQ-paU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SNd-Pu-tBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" backIndicatorImage="back_button" id="SNd-Pu-tBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,4 +98,7 @@
             <point key="canvasLocation" x="-842" y="-372"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_button" width="16" height="27"/>
+    </resources>
 </document>

@@ -21,11 +21,12 @@ class PullRequestsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        self.setup()
+        self.setupNavigationBarItems()
+        self.setupController()
         self.getPullRequests()
     }
     
-    private func setup() {
+    private func setupController() {
         let viewController = self
         let interactor = PullRequestInteractor()
         let presenter = PullRequestPresenter()

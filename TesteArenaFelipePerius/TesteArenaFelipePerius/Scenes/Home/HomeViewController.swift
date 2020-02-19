@@ -27,9 +27,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupNavigationBarItems()
         configTableView()
         self.getRepositories(page:startPage)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupNavigationBarItems()
     }
     
     // MARK: Setup

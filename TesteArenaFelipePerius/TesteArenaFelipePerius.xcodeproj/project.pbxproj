@@ -15,6 +15,7 @@
 		2F04A9D323FC6AFE00863D28 /* PullRequestDataScource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F04A9D223FC6AFE00863D28 /* PullRequestDataScource.swift */; };
 		2F04A9D523FC6BE000863D28 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F04A9D423FC6BE000863D28 /* HomeRouter.swift */; };
 		2F04A9D723FC6C1C00863D28 /* SegueName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F04A9D623FC6C1C00863D28 /* SegueName.swift */; };
+		2F317A0E23FD6CBD003BFDA8 /* PullRequest+ExtensionNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F317A0D23FD6CBD003BFDA8 /* PullRequest+ExtensionNavBar.swift */; };
 		2F317E0723FC39AC0078CFEE /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F317E0623FC39AC0078CFEE /* UIColor+Util.swift */; };
 		2F5C380A23FA179C000985E2 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */; };
 		2F5C380B23FA179C000985E2 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */; };
@@ -89,6 +90,7 @@
 		2F04A9D223FC6AFE00863D28 /* PullRequestDataScource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestDataScource.swift; sourceTree = "<group>"; };
 		2F04A9D423FC6BE000863D28 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		2F04A9D623FC6C1C00863D28 /* SegueName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueName.swift; sourceTree = "<group>"; };
+		2F317A0D23FD6CBD003BFDA8 /* PullRequest+ExtensionNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PullRequest+ExtensionNavBar.swift"; sourceTree = "<group>"; };
 		2F317E0623FC39AC0078CFEE /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		2F5C380823FA179C000985E2 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2F5C380923FA179C000985E2 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				2F04A9D223FC6AFE00863D28 /* PullRequestDataScource.swift */,
 				2FDB6C8B23FCBAAE00200D05 /* PullRequestInteractor.swift */,
 				2FDB6C8D23FCBD7100200D05 /* PullRequestPresenter.swift */,
+				2F317A0D23FD6CBD003BFDA8 /* PullRequest+ExtensionNavBar.swift */,
 			);
 			path = PullRequestList;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 			files = (
 				2FDB6C8A23FCAD1B00200D05 /* PullRequestWorker.swift in Sources */,
 				2F04A9C923FC63DA00863D28 /* PullRequestsViewController.swift in Sources */,
+				2F317A0E23FD6CBD003BFDA8 /* PullRequest+ExtensionNavBar.swift in Sources */,
 				2F7B7C3423F711C7006D73D2 /* AppDelegate.swift in Sources */,
 				2F04A9D023FC667D00863D28 /* PullRequestTableViewCell.swift in Sources */,
 				2F5C382923FB12C6000985E2 /* Owner.swift in Sources */,
