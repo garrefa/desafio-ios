@@ -34,7 +34,7 @@ class ServiceTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: { (error) in
             if error != nil {
-                XCTFail("🛑 Request timed out.")
+                XCTFail("Request timed out.")
             }
         })
     }
