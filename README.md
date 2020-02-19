@@ -1,3 +1,41 @@
+# **DESAFIO iOS ARENA - Felipe Perius**
+
+Objetivo do projeto é testar as habilidades do canditado na criação de aplicativos para plataforma iOS .
+
+## Começando
+Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
+
+### Pré-requisitos
+O que você precisa para construir, executar e testar o aplicativo:
+Xcode 9.3 ou posterior. 
+O Deployment target está configurando pra suporta iOS 11.0 ou posterior.
+
+Faça o clone do repositório em sua máquina local.
+
+ Depois será necessario a instalação das dependências com o comando:
+```bash
+$ pod install
+```
+
+Em seguida, abra o projeto no Xcode:
+open TesteArenaFelipePerius.xcworkspace Agora você está pronto para começar.
+
+### Uso de dependências 
+
+Nesse projeto utilizei 4 dependecias utilizando cocoaPods:
+* Utilizei o  [Alamofire](https://github.com/Alamofire/Alamofire) para facilitar as requisições com API .
+
+* [ObjectMapper]((https://github.com/tristanhimmelman/ObjectMapper) para fazer o parse dos models do JSON e comecei usando codable mas resolvi usar ObjectMapper mesmo.
+
+* [RxSwift](https://github.com/ReactiveX/RxSwift) para fazer as requisições na camada de serviço com programção reativa.
+
+* [SDWebImage](https://github.com/SDWebImage/SDWebImage) para download das urls de imagens e cache.
+
+### Autor 
+- **Felipe Augusto Pimentel Perius**
+
+
+
 # Criar um aplicativo de consulta a API do [GitHub](https://github.com)#
 
 Criar um aplicativo para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Java. Basear-se no mockup fornecido:
