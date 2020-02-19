@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-TesteArenaFelipePerius/Pods-TesteArenaFelipePerius-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
