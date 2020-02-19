@@ -25,7 +25,7 @@ open TesteArenaFelipePerius.xcworkspace Agora você está pronto para começar.
 Nesse projeto utilizei 4 dependecias utilizando cocoaPods:
 * Utilizei o  [Alamofire](https://github.com/Alamofire/Alamofire) para facilitar as requisições com API .
 
-* [ObjectMapper]((https://github.com/tristanhimmelman/ObjectMapper) para fazer o parse dos models do JSON e comecei usando codable mas resolvi usar ObjectMapper mesmo.
+* [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper) para fazer o parse dos models do JSON e comecei usando codable mas resolvi usar ObjectMapper mesmo.
 
 * [RxSwift](https://github.com/ReactiveX/RxSwift) para fazer as requisições na camada de serviço com programção reativa.
 
